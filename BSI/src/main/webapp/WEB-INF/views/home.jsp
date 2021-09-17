@@ -15,6 +15,7 @@
     <title>BSI</title>
 
    <jsp:include page="/WEB-INF/views/modules/css.jsp" />
+   
    <style type="text/css">
    #subpic{width: 1000px}
    </style>
