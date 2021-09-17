@@ -17,7 +17,7 @@
             <li class="nav-item active">
                 <a class="nav-link" href="/bsi">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
-                    <span>부산 지하철</span></a>
+                    <span>관리 페이지</span></a>
             </li>
 
             <!-- Divider -->

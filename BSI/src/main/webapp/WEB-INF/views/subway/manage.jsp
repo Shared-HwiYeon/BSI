@@ -23,7 +23,7 @@
     <!-- Page Wrapper -->
     <div id="wrapper">
 
-		<jsp:include page="/WEB-INF/views/modules/sidebar2.jsp" />
+		<jsp:include page="/WEB-INF/views/modules/managesidebar.jsp" />
 		
         <!-- Content Wrapper -->
         <div id="content-wrapper" class="d-flex flex-column">
@@ -38,8 +38,53 @@
 
                     <!-- Page Heading -->
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <h1 class="h3 mb-0 text-gray-800">page-template</h1>
+                        <h1 class="h3 mb-0 text-gray-800">관리페이지</h1>
                     </div>
+                   <div class="card shadow mb-4">
+                        <div class="card-header py-3">
+                            <span class="m-0 font-weight-bold text-primary">회원 목록</span>
+                            <div style="clear:both"></div>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                    <thead>
+                                        <tr>
+                                            <th>회원번호</th>
+                                            <th>회원아이디</th>
+                                            <th>회원유형</th>
+                                            <th>가입일자</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                    <c:forEach var="board" items="${ boards }">
+                                        <tr>
+                                            <td>${ board.boardNo }</td>
+                                            <td>
+                                            	<c:choose>
+                                            		<c:when test="${ not board.deleted }">
+                                            		<a href="detail?boardNo=${ member.unumber }">${ member.name }</a>
+                                            		</c:when>
+                                            		<c:otherwise>
+                                            		<span>${ board.title }[삭제된 글]</span>
+                                            		</c:otherwise> 
+                                            	</c:choose>
+                                            	
+                                            </td>
+                                            <td>${ board.regDate }</td>
+                                        </tr>
+                                    </c:forEach>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                
+
+                </div>
+                <!-- /.container-fluid -->
+                   
 
                 <!-- /.container-fluid -->
 

@@ -62,4 +62,9 @@ public class SubwayController {
 	public String five() {
 		return "subway/5";
 	}
+	
+	@GetMapping(path= { "/manage" })
+	public String showmanageForm() {
+		return "subway/manage";
+	}
 }
