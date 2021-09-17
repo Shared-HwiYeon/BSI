@@ -3,7 +3,7 @@
         <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/project4">
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/bsi">
                 <div class="sidebar-brand-icon rotate-n-15">
                     <i class="fas fa-laugh-wink"></i>
                 </div>
@@ -15,7 +15,7 @@
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item active">
-                <a class="nav-link" href="/project4/subway/5">
+                <a class="nav-link" href="/bsi/subway/5">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>마이 페이지</span></a>
             </li>
@@ -30,7 +30,7 @@
 
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
-                <a class="nav-link collapsed" href="/project4/member/edit" >
+                <a class="nav-link collapsed" href="/bsi/member/edit" >
                     <i class="fas fa-fw fa-cog"></i>
                     <span>내정보 보기</span>
                 </a>
@@ -38,7 +38,7 @@
 
             <!-- Nav Item - Utilities Collapse Menu -->
             <li class="nav-item">
-                <a class="nav-link collapsed" href="/project4/member/like">
+                <a class="nav-link collapsed" href="/bsi/member/like">
                     <i class="fas fa-fw fa-wrench"></i>
                     <span>찜목록 보기</span>
                 </a>

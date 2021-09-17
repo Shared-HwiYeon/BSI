@@ -19,15 +19,15 @@ public class CustomerServiceImpl implements CustomerService {
 	@Override
 	public void initData(String csvPath) {
 		
-		List<CustomerVO> list = readbsiFromCsv(csvPath);
+		List<CustomerVO> list2 = readbsiFromCsv(csvPath);
+		
+//		customerDao.insertCustomer(list2);
 		
 //		customerDao.dropCustomer();
 //		
 //		customerDao.createCustomer();
 //				
 //		customerDao.deleteCustomer();
-
-		customerDao.insertCustomer(list);
 		
 	}
 
@@ -51,7 +51,7 @@ public class CustomerServiceImpl implements CustomerService {
 				if(row==null) {
 					break;
 				}
-				for(int i = 18; i < 24; i ++) {
+				for(int i = 0; i < 18; i ++) {
 				CustomerVO customer = new CustomerVO(Integer.BYTES,
 												 	 Integer.parseInt(row[1]),
 												 	 sdf.parse(row[3]),

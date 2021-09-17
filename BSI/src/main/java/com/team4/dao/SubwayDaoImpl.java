@@ -11,7 +11,7 @@ import lombok.Setter;
 
 public class SubwayDaoImpl implements SubwayDao{
 	
-	private final String mapper = "com.bsi.mapper.SubwayMapper.";
+	private final String mapper = "com.team4.mapper.SubwayMapper.";
 	
 	@Setter
 	private JdbcTemplate jdbcTemplate;
