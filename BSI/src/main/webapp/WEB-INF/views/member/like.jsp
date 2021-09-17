@@ -38,7 +38,7 @@
 
                     <!-- Page Heading -->
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <h1 class="h3 mb-0 text-gray-800">page-template</h1>
+                        <h1 class="h3 mb-0 text-gray-800">My Likes</h1>
                     </div>
 
                 <!-- /.container-fluid -->
@@ -82,11 +82,11 @@
     <jsp:include page="/WEB-INF/views/modules/js.jsp"/>
 
     <!-- Page level plugins -->
-    <script src="/bsi/resources/vendor/chart.js/Chart.min.js"></script>
+    <script src="/project4/resources/vendor/chart.js/Chart.min.js"></script>
 
     <!-- Page level custom scripts -->
-    <script src="/bsi/resources/js/demo/chart-area-demo.js"></script>
-    <script src="/bsi/resources/js/demo/chart-pie-demo.js"></script>
+    <script src="/project4/resources/js/demo/chart-area-demo.js"></script>
+    <script src="/project4/resources/js/demo/chart-pie-demo.js"></script>
 
 </body>
 
