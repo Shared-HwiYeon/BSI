@@ -15,7 +15,7 @@
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item active">
-                <a class="nav-link" href="/bsi">
+                <a class="nav-link" href="/bsi/subway/manage">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>관리 페이지</span></a>
             </li>
