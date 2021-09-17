@@ -55,7 +55,7 @@
                                                     Me</label>
                                             </div>
                                         </div>
-                                        <a href="/project4" class="btn btn-primary btn-user btn-block">
+                                        <a href="/bsi" class="btn btn-primary btn-user btn-block">
                                             Login
                                         </a>
                                     </form>
@@ -64,7 +64,7 @@
                                         <a class="small" href="forgot-password.html">Forgot Password?</a>
                                     </div>
                                     <div class="text-center">
-                                        <a class="small" href="/project4/account/register">Create an Account!</a>
+                                        <a class="small" href="/bsi/account/register">Create an Account!</a>
                                     </div>
                                 </div>
                             </div>

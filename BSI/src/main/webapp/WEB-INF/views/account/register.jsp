@@ -57,7 +57,7 @@
                                             id="exampleRepeatPassword" placeholder="Repeat Password">
                                     </div>
                                 </div>
-                                <a href="login.html" class="btn btn-primary btn-user btn-block">
+                                <a href="/bsi/account/login" class="btn btn-primary btn-user btn-block">
                                     Register Account
                                 </a>
                             </form>
@@ -66,7 +66,7 @@
                                 <a class="small" href="forgot-password.html">Forgot Password?</a>
                             </div>
                             <div class="text-center">
-                                <a class="small" href="/project4/account/login">Already have an account? Login!</a>
+                                <a class="small" href="/bsi/account/login">Already have an account? Login!</a>
                             </div>
                         </div>
                     </div>
