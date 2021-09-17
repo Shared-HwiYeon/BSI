@@ -7,6 +7,7 @@ import java.util.HashSet;
 import java.util.List;
 
 import com.team4.dao.SubwayDao;
+import com.team4.mapper.SubwayMapper;
 import com.team4.vo.CustomerVO;
 import com.team4.vo.SubwayVO;
 import com.opencsv.CSVReader;
@@ -17,6 +18,9 @@ public class SubwayServiceImpl implements SubwayService{
 	
 	@Setter
 	private SubwayDao subwaydao;
+	
+	@Setter
+	private SubwayMapper subwayMapper;
 
 	@Override
 	public void initData(String csvPath) {
@@ -63,6 +67,14 @@ public class SubwayServiceImpl implements SubwayService{
 		//System.out.println(result);
 		return result;
 	}
+
+//	@Override  //나중에 MemberServicImpl로 이동 
+//	public List<MemberVO> findAll() {
+//		
+//		List<MemberVO> members = subwayMapper.selectAll();
+//		
+//		return null;
+//	} 
 
 
 }

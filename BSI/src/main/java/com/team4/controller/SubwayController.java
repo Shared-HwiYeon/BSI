@@ -65,7 +65,13 @@ public class SubwayController {
 	}
 	
 	@GetMapping(path= { "/manage" })
-	public String showmanageForm() {
+	public String manage(Model model) {
+		
+		//데이터 조회
+		//List<MemberVO> members = subwayService.findAll();
+		
+		// View 에서 사용할 수 있도록	 Model 타입의 전달인자에 저장 -> requesst 객체에 저장
+//		model.addAttribute("members" , members);
 		return "subway/manage";
 	}
 	

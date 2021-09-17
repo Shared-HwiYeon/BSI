@@ -10,4 +10,6 @@ public interface SubwayMapper {
 	void insertSubway(List<SubwayVO> subways);
 	
 	void insertCustomer(List<CustomerVO> customers);
+	
+//	List<MemberVO> selectAll();
 }
