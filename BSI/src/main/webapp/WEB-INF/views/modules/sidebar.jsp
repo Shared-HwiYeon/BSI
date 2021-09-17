@@ -15,7 +15,7 @@
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item active">
-                <a class="nav-link" href="/project4">
+                <a class="nav-link" href="/bsi">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>부산 지하철</span></a>
             </li>
