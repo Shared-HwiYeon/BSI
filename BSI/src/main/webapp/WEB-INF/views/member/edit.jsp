@@ -6,13 +6,34 @@
 
 <head>
 
+<style type="text/css">
+.in {
+	background-color: white;
+}
+</style>
+<script type="text/javascript">
+function fnSubmit() {
+	if(confirm("정말 수정하시겠습니까?")) {
+		return true;
+	}
+	return false;
+}
+
+function fnReset() {
+	if(confirm("정말 초기화하시겠습니까?")) {
+		return true;
+	}
+	return false;
+}
+</script>
+
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>BSI</title>
+    <title>My Page</title>
 
    <jsp:include page="/WEB-INF/views/modules/css.jsp" />
 
@@ -38,9 +59,44 @@
 
                     <!-- Page Heading -->
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <h1 class="h3 mb-0 text-gray-800">page-template</h1>
+                        <h1 class="h3 mb-0 text-gray-800">My Information</h1>
                     </div>
-
+                    </div>
+<div align="center">
+	<form action="memberUpdate.jsp" method="post" onsubmit="return fnSubmit()" onreset="return fnReset()">
+		<input type="hidden" name="id" value="${dto.id }" />
+		<table border="1">
+			<tr>
+				<th>First Name</th>
+				<td><input type="text" name="irum" value="${dto.irum }" class="in" required="required" /></td>
+			</tr>
+			<tr>
+				<th>Last Name</th>
+				<td><input type="text" name="irum" value="${dto.irum }" class="in" required="required" /></td>
+			</tr>
+			<tr>
+				<th>E-mail Address</th>
+				<td><input type="text" name="addr" value="${dto.addr }" class="in" required="required"/></td>
+			</tr>
+			<tr>
+				<th>Password</th>
+				<td><input type="password" name="pw" value="${dto.pw }" class="in" required="required" /></td>
+			</tr>
+			<tr>
+				<th>Repeat Password</th>
+				<td><input type="password" name="pw" value="${dto.pw }" class="in" required="required" /></td>
+			</tr>
+			
+			<tr align="center">
+				<td colspan="2">
+					<input type="submit" value="수정하기" />
+					<input type="reset" value="초기화하기" />
+									
+				</td>
+			</tr>
+		</table>
+	</form>
+</div>
                 <!-- /.container-fluid -->
 
             </div>
@@ -82,11 +138,11 @@
     <jsp:include page="/WEB-INF/views/modules/js.jsp"/>
 
     <!-- Page level plugins -->
-    <script src="/bsi/resources/vendor/chart.js/Chart.min.js"></script>
+    <script src="/project4/resources/vendor/chart.js/Chart.min.js"></script>
 
     <!-- Page level custom scripts -->
-    <script src="/bsi/resources/js/demo/chart-area-demo.js"></script>
-    <script src="/bsi/resources/js/demo/chart-pie-demo.js"></script>
+    <script src="/project4/resources/js/demo/chart-area-demo.js"></script>
+    <script src="/project4/resources/js/demo/chart-pie-demo.js"></script>
 
 </body>
 
