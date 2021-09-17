@@ -6,6 +6,7 @@ import javax.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -66,5 +67,22 @@ public class SubwayController {
 	@GetMapping(path= { "/manage" })
 	public String showmanageForm() {
 		return "subway/manage";
+	}
+	
+	@GetMapping(path= { "/managedetail" })
+	public String managedetail(int memberNo, Model model) {
+		
+		// 1. 요청데이터 읽기
+		// 2. 데이터베이스에서 데이터 조회(데이터가 없으면 목록으로 이동)
+//		MemberVO member = MemberService.findBoardByMemberNo(memberNo);
+		
+//		if(member == null) {
+//			return "redirect:manage";
+//		}
+//		
+//		//3. view(.jsp)에서 읽을 수 있도록 데이터 저장
+//		model.addAttribute("member",member);//HttpServlertRequest.setattribute;
+		
+		return "subway/managedetail";
 	}
 }
