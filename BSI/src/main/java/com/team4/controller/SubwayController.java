@@ -49,15 +49,15 @@ public class SubwayController {
 		return "subway/2";
 	}
 	
-	@GetMapping(path= { "/3" })
-	public String third() {
-		return "subway/3";
-	}
+//	@GetMapping(path= { "/3" })
+//	public String third() {
+//		return "subway/3";
+//	} // 김혜원
 	
-	@GetMapping(path= { "/4" })
-	public String four() {
-		return "subway/4";
-	}
+//	@GetMapping(path= { "/4" })
+//	public String four() {
+//		return "subway/4";
+//	} // 김혜원
 	
 	@GetMapping(path= { "/5" })
 	public String five() {
