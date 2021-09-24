@@ -33,10 +33,10 @@ public class SubwayServiceImpl implements SubwayService{
 		
 		//subwaydao.deleteSubwayData();
 
-//		 subwaydao.insertSubway(list);
+		 subwaydao.insertSubway(list); //데이터 삽입이에요	
 	}
 
-	public List<SubwayVO> readbsiFromCsv(String csvPath) {
+	public List<SubwayVO> readbsiFromCsv(String csvPath) { //이게 데이터 읽어오는 부분이에요	
 		FileReader fr = null;
 		CSVReader csvr = null;
 		ArrayList<SubwayVO> result = new ArrayList<>();

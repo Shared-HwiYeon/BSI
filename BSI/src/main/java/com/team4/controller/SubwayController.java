@@ -32,8 +32,8 @@ public class SubwayController {
 		ServletContext application = req.getServletContext();
 		String csvPath = application.getRealPath("/WEB-INF/data-files/bsi_2021.csv");
 		
-		subwayService.initData(csvPath);
-		customerService.initData(csvPath);
+		//subwayService.initData(csvPath);
+		//customerService.initData(csvPath);
 		System.out.println("test");
 		
 		return "redirect:/" ;

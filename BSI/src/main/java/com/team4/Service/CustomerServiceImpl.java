@@ -21,7 +21,7 @@ public class CustomerServiceImpl implements CustomerService {
 		
 		List<CustomerVO> list2 = readbsiFromCsv(csvPath);
 		
-//		customerDao.insertCustomer(list2);
+		//customerDao.insertCustomer(list2);
 		
 //		customerDao.dropCustomer();
 //		
@@ -51,7 +51,7 @@ public class CustomerServiceImpl implements CustomerService {
 				if(row==null) {
 					break;
 				}
-				for(int i = 0; i < 18; i ++) {
+				for(int i = 0; i < 5; i ++) {
 				CustomerVO customer = new CustomerVO(Integer.BYTES,
 												 	 Integer.parseInt(row[1]),
 												 	 sdf.parse(row[3]),
