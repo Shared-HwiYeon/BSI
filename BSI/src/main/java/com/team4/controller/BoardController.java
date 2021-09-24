@@ -59,7 +59,7 @@ public class BoardController {
 		
 		model.addAttribute("board", board);
 		
-		return "board/detail";
+		return "board-khw/detail";
 	}
 	
 	@GetMapping(path = { "/delete" })
@@ -82,7 +82,7 @@ public class BoardController {
 	
 		model.addAttribute("board", board);
 	
-		return "board/edit";
+		return "board-khw/edit";
 	}
 	
 	@PostMapping(path = { "/update" })

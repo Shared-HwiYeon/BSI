@@ -35,7 +35,7 @@
 	WHERE BOARDNO = #{ boardNo }
 	</update>
 	
-	<update id="updateBoard" parameterType="int">
+	<update id="updateBoard" parameterType="BoardVO">
 	UPDATE BOARD 
 	SET TITLE = #{title}, CONTENT = #{content}
 	WHERE BOARDNO = #{ boardNo }
