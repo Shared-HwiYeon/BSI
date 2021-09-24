@@ -13,7 +13,7 @@
 	
 	<select id="selectAll" resultType="BoardVO">
 	SELECT BOARDNO, TITLE, MEMBERID, READCOUNT, REGDATE, DELETED
-	FROM BOARD 
+	FROM BOARD
 	ORDER BY BOARDNO DESC
 	</select>
 	
