@@ -8,7 +8,7 @@
 
 	<insert id="insertBoard" parameterType="BoardVO">
 	INSERT INTO BOARD (TITLE, MEMBERID, CONTENT) 
-	VALUES (#{ title }, #{ writer }, #{ content })
+	VALUES (#{ title }, #{ memberId }, #{ content })
 	</insert>
 	
 	<select id="selectAll" resultType="BoardVO">
