@@ -48,7 +48,7 @@
                         	 <iclass="fas fa-download fa-sm text-white-50"></i>지하철시간표 검색</a>
                     </div>
 					
-					<div><a target="_blank" href="https://ssl.pstatic.net/sstatic/keypage/outside/subway/img/210319/smap_bs_all.png"><img id="subpic" src="https://ssl.pstatic.net/sstatic/keypage/outside/subway/img/210319/smap_bs_all.png"></a></div>
+					<div><a target="_blank" href="https://ssl.pstatic.net/sstatic/keypage/outside/subway/img/210319/smap_bs_all.png"><img id="subpic" src="https://ssl.pstatic.net/sstatic/keypage/outside/subway/img/210319/smap_bs_all.png" style="width:100%"></a></div>
 
                 <!-- /.container-fluid -->
 
