@@ -43,12 +43,57 @@
                         	호선별 승하차 인원
                         </h1>
                     </div>
+                    
+                    <div class="con" style="width:100%;">
+                    
+                    <div class="card shadow mb-4" style="float:right">
+                                <!-- Card Header - Accordion -->
+                                <a href="#collapseCardExample" class="d-block card-header py-3" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="collapseCardExample">
+                                    <h6 class="m-0 font-weight-bold text-primary">부산 지하철 연혁</h6>
+                                </a>
+                                <!-- Card Content - Collapse -->
+                                <div class="collapse show" id="collapseCardExample" style="right">
+                                    <div class="card-body">
+                                       1981.01.01 부산시 지하철건설본부 설치1981.06~1994.061호선을 4단계로 구분하여 건설<br>
+                                       1981.06.23~1985.07.19 1단계구간 공사착공 및 개통(노포동~범내골 16.2㎞)<br>
+                                       1983.07.28~1987.05.15 2단계구간 공사착공 및 개통(범내골~중앙동 5.4㎞)<br>
+                                       1984.08.14~1990.02.28 3단계구간 공사착공 및 개통(중앙동~서대신동 4.5㎞)<br>
+                                       1987.11.28 부산교통공단법 제정 공포<br><br>
+                                       1988.07.01 부산교통공단 창단<br><br>
+                                       1990.07.24~1994.06.23 4단계구간 공사착공 및 개통(서대신동~신평 6.4㎞)<br><br>
+                                       1991.11.28 2호선 1단계구간 착공(양산 호포~서면 21.7㎞)<br><br>
+                                       1994.10.27 2호선 2단계구간 착공(서면~장산 16.3㎞)<br><br>
+                                       1996.02.16 3호선 건설·운영 기본계획 확정1997.11.253호선 대저~수영구간 착공(18.3km)<br><br>
+                                       1999.06.30 2호선 1단계 구간 개통(양산 호포~서면 21.7㎞)<br><br>
+                                       2001.08.08 2호선 2단계 서면~금련산구간 개통(서면~금련산 7.7㎞)<br>
+                                       2001.12.21 2호선 연장구간 착공(양산 호포~중부 8㎞)<br><br>
+                                       2002.01.16 2호선 광안역 개통2002.08.292호선 광안~장산 개통<br><br>
+                                       2003.12.03 4호선 미남~안평구간 착공(12.7Km)<br><br>
+                                       2005.07.13 부산교통공단법 폐지법률 공포<br>
+                                       2005.11.28 3호선 수영~대저 구간 개통(18.1km)<br><br>
+                                       2006.01.01 부산교통공사 창립<br><br>
+                                       2008.01.10 2호선 연장구간(호포~양산) 개통(7.2Km)<br><br>
+                                       2009.10.01 2호선 부산대양산캠퍼스역 개통<br><br>
+                                       2011.03.30 4호선 미남~안평구간 개통<br><br>
+                                       2013.09.02 도시철도 문화경영 선포<br>
+                                       2013.11.18 인천국제공항 셔틀트레인 O&M용역<br><br>
+                                       2015.03.20 페루 리마메트로 2호선 시공감리 용역<br>
+                                       2015.07.16 新사훈 선포<br><br>
+                                       2016.06.15 사상~하단선(6.9km) 기공식<br>
+                                       2016.07.13 청렴 BI 선포<br><br>
+                                       2017.04.20 1호선 연장 다대구간(7.4km) 개통<br>
+                                       
+                                                        
+                                    </div>
+                                </div>
+                            </div>
+                    
   					
 					 <!-- Content Column -->
                         <div class="col-lg-6 mb-4">
 
                             <!-- Project Card Example -->
-                            <div class="card shadow mb-4" style="width:900px">
+                            <div class="card shadow mb-4" style="width:100%">
                                 <div class="card-header py-3" style="height:70px">
                                     <h6 class="m-0 font-weight-bold text-primary" style="display:inline-block">평균 이용객</h6>
                                     <div class="dropdown mb-4 show" style="float:right">
@@ -89,7 +134,10 @@
                                     </div>
                                     
                                 </div>
+                                
+                                
                               
+</div>
 
 				</div>
                 <!-- /.container-fluid -->
