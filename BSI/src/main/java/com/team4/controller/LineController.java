@@ -13,5 +13,11 @@ public class LineController {
 		
 		return "line-khw/line";
 	}
+	
+	@GetMapping(path = {"/line2"})
+	public String line2() {
+		
+		return "line-khw/line2";
+	}
 
 }

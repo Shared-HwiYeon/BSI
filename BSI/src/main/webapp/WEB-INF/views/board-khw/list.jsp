@@ -38,22 +38,26 @@
 
                     <!-- Page Heading -->
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <h1 class="h3 mb-0 text-gray-800">건의사항</h1>
+                        <h1 class="h3 mb-0 text-gray-800" 
+                        	style="font-weight: bold; margin-left:20px">
+                        	건의사항
+                        </h1>
                     </div>
                     
                      <!-- DataTales Example -->
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
                             <span class="m-0 font-weight-bold text-primary">글 목록</span>
-                            <a href="write" class="btn btn-primary btn-sm" style="float:right">글 쓰기</a>
+                            <a href="write" class="btn btn-primary btn-sm" style="float:right">글쓰기</a>
                             <div style="clear:both"></div>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
-                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0"
+                                	   style="text-align:center">
                                     <thead>
                                         <tr>
-                                            <th>글번호</th>
+                                            <th style="width:80px;">번호</th>
                                             <th>제목</th>
                                             <th>작성자</th>
                                             <th>작성일자</th>
@@ -64,17 +68,20 @@
                                     <tbody>
                                     <c:forEach var = "board" items="${ boards }">
                                         <tr>
-                                            <td>${ board.boardNo }</td>
                                             <td>
-                                           	<c:choose>
+                                            <a href="detail?boardNo=${ board.boardNo }">
+                                            ${ board.boardNo }
+                                            </a>	
+                                            </td>
+                                            <td>
+                                           		<c:choose>
                                            		<c:when test="${ not board.deleted }">
                                            		<a href="detail?boardNo=${ board.boardNo }">${ board.title }</a>
                                            		</c:when>
                                            		<c:otherwise>
                                            		<span style="color:lightgray">${ board.title } [삭제된 글]</span>
                                            		</c:otherwise>	
-                                           	</c:choose>
-                                            	
+                                           		</c:choose>
                                             </td>
                                             <td>${ board.memberId }</td>
                                             <td>${ board.regDate }</td>
