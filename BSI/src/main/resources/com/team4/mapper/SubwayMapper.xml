@@ -23,6 +23,65 @@
 	</foreach>
 	</insert>
 	
-	<insert id="selectAll"></insert>
+	<select id="selectrank" resultType="StationVO">
+	select dense_rank() over(order by sum(unumber) desc) as ranking,
+		   sname as sname, division, round(sum(unumber)/243,0) as unumber
+		   from customer join subway on subway.snumber = customer.snumber
+		   GROUP BY customer.snumber, customer.division limit 5;
+	</select>
+	
+	<select id="selectAvg" resultType="StationVO">
+	Select round(sum(unumber)/243,0) as unumber
+	from customer;
+	</select>
+	
+	<insert id="insertMember" parameterType="MembersVO">
+	INSERT INTO member (memberId, passwd, email)
+	VALUES (#{ memberId }, #{ passwd }, #{ email } )
+	</insert>
+	
+	<resultMap type="MembersVO" id="memberResult">
+		<result property="memberId" column="memberId"/>
+		<result property="email" column="email"/>
+		<result property="userType" column="usertype"/>
+		<result property="regDate" column="regdate"/>
+	</resultMap>
+	
+	<select id="selectMemberIdAndPasswd" parameterType="String" resultMap="memberResult">
+	SELECT memberId, email, usertype, regdate 
+	FROM member
+	WHERE memberId = #{ memberId } AND passwd = #{ passwd }
+	</select>
+	
+	<resultMap type="MembersVO" id="memberlist">
+		<result property="memberId" column="memberId"/>
+		<result property="email" column="email"/>
+		<result property="userType" column="usertype"/>
+		<result property="regDate" column="regdate"/>
+	</resultMap>
+	
+	<select id="selectAll" resultMap="memberlist">
+	SELECT memberId, email, usertype, regDate
+	FROM member
+	</select>
+	
+	<select id="selectMemberId" parameterType="String" resultMap="memberlist">
+	SELECT memberId, email, usertype, REGDATE
+	FROM MEMBER
+	WHERE MEMBERID = #{ memberId }
+	</select>
+	
+	<update id="updateMember" parameterType="MembersVO">
+	UPDATE MEMBER
+	SET USERTYPE = #{ userType }, EMAIL = #{ email }
+	WHERE MEMBERID = #{ memberId }
+	</update>
+	
+	<delete id="deleteMember" parameterType="String">
+	DELETE
+	FROM member
+	WHERE memberId = '${ memberId }'
+	</delete>	
+	
 	
 </mapper>
