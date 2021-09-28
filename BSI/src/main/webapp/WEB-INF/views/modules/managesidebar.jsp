@@ -47,7 +47,7 @@
 
 			<!-- Nav Item - Utilities Collapse Menu -->
             <li class="nav-item">
-                <a class="nav-link collapsed" href="/bsi/subway/3">
+                <a class="nav-link collapsed" href="/bsi/line-khw/line">
                     <i class="fas fa-fw fa-wrench"></i>
                     <span>호선별 승하차 인원</span>
                 </a>
@@ -55,7 +55,7 @@
             
             <!-- Nav Item - Utilities Collapse Menu -->
             <li class="nav-item">
-                <a class="nav-link collapsed" href="/bsi/subway/4">
+                <a class="nav-link collapsed" href="/bsi/board-khw/list">
                     <i class="fas fa-fw fa-wrench"></i>
                     <span>건의 사항 게시판</span>
                 </a>
