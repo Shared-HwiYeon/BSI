@@ -143,11 +143,11 @@
     <jsp:include page="/WEB-INF/views/modules/js.jsp"/>
 
     <!-- Page level plugins -->
-    <script src="/bsi/resources/vendor/chart.js/Chart.min.js"></script>
+    <script src="/BSI/resources/vendor/chart.js/Chart.min.js"></script>
 
     <!-- Page level custom scripts -->
-    <script src="/bsi/resources/js/demo/chart-area-demo.js"></script>
-    <script src="/bsi/resources/js/demo/chart-pie-demo.js"></script>
+    <script src="/BSI/resources/js/demo/chart-area-demo.js"></script>
+    <script src="/BSI/resources/js/demo/chart-pie-demo.js"></script>
 
 </body>
 

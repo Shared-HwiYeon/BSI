@@ -101,8 +101,8 @@
                                         </button>
                                         <div class="dropdown-menu animated--fade-in show" aria-labelledby="dropdownMenuButton" style="position: absolute; transform: translate3d(0px, 38px, 0px); top: 0px; left: 0px; will-change: transform;" x-placement="bottom-start">
                                               
-                                            <a class="dropdown-item" href="/bsi/line-khw/line">승차</a>
-                                            <a class="dropdown-item" href="/bsi/line-khw/line2">하차</a>
+                                            <a class="dropdown-item" href="/BSI/line-khw/line">승차</a>
+                                            <a class="dropdown-item" href="/BSI/line-khw/line2">하차</a>
                                         </div>
                                     </div>
                                 </div>
