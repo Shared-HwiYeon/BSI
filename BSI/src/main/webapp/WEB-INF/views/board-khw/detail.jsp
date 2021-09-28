@@ -83,8 +83,10 @@
 								<input class="form-control" id='readCount' value="${ board.readCount }">
 							</div>
 
+							<c:if test="${sessionScope.loginuser.memberId == board.memberId || sessionScope.loginuser.userType == 'admin'}">
 							<button id="edit-button" type="button" class="btn btn-success">수정</button>
 							<button id="delete-button" type="button" class="btn btn-success">삭제</button>
+							</c:if>
 							<button id="tolist-button" type="button" class="btn btn-success">목록</button>
 
 						</div>
