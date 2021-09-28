@@ -38,15 +38,56 @@
 
                     <!-- Page Heading -->
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <h1 class="h3 mb-0 text-gray-800">page-template</h1>
+                        <h1 class="h3 mb-0 text-gray-800">역별 승하차 인원</h1>
+                        
                     </div>
+                    
 
+               <!-- Content Column -->
+                       	<div style="padding-top:25px;text-align:center">
+			<form action="stats-by-section.action" method="post">
+			<table border="1" style="width:800px;margin:0 auto">
+				<tr style="height:30px">
+					<th style="width:20%">역명</th>
+					<td style="text-align:center">
+						<select name="range">
+							<option value="5" selected>5번대</option>
+							<option value="10" >10번대</option>
+						</select>						
+					</td>
+					
+					<th>시간</th>
+					<td style="text-align:center">
+						<select name="weeks">
+							<option value="5" >최근 5주</option>
+							<option value="10" >최근 10주</option>
+							<option value="15" selected>최근 15주</option>
+						</select>
+					</td>
+				
+				<tr>					
+					<td colspan="4" style="text-align: center;height:50px">
+						<input type="submit" value="조회"><!-- type=submit : 포함된 form을 서버로 submit -->
+					</td>
+				</tr>
+			</table>
+			</form>
+			<br><br>
+					</div>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+
+				</div>
                 <!-- /.container-fluid -->
+        	</div>
+        	<!-- End of Main Content -->
 
-            </div>
-            <!-- End of Main Content -->
-
-           <jsp:include page="/WEB-INF/views/modules/footer.jsp" />
+			
+  <!-- Footer -->
+         
+            <!-- End of Footer -->
 
         </div>
         <!-- End of Content Wrapper -->
@@ -79,14 +120,14 @@
         </div>
     </div>
 
-    <jsp:include page="/WEB-INF/views/modules/js.jsp"/>
+      <!-- Bootstrap core JavaScript-->
+    <script src="/BSI/resources/vendor/jquery/jquery.min.js"></script>
+    <script src="/BSI/resources/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-    <!-- Page level plugins -->
-    <script src="/bsi/resources/vendor/chart.js/Chart.min.js"></script>
+    <!-- Core plugin JavaScript-->
+    <script src="/BSI/resources/vendor/jquery-easing/jquery.easing.min.js"></script>
 
-    <!-- Page level custom scripts -->
-    <script src="/bsi/resources/js/demo/chart-area-demo.js"></script>
-    <script src="/bsi/resources/js/demo/chart-pie-demo.js"></script>
+
 
 </body>
 
