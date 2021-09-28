@@ -2,16 +2,20 @@ package com.team4.controller;
 
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.team4.Service.BoardService;
 import com.team4.vo.BoardVO;
+import com.team4.vo.MembersVO;
 
 @Controller
 @RequestMapping(path = {"/board-khw"})
@@ -38,12 +42,17 @@ public class BoardController {
 	}
 	
 	@PostMapping(path = {"/write"})
-	public String write(BoardVO board) {
+	public String write(@ModelAttribute BoardVO board, HttpSession session, Model model) {
+		
+		MembersVO s = (MembersVO)session.getAttribute("loginuser"); // 세션에 저장된 로그인 유저값 불러오기
+		
+		board.setMemberId(s.getMemberId()); // 보드에 memberId 저장하기
 		
 		boardService.writeBoard(board);
 		
 		return "redirect:list";
 	}
+	
 	
 	@GetMapping(path = { "/detail" })
 	public String detail(int boardNo, Model model) {

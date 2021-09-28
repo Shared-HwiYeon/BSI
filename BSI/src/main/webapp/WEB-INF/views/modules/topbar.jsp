@@ -6,6 +6,8 @@
 
 				<!-- Topbar -->
                 <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+                	
+                	<p style="font-size:12px;font-style:italic;margin-top:20px"> Busan Subway Information with team4</p>
 
                     <!-- Sidebar Toggle (Topbar) -->
                     <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
@@ -15,6 +17,7 @@
 
                     <!-- Topbar Navbar -->
                     <ul class="navbar-nav ml-auto">
+					
 
                         <!-- Nav Item - Search Dropdown (Visible Only XS) -->
                         <li class="nav-item dropdown no-arrow d-sm-none">
@@ -59,7 +62,7 @@
                         <c:otherwise>
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Douglas McGee</span>
+                                 <span class="mr-2 d-none d-lg-inline text-gray-600 small">${ sessionScope.loginuser.memberId } 님 </span>
                                 <img class="img-profile rounded-circle"
                                     src="/bsi/resources/img/undraw_profile.svg">
                             </a>
