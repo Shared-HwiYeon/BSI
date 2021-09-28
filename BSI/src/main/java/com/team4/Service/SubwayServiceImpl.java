@@ -9,6 +9,8 @@ import java.util.List;
 import com.team4.dao.SubwayDao;
 import com.team4.mapper.SubwayMapper;
 import com.team4.vo.CustomerVO;
+import com.team4.vo.MembersVO;
+import com.team4.vo.StationVO;
 import com.team4.vo.SubwayVO;
 import com.opencsv.CSVReader;
 
@@ -35,6 +37,7 @@ public class SubwayServiceImpl implements SubwayService{
 
 		 subwaydao.insertSubway(list); //데이터 삽입이에요	
 	}
+	
 
 	public List<SubwayVO> readbsiFromCsv(String csvPath) { //이게 데이터 읽어오는 부분이에요	
 		FileReader fr = null;
@@ -68,14 +71,47 @@ public class SubwayServiceImpl implements SubwayService{
 		return result;
 	}
 
-//	@Override  //나중에 MemberServicImpl로 이동 
-//	public List<MemberVO> findAll() {
-//		
-//		List<MemberVO> members = subwayMapper.selectAll();
-//		
-//		return null;
-//	} 
+	@Override
+	public List<StationVO> findrank() {
+		
+		List<StationVO> list = subwayMapper.selectrank();
+		
+		return list;
+	}
 
+	@Override
+	public StationVO findavg() {
+		
+		StationVO vo = subwayMapper.selectAvg();
+		
+		return vo;
+	}
+
+	@Override  //나중에 MemberServicImpl로 이동 
+	public List<MembersVO> findAll() {
+		
+		List<MembersVO> members = subwayMapper.selectAll();
+		
+		return members;
+	}
+
+	@Override
+	public MembersVO findMemberByMemberId(String memberId) {
+		
+		MembersVO member = subwayMapper.selectMemberId(memberId); 
+		
+		return member;
+	}
+
+	@Override
+	public void updateMember(MembersVO member) {
+		subwayMapper.updateMember(member);
+	}
+
+	@Override
+	public void deleteMember(String memberId) {
+		subwayMapper.deleteMember(memberId);
+	}
 
 }
 
