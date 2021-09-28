@@ -9,6 +9,7 @@ import java.util.List;
 import com.team4.dao.SubwayDao;
 import com.team4.mapper.SubwayMapper;
 import com.team4.vo.CustomerVO;
+import com.team4.vo.StationVO;
 import com.team4.vo.SubwayVO;
 import com.opencsv.CSVReader;
 
@@ -66,6 +67,22 @@ public class SubwayServiceImpl implements SubwayService{
 		}
 		//System.out.println(result);
 		return result;
+	}
+
+	@Override
+	public List<StationVO> findrank() {
+		
+		List<StationVO> list = subwayMapper.selectrank();
+		
+		return list;
+	}
+
+	@Override
+	public StationVO findavg() {
+		
+		StationVO vo = subwayMapper.selectAvg();
+		
+		return vo;
 	}
 
 //	@Override  //나중에 MemberServicImpl로 이동 

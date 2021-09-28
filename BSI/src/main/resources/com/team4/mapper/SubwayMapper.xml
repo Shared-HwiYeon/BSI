@@ -23,6 +23,18 @@
 	</foreach>
 	</insert>
 	
+	<select id="selectrank" resultType="StationVO">
+	select dense_rank() over(order by sum(unumber) desc) as ranking,
+		   sname as sname, division, round(sum(unumber)/243,0) as unumber
+		   from customer join subway on subway.snumber = customer.snumber
+		   GROUP BY customer.snumber, customer.division limit 5;
+	</select>
+	
+	<select id="selectAvg" resultType="StationVO">
+	Select round(sum(unumber)/243,0) as unumber
+	from customer;
+	</select>
+	
 	<insert id="selectAll"></insert>
 	
 </mapper>
