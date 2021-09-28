@@ -18,6 +18,7 @@
 
 </head>
 
+
 <body id="page-top">
 
     <!-- Page Wrapper -->
@@ -38,7 +39,10 @@
 
                     <!-- Page Heading -->
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <h1 class="h3 mb-0 text-gray-800">글쓰기</h1>
+                         <h1 class="h3 mb-0 text-gray-800" 
+                        	style="font-weight: bold; margin-left:20px">
+                        	글쓰기
+                        </h1>
                     </div>
 
 					<div class="card shadow mb-4">
@@ -46,18 +50,18 @@
                              <h6 class="m-0 font-weight-bold text-primary">건의사항을 적어주세요 :)</h6>
                          </div>
                          <div class="card-body">
-                             <form id="board-write-form" action="write" method="post">
+                             <form id="board-khw-write-form" action="write" method="post">
                              	<div class="form-group">
                              		<label>제목</label>
-                             		<input type="text" class="form-control" name="title">
+                             		<input type="text" class="form-control" name="title" id="title">
                              	</div>
-                             	<div class="form-group">
+                             	<!-- <div class="form-group">
                              		<label>작성자</label>
-                             		<input type="text" class="form-control" name="writer">
-                             	</div>
+                             		<input type="text" class="form-control" name="memberId">
+                             	</div> -->
                              	<div class="form-group">
                              		<label>내용</label>
-                             		<textarea class="form-control" name="content" rows="5"></textarea>
+                             		<textarea class="form-control" name="content" rows="5" id="contentarea"></textarea>
                              	</div>
                              	
                              	<button id="write-button" class="btn btn-primary btn-sm">쓰기</button>
@@ -117,7 +121,19 @@
 			
 			// 입력 데이터의 유효성 검사 등 처리
 			
-			$('#board-write-form').submit(); // form을 서버로 전송
+			var title = $('#title').val();
+			var content = $('#contentarea').val();
+			// 입력 데이터의 유효성 검사 등 처리
+			if(title == ""){
+				alert("제목을 입력하세요");
+				return;
+			}
+			if(content== null || content == ""){
+				alert("내용을 입력하세요");
+				return;
+			}
+			
+			$('#board-khw-write-form').submit(); // form을 서버로 전송
 			
 		});
 	

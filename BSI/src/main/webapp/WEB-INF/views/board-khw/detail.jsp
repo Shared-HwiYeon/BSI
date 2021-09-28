@@ -18,6 +18,7 @@
 
 </head>
 
+
 <body id="page-top">
 
     <!-- Page Wrapper -->
@@ -37,7 +38,10 @@
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-					<h1 class="h3 mb-2 text-gray-800">건의사항</h1>
+					 <h1 class="h3 mb-0 text-gray-800" 
+                        	style="font-weight: bold; margin-left:20px">
+                        	건의사항
+                     </h1>
 					<br>
 
 					<div class="card shadow mb-4">
@@ -55,6 +59,12 @@
 								<label>제목</label> 
 								<input class="form-control" id='title' name='title' value="${ board.title }">
 							</div>
+							
+							
+							<div class="form-group">
+								<label>작성자</label> 
+								<input class="form-control" id='memberID'	name='memberId' value="${ board.memberId }">
+							</div>
 
 							<div class="form-group">
 								<label>내용</label>
@@ -62,10 +72,6 @@
 									id='content' name='content'>${ board.content }</textarea>
 							</div>
 
-							<div class="form-group">
-								<label>작성자</label> 
-								<input class="form-control" id='memberID'	name='memberId' value="${ board.memberId }">
-							</div>
 
 							<div class="form-group">
 								<label>작성일자</label>
@@ -78,8 +84,10 @@
 								<input class="form-control" id='readCount' value="${ board.readCount }">
 							</div>
 
+							<c:if test="${sessionScope.loginuser.memberId == board.memberId || sessionScope.loginuser.userType == 'admin'}">
 							<button id="edit-button" type="button" class="btn btn-success">수정</button>
 							<button id="delete-button" type="button" class="btn btn-success">삭제</button>
+							</c:if>
 							<button id="tolist-button" type="button" class="btn btn-success">목록</button>
 
 						</div>
