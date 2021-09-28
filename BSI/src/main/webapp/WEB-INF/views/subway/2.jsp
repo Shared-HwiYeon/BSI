@@ -49,7 +49,7 @@
 			<table border="1" style="width:800px;margin:0 auto">
 				<tr style="height:30px">
 					<th style="width:20%">역명</th>
-					<td style="text-align:center">
+					<td style="text-align:center;width:30%">
 						<select name="range">
 							<option value="95" selected>다대포해수욕장</option>
 							<option value="96" >다대포항</option>
@@ -94,8 +94,8 @@
 						</select>						
 					</td>
 					
-					<th>기준값</th>
-					<td style="text-align:center">
+					<th style="width:20%">기준값</th>
+					<td style="text-align:center;width:30%">
 						<select name="weeks">
 							<option value="minimum" >최소</option>
 							<option value="maximum" >최대</option>
@@ -125,7 +125,7 @@
 					<th style="width:80px"></th>
 				</tr>
 				<tr style="background-color:#f5f5f5;height:40px">
-					<th style="width:60px">역 이용객</th>
+					<th style="width:60px">최대/최소 역 이용객</th>
 					<th style="width:80px"></th>
 				</tr>
 				<tr style="background-color:#f5f5f5;height:40px">
