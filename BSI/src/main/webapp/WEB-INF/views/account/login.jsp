@@ -38,15 +38,15 @@
                                     <div class="text-center">
                                         <h1 class="h4 text-gray-900 mb-4">BSI에 오신것을 환영합니다!</h1>
                                     </div>
-                                    <form class="user">
+                                    <form class="user" action="login" method="post" >
                                         <div class="form-group">
-                                            <input type="email" class="form-control form-control-user"
+                                            <input type="text" class="form-control form-control-user"
                                                 id="exampleInputEmail" aria-describedby="emailHelp"
-                                                placeholder="이메일을 입력해 주세요.">
+                                                placeholder="이메일을 입력해 주세요." name="memberId">
                                         </div>
                                         <div class="form-group">
                                             <input type="password" class="form-control form-control-user"
-                                                id="exampleInputPassword" placeholder="비밀번호">
+                                                id="exampleInputPassword" placeholder="비밀번호" name="passwd">
                                         </div>
                                         <div class="form-group">
                                             <div class="custom-control custom-checkbox small">
@@ -54,9 +54,9 @@
                                                 <label class="custom-control-label" for="customCheck">로그인 상태 유지</label>
                                             </div>
                                         </div>
-                                        <a href="/bsi" class="btn btn-primary btn-user btn-block">
-                                            로그인
-                                        </a>
+
+                                        <input type="submit" value="Login" 
+                                        	class="btn btn-primary btn-user btn-block"/>
                                     </form>
                                     <hr>
                                     <div class="text-center">
