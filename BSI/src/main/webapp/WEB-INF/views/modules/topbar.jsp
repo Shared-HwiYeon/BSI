@@ -48,13 +48,13 @@
                         <c:when test="${ empty loginuser }">
                         </li>
 							<li class="nav-item dropdown no-arrow">
-                            <a class="nav-link dropdown-toggle" href="/BSI/account/login">
+                            <a class="nav-link dropdown-toggle" href="/bsi/account/login">
                                 <span class="mr-2 d-none d-lg-inline text-gray-600 small">Login</span>
                             </a>
                         </li>
                         </li>
 							<li class="nav-item dropdown no-arrow">
-                            <a class="nav-link dropdown-toggle" href="/BSI/account/register">
+                            <a class="nav-link dropdown-toggle" href="/bsi/account/register">
                                 <span class="mr-2 d-none d-lg-inline text-gray-600 small">Register</span>
                             </a>
                         </li>
@@ -64,11 +64,11 @@
                             <a class="nav-link dropdown-toggle" href="#">
                                  <span class="mr-2 d-none d-lg-inline text-gray-600 small">${ sessionScope.loginuser.memberId } 님 </span>
                                 <img class="img-profile rounded-circle"
-                                    src="/BSI/resources/img/undraw_profile.svg">
+                                    src="/bsi/resources/img/undraw_profile.svg">
                             </a>
                         </li>
 							<li class="nav-item dropdown no-arrow">
-                            <a class="nav-link dropdown-toggle" href="/BSI/account/logout.action">
+                            <a class="nav-link dropdown-toggle" href="/bsi/account/logout.action">
                                 <span class="mr-2 d-none d-lg-inline text-gray-600 small">Logout</span>
                             </a>
                         </li>

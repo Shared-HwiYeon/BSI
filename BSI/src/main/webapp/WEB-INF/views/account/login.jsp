@@ -63,7 +63,7 @@
                                         <a class="small" href="forgot-password.html">비밀번호를 잊으셨나요?</a>
                                     </div>
                                     <div class="text-center">
-                                        <a class="small" href="/BSI/account/register">계정이 없으신가요?</a>
+                                        <a class="small" href="/bsi/account/register">계정이 없으신가요?</a>
                                     </div>
                                 </div>
                             </div>
@@ -80,7 +80,7 @@
 	<jsp:include page="/WEB-INF/views/modules/js.jsp"/>
 
     <!-- Custom scripts for all pages-->
-    <script src="/BSI/resources/js/sb-admin-2.min.js"></script>
+    <script src="/bsi/resources/js/sb-admin-2.min.js"></script>
 
 </body>
 
