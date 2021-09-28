@@ -57,10 +57,10 @@
 								</div>
 								
 								
-								<div class="form-group">
+								<%-- <div class="form-group">
 									<label>작성자</label> 
 									<input class="form-control" id='memberId' name='memberId' value='${ board.memberId }'>
-								</div>
+								</div> --%>
 
 								<div class="form-group">
 									<label>내용</label>

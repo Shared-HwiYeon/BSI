@@ -49,15 +49,15 @@
                              <h6 class="m-0 font-weight-bold text-primary">건의사항을 적어주세요 :)</h6>
                          </div>
                          <div class="card-body">
-                             <form id="board-write-form" action="write" method="post">
+                             <form id="board-khw-write-form" action="write" method="post">
                              	<div class="form-group">
                              		<label>제목</label>
                              		<input type="text" class="form-control" name="title">
                              	</div>
-                             	<div class="form-group">
+                             	<!-- <div class="form-group">
                              		<label>작성자</label>
-                             		<input type="text" class="form-control" name="writer">
-                             	</div>
+                             		<input type="text" class="form-control" name="memberId">
+                             	</div> -->
                              	<div class="form-group">
                              		<label>내용</label>
                              		<textarea class="form-control" name="content" rows="5"></textarea>
@@ -120,7 +120,7 @@
 			
 			// 입력 데이터의 유효성 검사 등 처리
 			
-			$('#board-write-form').submit(); // form을 서버로 전송
+			$('#board-khw-write-form').submit(); // form을 서버로 전송
 			
 		});
 	
