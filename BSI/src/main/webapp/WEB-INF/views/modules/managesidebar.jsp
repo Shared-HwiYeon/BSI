@@ -3,7 +3,7 @@
         <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/bsi">
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/BSI">
                 <div class="sidebar-brand-icon rotate-n-15">
                     <i class="fas fa-laugh-wink"></i>
                 </div>
@@ -31,7 +31,7 @@
 
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
-                <a class="nav-link collapsed" href="/bsi/subway/1" >
+                <a class="nav-link collapsed" href="/BSI/subway/1" >
                     <i class="fas fa-fw fa-cog"></i>
                     <span>역별 시간별 이용객수</span>
                 </a>
@@ -39,7 +39,7 @@
 
             <!-- Nav Item - Utilities Collapse Menu -->
             <li class="nav-item">
-                <a class="nav-link collapsed" href="/bsi/subway/2">
+                <a class="nav-link collapsed" href="/BSI/subway/2">
                     <i class="fas fa-fw fa-wrench"></i>
                     <span>역별 승하차 인원</span>
                 </a>
@@ -47,7 +47,7 @@
 
 			<!-- Nav Item - Utilities Collapse Menu -->
             <li class="nav-item">
-                <a class="nav-link collapsed" href="/bsi/line-khw/line">
+                <a class="nav-link collapsed" href="/BSI/subway/3">
                     <i class="fas fa-fw fa-wrench"></i>
                     <span>호선별 승하차 인원</span>
                 </a>
@@ -55,7 +55,7 @@
             
             <!-- Nav Item - Utilities Collapse Menu -->
             <li class="nav-item">
-                <a class="nav-link collapsed" href="/bsi/board-khw/list">
+                <a class="nav-link collapsed" href="/BSI/subway/4">
                     <i class="fas fa-fw fa-wrench"></i>
                     <span>건의 사항 게시판</span>
                 </a>
@@ -71,7 +71,7 @@
 
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
-                <a class="nav-link collapsed" href="/bsi/subway/5" >
+                <a class="nav-link collapsed" href="/BSI/subway/5" >
                     <i class="fas fa-fw fa-folder"></i>
                     <span>마이페이지</span>
                 </a>
@@ -79,7 +79,7 @@
             
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
-                <a class="nav-link collapsed" href="/bsi/subway/manage" >
+                <a class="nav-link collapsed" href="/BSI/subway/manage" >
                     <i class="fas fa-fw fa-folder"></i>
                     <span>관리페이지</span>
                 </a>
@@ -87,7 +87,7 @@
             
              <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
-                <a class="nav-link collapsed" href="/bsi/subway/init-data.action" >
+                <a class="nav-link collapsed" href="/BSI/subway/init-data.action" >
                     <i class="fas fa-fw fa-folder"></i>
                     <span>데이터초기화</span>
                 </a>
