@@ -2,6 +2,7 @@ package com.team4.Service;
 
 import java.util.List;
 
+import com.team4.vo.MembersVO;
 import com.team4.vo.StationVO;
 import com.team4.vo.SubwayVO;
 
@@ -14,7 +15,13 @@ public interface SubwayService {
 	List<StationVO> findrank();
 
 	StationVO findavg();
-	
-//	List<MemberVO> findAll(); // 나중에 memberService로 이동
 
+	List<MembersVO> findAll();
+
+	MembersVO findMemberByMemberId(String memberId);
+
+	void updateMember(MembersVO member);
+
+	void deleteMember(String memberId);
+	
 }

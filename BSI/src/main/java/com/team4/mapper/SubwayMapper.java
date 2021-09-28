@@ -22,6 +22,13 @@ public interface SubwayMapper {
 	void insertMember(MembersVO member);
 
 	MembersVO selectMemberIdAndPasswd(@Param("memberId") String memberId,@Param("passwd") String passwd);
+
+	List<MembersVO> selectAll();
+
+	MembersVO selectMemberId(String memberId);
+
+	void updateMember(MembersVO member);
+
+	void deleteMember(String memberId);
 	
-//	List<MemberVO> selectAll();
 }

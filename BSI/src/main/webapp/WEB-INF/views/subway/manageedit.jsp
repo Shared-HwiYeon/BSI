@@ -45,34 +45,37 @@
 							<span class="m-0 font-weight-bold text-primary">회원 상세 보기</span>
 						</div>
 						<div class="card-body">
-
-							<div class="form-group">
-								<label>회원아이디</label> 
-								<input class="form-control" id='title' name='title' value="${ member.memberId }">
+						<form role="form" id="update" action="update" method="post" >
+	
+								<div class="form-group">
+									<label>회원아이디</label> 
+									<input class="form-control" id='memberId' name='memberId' value="${ member.memberId }">
+								</div>
+	
+								<div class="form-group">
+									<label>이메일</label> 
+									<input class="form-control" id='email'	name='email' value ="${ member.email }">
+								</div>
+	
+								<div class="form-group">
+									<label>회원유형</label> 
+									<input class="form-control" id='userType' name='userType' value="${ member.userType }">
+								</div>
+				
+								<div class="form-group">
+									<label>회원가입일자</label> 
+									<fmt:formatDate var="formattedRegDate" value="${ member.regDate }" pattern="yyyy-MM-dd hh:mm:ss"/>
+									<input class="form-control" id='regDate' value="${ formattedRegDate }">
+								</div>
+	
+								<button id="update-button" type="button" class="btn btn-success">수정</button>
+								<button id="cancel-button" type="button" class="btn btn-success">취소</button>
+								<button id="tolist-button" type="button" class="btn btn-success">목록</button>
+								<button id="delete-button" type="button" class="btn btn-success">탈퇴</button>
+								</form>
 							</div>
-
-							<div class="form-group">
-								<label>이메일</label> 
-								<input class="form-control" id='writer'	name='writer' value ="${ member.email }">
-							</div>
-
-							<div class="form-group">
-								<label>회원유형</label> 
-								<input class="form-control" id='readCount' value="${ member.userType }">
-							</div>
-			
-							<div class="form-group">
-								<label>회원가입일자</label> 
-								<fmt:formatDate var="formattedRegDate" value="${ member.regDate }" pattern="yyyy-MM-dd hh:mm:ss"/>
-								<input class="form-control" id='regDate' value="${ formattedRegDate }">
-							</div>
-
-							<button id="edit-button" type="button" class="btn btn-success">관리</button>
-							<button id="tolist-button" type="button" class="btn btn-success">목록</button>
-
-						</div>
 					</div>
-
+				
 
                 </div>
                 <!-- /.container-fluid -->
@@ -120,20 +123,31 @@
 
     <!-- Page level custom scripts -->
     <script src="/bsi/resources/js/demo/chart-area-demo.js"></script>
-    <script src="/bsi/resources/js/demo/chart-pie-demo.js"></script>
+    <script src="/bsi/resources/js/demo/chart-pie-demo2.js"></script>
     <script type="text/javascript">
     
     
-    $(function() {
-    	$(".form-group input").attr('readonly', true);
+    $(function(){
     	
-    	$('#edit-button').on('click',function(event){
-    		location.href="manageedit?memberId=${ member.memberId }"
+    	$('#update-button').on('click',function(event){
+			// 필요한 경우 입력데이터 유효성 검사 수행
+			
+			//<form id ="update"...>...</form>요소를 서버로 전송
+			$('#update').submit();
     	});
+    	$('#cancel-button').on('click', function(event){
+			location.href="managedetail?memberId=${ member.memberId }"
+		});
 		
 		$('#tolist-button').on('click',function(event){
     		location.href="manage";
     	});
+		$('#delete-button').on('click',function(event){
+			var yes = confirm('${ member.memberId }님을 탈퇴시키시겠습니까?');
+			if(yes){
+				location.href="delete?memberId=${ member.memberId }";
+			}
+		});
     	
     });
     
