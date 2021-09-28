@@ -35,6 +35,24 @@
 	from customer;
 	</select>
 	
+	<insert id="insertMember" parameterType="MembersVO">
+	INSERT INTO member (memberId, passwd, email)
+	VALUES (#{ memberId }, #{ passwd }, #{ email } )
+	</insert>
+	
+	<resultMap type="MembersVO" id="memberResult">
+		<result property="memberId" column="memberId"/>
+		<result property="email" column="email"/>
+		<result property="userType" column="usertype"/>
+		<result property="regDate" column="regdate"/>
+	</resultMap>
+	
+	<select id="selectMemberIdAndPasswd" parameterType="String" resultMap="memberResult">
+	SELECT memberId, email, usertype, regdate 
+	FROM member
+	WHERE memberId = #{ memberId } AND passwd = #{ passwd }
+	</select>
+	
 	<insert id="selectAll"></insert>
 	
 </mapper>

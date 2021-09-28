@@ -13,6 +13,7 @@
 		<typeAlias type="com.team4.vo.SubwayVO" alias="SubwayVO" />
 		<typeAlias type="com.team4.vo.BoardVO" alias="BoardVO" />
 		<typeAlias type="com.team4.vo.StationVO" alias="StationVO" />
+		<typeAlias type="com.team4.vo.MembersVO" alias="MembersVO" />
 	</typeAliases>
 	
 	<mappers>

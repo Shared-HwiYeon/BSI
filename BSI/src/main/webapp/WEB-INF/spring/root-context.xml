@@ -32,4 +32,5 @@
 	<import resource="subway-context.xml"/>
 	<import resource="customer-context.xml"/>
 	<import resource="board-context.xml"/>
+	<import resource="member-context.xml"/>
 </beans>
