@@ -42,7 +42,7 @@
                                         <div class="form-group">
                                             <input type="text" class="form-control form-control-user"
                                                 id="exampleInputEmail" aria-describedby="emailHelp"
-                                                placeholder="이메일을 입력해 주세요." name="memberId">
+                                                placeholder="아이디를 입력해 주세요." name="memberId">
                                         </div>
                                         <div class="form-group">
                                             <input type="password" class="form-control form-control-user"
