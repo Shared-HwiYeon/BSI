@@ -33,9 +33,5 @@
 	<import resource="customer-context.xml"/>
 	<import resource="board-context.xml"/>
 	<import resource="member-context.xml"/>
-<<<<<<< HEAD
 	<import resource="line-context2.xml"/>
-=======
-	
->>>>>>> branch 'main' of https://github.com/Shared-HwiYeon/BSI.git
 </beans>
