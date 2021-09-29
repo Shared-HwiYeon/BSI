@@ -116,12 +116,12 @@
 													<option value="${ sname }">${ sname }</option>
 													</c:forEach>
 												</select>
+												<div class="col-auto">
+			                                        <button name='search'class="btn btn-outline-dark">조회</button>
+												</div>
 												</div>
                                             </div>
                                         </div> 
-                                        <div class="col mr-2">
-                                        <button name='search'class="btn btn-outline-dark">조회</button>
-										</div>
                                     </div>
                                 </div>
                             </div>
