@@ -26,10 +26,16 @@ public class AuthInterceptor implements HandlerInterceptor{
 		if(uri.contains("/subway/")) {
 			if(member == null) {
 				invalid = true;
-			} else if (uri.contains("init-data.acion")&& // 경로에 Init-data.action 이 포함되고
-					   uri.contains("/manage")&&		 // 경로에 /manage 이 포함되고 
-					   !member.getUserType().equals("admin")) { // admin이 아닌 경우
-				invalid =true;
+			}else if (uri.contains("/manage") &&
+					!member.getUserType().equals("admin")) {
+				invalid = true;
+			}else if (uri.contains("init-data.action")&& // 경로에 Init-data.action 이 포함되고
+					   !member.getUserType().equals("admin") ) { // admin이 아닌 경우
+				invalid = true;
+			}
+		}else if (uri.contains("/line-khw")) { 
+			if(member == null) {
+				invalid = true;
 			}
 		}
 		if(invalid) {
