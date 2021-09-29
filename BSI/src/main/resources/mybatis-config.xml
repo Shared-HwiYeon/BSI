@@ -16,6 +16,7 @@
 		<typeAlias type="com.team4.vo.MembersVO" alias="MembersVO" />
 		<typeAlias type="com.team4.vo.MembersVO" alias="CustomerVO" />
 		<typeAlias type="com.team4.vo.LineVO" alias="LineVO" />
+	
 	</typeAliases>
 	
 	<mappers>

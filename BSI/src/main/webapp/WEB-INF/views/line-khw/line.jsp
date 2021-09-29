@@ -44,20 +44,13 @@
                 
 
                      <!-- Donut Chart -->
-                        <div class="col-xl-12 col-lg-12" style="margin-top: 30px">
+                        <div class="col-xl-12 col-lg-12" style="margin-top: 30px; height: 500px">
                             <div class="card shadow mb-4">
                                 <!-- Card Header - Dropdown -->
                                 <div class="card-header py-3" style="height:70px">
                                     <h6 class="m-0 font-weight-bold text-primary" style="display:inline-block">하루 평균 이용 객수</h6>
                                     <div class="dropdown mb-4 show" style="float:right">
-                    <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                          구분
-               		</button>
-	                <div class="dropdown-menu animated--fade-in show" aria-labelledby="dropdownMenuButton" style="position: absolute; transform: translate3d(0px, 38px, 0px); top: 0px; left: 0px; will-change: transform;" x-placement="bottom-start">
-	                                              
-	                    <a class="dropdown-item" href="#">승차</a>
-	                    <a class="dropdown-item" href="#">하차</a>
-	                </div>
+                    
                 </div><!-- 승하차버튼 dropdown mb-4 show -->
                                 </div>
                                 <!-- Card Body -->
@@ -80,6 +73,7 @@
                                         <span class="mr-2">
                                             <i class="fas fa-circle text-primary"></i> 4호선
                                         </span>
+                                        
                                     </div>
                                 </div>
                             </div>
@@ -141,11 +135,11 @@
     var myPieChart = new Chart(ctx, {
       type: 'horizontalBar',
       data: {
-        labels: ["1호선", "2호선", "3호선", "4호선"],
+        labels: ["1호선 승차", "1호선 하차", "2호선 승차", "2호선 하차", "3호선 승차", "3호선 하차", "4호선 승차", "4호선 하차"],
         datasets: [{
-          data: [ ${line1}, ${line2}, ${line3}, ${line4} ],
-          backgroundColor: ['#e74a3b', '#1cc88a', '#f6c23e', '#4e73df'],
-          hoverBackgroundColor: ['#e74a6b', '#4cc88a', '#f6c28e','#2e59d9'],
+          data: [ ${lines.get(0).getAvgNumber()},${lines.get(1).getAvgNumber()},${lines.get(2).getAvgNumber()},${lines.get(3).getAvgNumber()},${lines.get(4).getAvgNumber()},${lines.get(5).getAvgNumber()},${lines.get(6).getAvgNumber()},${lines.get(7).getAvgNumber()}],
+          backgroundColor: ['#e74a3b', '#e74a3b', '#1cc88a', '#1cc88a', '#f6c23e', '#f6c23e', '#4e73df', '#4e73df'],
+          hoverBackgroundColor: ['#e74a3b', '#e74a3b', '#1cc88a', '#1cc88a', '#f6c23e', '#f6c23e', '#4e73df', '#4e73df'],
           hoverBorderColor: "rgba(234, 236, 244, 1)",
         }],
       },

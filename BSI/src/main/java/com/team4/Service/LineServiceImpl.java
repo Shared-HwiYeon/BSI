@@ -11,35 +11,14 @@ public class LineServiceImpl implements LineService{
 
 	@Setter
 	private LineMapper lineMapper;
-	
-	@Override
-	public LineVO findLine1() {
-		
-		LineVO line = lineMapper.selectLine1();
-		return line;
-	}
 
 	@Override
-	public LineVO findLine2() {
+	public List<LineVO> findAvgUnumber() {
 		
-		LineVO line = lineMapper.selectLine2();
-		return line;
-	}
-
-	@Override
-	public LineVO findLine3() {
+		List<LineVO> lines = lineMapper.selectAvgUnumber();
 		
-		LineVO line = lineMapper.selectLine3();
-		return line;
+		return lines;
 	}
-
-	@Override
-	public LineVO findLine4() {
-		
-		LineVO line = lineMapper.selectLine4();
-		return line;
-	}
-	
 	
 
 }
