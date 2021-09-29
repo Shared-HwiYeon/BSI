@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+		   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.team4.mapper.LineMapper">
+
+	<select id="selectLine1" resultType="LineVO">
+	SELECT sum(unumber)/243 as unumber
+	FROM CUSTOMER
+	WHERE SNUMBER between 1 and 200
+	</select>
+	
+	<select id="selectLine2" resultType="LineVO">
+	SELECT sum(unumber)/243 as unumber
+	FROM CUSTOMER
+	WHERE SNUMBER between 200 and 300
+	</select>
+	
+	<select id="selectLine3" resultType="LineVO">
+	SELECT sum(unumber)/243 as unumber
+	FROM CUSTOMER
+	WHERE SNUMBER between 300 and 400
+	</select>
+	
+	<select id="selectLine4" resultType="LineVO">
+	SELECT sum(unumber)/243 as unumber
+	FROM CUSTOMER
+	WHERE SNUMBER between 400 and 500
+	</select>
+
+</mapper>
