@@ -34,10 +34,6 @@ public class LineController {
 		model.addAttribute("line4", line4.getUnumber());
 		
 		return "line-khw/line";
-<<<<<<< HEAD
-		
-=======
->>>>>>> branch 'main' of https://github.com/Shared-HwiYeon/BSI.git
 	}
 
 }
