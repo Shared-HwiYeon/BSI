@@ -8,7 +8,7 @@
 		
 	<bean id="hikaridataSource" class="com.zaxxer.hikari.HikariDataSource">
 		<property name="driverClassName" value="com.mysql.cj.jdbc.Driver" />
-		<property name="jdbcUrl" value="jdbc:mysql://localhost:3306/project4team" />
+		<property name="jdbcUrl" value="jdbc:mysql://localhost:3306/project4team?characterEncoding=utf8&amp;useSSL=false&amp;autoReconnection=true" />
 		<property name="username" value="kdigital" />
 		<property name="password" value="mysql" />
 		<property name="minimumIdle" value="20" />
