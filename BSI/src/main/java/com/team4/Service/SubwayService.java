@@ -23,6 +23,10 @@ public interface SubwayService {
 	void updateMember(MembersVO member);
 
 	void deleteMember(String memberId);
+
+	List<Integer> findline();
+
+	List<String> findSnameGroupByLine(int lname);
 	
 	
 }
