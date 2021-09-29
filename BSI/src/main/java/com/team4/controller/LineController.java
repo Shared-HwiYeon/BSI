@@ -23,17 +23,17 @@ public class LineController {
 	@GetMapping(path = {"/line"})
 	public String line(Model model) {
 		
-		LineVO line1 = lineService.findLine1();
-		LineVO line2 = lineService.findLine2();
-		LineVO line3 = lineService.findLine3();
-		LineVO line4 = lineService.findLine4();
+		List<LineVO> lines = lineService.findAvgUnumber();
 		
-		model.addAttribute("line1", line1.getUnumber());
-		model.addAttribute("line2", line2.getUnumber());
-		model.addAttribute("line3", line3.getUnumber());
-		model.addAttribute("line4", line4.getUnumber());
+		/*
+		 * System.out.println(lines.get(3).getDivision());
+		 * System.out.println(lines.get(3).getAvgNumber());
+		 */
+		model.addAttribute("lines", lines);
 		
 		return "line-khw/line";
 	}
+
+	
 
 }
