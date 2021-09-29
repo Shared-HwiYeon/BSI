@@ -23,12 +23,14 @@ public class HomeController {
 	@RequestMapping(path = { "/", "/home" }, method = RequestMethod.GET)
 	public String home(Locale locale, Model model) {
 
-		/*
-		 * List<StationVO> list = subwayService.findrank();
-		 * 
-		 * StationVO vo = subwayService.findavg(); model.addAttribute("list",list);
-		 * model.addAttribute("vo",vo);
-		 */
+		
+		  List<StationVO> list = subwayService.findrank();
+		  
+		  StationVO vo = subwayService.findavg();
+		  
+		  model.addAttribute("list",list);
+		  model.addAttribute("vo",vo);
+		 
 
 		return "home";
 	}
