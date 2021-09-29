@@ -37,10 +37,7 @@
                 <div class="container-fluid">
 
 					<!-- Page Heading -->
-					 <h1 class="h3 mb-0 text-gray-800" 
-                        	style="font-weight: bold; margin-left:20px">
-                        	건의사항
-                     </h1>
+					<h1 class="h3 mb-2 text-gray-800">게시판</h1>
 					<br>
 
 					<div class="card shadow mb-4">
@@ -55,18 +52,16 @@
 									<label>제목</label> 
 									<input class="form-control" id='title' name='title' value='${ board.title }'>
 								</div>
-								
-								
-								<%-- <div class="form-group">
-									<label>작성자</label> 
-									<input class="form-control" id='memberId' name='memberId' value='${ board.memberId }'>
-								</div> --%>
 
 								<div class="form-group">
 									<label>내용</label>
 									<textarea class="form-control" rows="3" id='content' name='content'>${ board.content }</textarea>
 								</div>
 
+								<div class="form-group">
+									<label>작성자</label> 
+									<input class="form-control" id='memberId' name='memberId' value='${ board.memberId }'>
+								</div>
 
 								<button id="update-button" type="button" class="btn btn-success">수정</button>
 								<button type="reset" class="btn btn-success">다시쓰기</button>

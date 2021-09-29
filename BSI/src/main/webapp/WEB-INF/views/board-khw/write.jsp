@@ -18,6 +18,7 @@
 
 </head>
 
+
 <body id="page-top">
 
     <!-- Page Wrapper -->
@@ -52,7 +53,7 @@
                              <form id="board-khw-write-form" action="write" method="post">
                              	<div class="form-group">
                              		<label>제목</label>
-                             		<input type="text" class="form-control" name="title">
+                             		<input type="text" class="form-control" name="title" id="title">
                              	</div>
                              	<!-- <div class="form-group">
                              		<label>작성자</label>
@@ -60,7 +61,7 @@
                              	</div> -->
                              	<div class="form-group">
                              		<label>내용</label>
-                             		<textarea class="form-control" name="content" rows="5"></textarea>
+                             		<textarea class="form-control" name="content" rows="5" id="contentarea"></textarea>
                              	</div>
                              	
                              	<button id="write-button" class="btn btn-primary btn-sm">쓰기</button>
@@ -119,6 +120,18 @@
 			event.stopPropagation();	// 상위 객체로 이벤트 전달 차단
 			
 			// 입력 데이터의 유효성 검사 등 처리
+			
+			var title = $('#title').val();
+			var content = $('#contentarea').val();
+			// 입력 데이터의 유효성 검사 등 처리
+			if(title == ""){
+				alert("제목을 입력하세요");
+				return;
+			}
+			if(content== null || content == ""){
+				alert("내용을 입력하세요");
+				return;
+			}
 			
 			$('#board-khw-write-form').submit(); // form을 서버로 전송
 			

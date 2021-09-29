@@ -53,6 +53,7 @@ public class BoardController {
 		return "redirect:list";
 	}
 	
+	
 	@GetMapping(path = { "/detail" })
 	public String detail(int boardNo, Model model) {
 		

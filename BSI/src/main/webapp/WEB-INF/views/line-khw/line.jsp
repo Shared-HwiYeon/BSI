@@ -12,7 +12,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>BSI</title>
+    <title>bsi</title>
 
    <jsp:include page="/WEB-INF/views/modules/css.jsp" />
 
@@ -136,6 +136,7 @@
     Chart.defaults.global.defaultFontFamily = 'Nunito', '-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif';
     Chart.defaults.global.defaultFontColor = '#858796';
 
+<<<<<<< HEAD
     // Pie Chart Example
     var ctx = document.getElementById("myPieChart");
     var myPieChart = new Chart(ctx, {
@@ -172,6 +173,12 @@
     });
     
     </script>
+=======
+	<script type='text/javascript'>
+		
+		
+	</script>
+>>>>>>> branch 'main' of https://github.com/Shared-HwiYeon/BSI.git
 
 </body>
 

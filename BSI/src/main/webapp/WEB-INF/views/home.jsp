@@ -2,6 +2,7 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ page pageEncoding="utf-8" contentType="text/html; charset=utf-8" %>
 
+
 <!DOCTYPE html>
 <html lang="ko">
 
@@ -13,7 +14,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>BSI</title>
+    <title>bsi</title>
 
    <jsp:include page="/WEB-INF/views/modules/css.jsp" />
    
@@ -212,8 +213,8 @@
 	$(function(){
 		$('.carousel').carousel({
 			  interval: 100
-			})
-	})
+		})
+	});
 	</script>
 
 </body>

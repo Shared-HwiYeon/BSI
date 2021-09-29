@@ -1,4 +1,5 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ page pageEncoding="utf-8" contentType="text/html; charset=utf-8" %>
 
 <!DOCTYPE html>
@@ -17,6 +18,7 @@
    <jsp:include page="/WEB-INF/views/modules/css.jsp" />
 
 </head>
+
 
 <body id="page-top">
 
@@ -48,7 +50,9 @@
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
                             <span class="m-0 font-weight-bold text-primary">글 목록</span>
+                            <c:if test="${sessionScope.loginuser != null }">
                             <a href="write" class="btn btn-primary btn-sm" style="float:right">글쓰기</a>
+                            </c:if>
                             <div style="clear:both"></div>
                         </div>
                         <div class="card-body">
@@ -84,7 +88,9 @@
                                            		</c:choose>
                                             </td>
                                             <td>${ board.memberId }</td>
-                                            <td>${ board.regDate }</td>
+                                            <td>
+											<fmt:formatDate value="${ board.regDate }" pattern="yyyy-MM-dd HH:mm:ss"/>		
+											</td>
                                             <td>${ board.readCount }</td>
                                         </tr>
                                     </c:forEach>

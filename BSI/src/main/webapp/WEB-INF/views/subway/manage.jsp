@@ -18,6 +18,7 @@
 
 </head>
 
+
 <body id="page-top">
 
     <!-- Page Wrapper -->
@@ -50,28 +51,21 @@
                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                     <thead>
                                         <tr>
-                                            <th>회원번호</th>
                                             <th>회원아이디</th>
+                                            <th>회원이메일</th>
                                             <th>회원유형</th>
                                             <th>가입일자</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                    <c:forEach var="board" items="${ boards }">
+                                    <c:forEach var="member" items="${ members }">
                                         <tr>
-                                            <td>${ board.boardNo }</td>
                                             <td>
-                                            	<c:choose>
-                                            		<c:when test="${ not board.deleted }">
-                                            		<a href="detail?boardNo=${ member.unumber }">${ member.name }</a>
-                                            		</c:when>
-                                            		<c:otherwise>
-                                            		<span>${ board.title }[삭제된 글]</span>
-                                            		</c:otherwise> 
-                                            	</c:choose>
-                                            	
+                                            <a href="managedetail?memberId=${ member.memberId }">${ member.memberId }</a>
                                             </td>
-                                            <td>${ board.regDate }</td>
+                                            <td>${ member.email }</td>
+                                            <td>${ member.userType }</td>
+                                            <td>${ member.regDate }</td>
                                         </tr>
                                     </c:forEach>
                                     </tbody>

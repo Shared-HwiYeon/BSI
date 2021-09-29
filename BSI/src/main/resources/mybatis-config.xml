@@ -24,4 +24,5 @@
 		<mapper resource="com/team4/mapper/LineMapper.xml"/>
 	</mappers>
 	
+	
 </configuration>
