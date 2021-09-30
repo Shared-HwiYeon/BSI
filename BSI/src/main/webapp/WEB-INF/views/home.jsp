@@ -153,17 +153,36 @@
                         </div>
                     	<!-- Pending Requests Card Example -->
                         <div class="col-xl-3 col-md-3 mb-1">
-                            <div class="card border-left-warning shadow h-20 py-2">
+                            <div class="card border-left-dark shadow h-20 py-2">
                                 <div class="card-body">
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-1">
-                                            <div class="text-md font-weight-bold text-warning text-uppercase mb-0">
+                                            <div class="text-md font-weight-bold text-dark text-uppercase mb-0">
                                                 일편균 이용객 순위</div>
                                             <c:forEach var="rank" items="${ list }">
                                             <marquee direction="up" scrolldelay="400">   
                                             <div class="h6 mb-0 font-weight-bold text-gray-800" style="text-align: center">${ rank.ranking }위&nbsp;&nbsp;${ rank.sname }&nbsp;-&nbsp;${ rank.division }&nbsp;-&nbsp;${ rank.unumber }명<hr width="200px"></div>
                                         	</marquee>
                                         	</c:forEach>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Pending Requests Card Example -->
+                        <div class="col-xl-3 col-md-3 mb-1">
+                            <div class="card border-left-warning shadow h-20 py-2">
+                                <div class="card-body">
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="col mr-1">
+                                            <div class="text-md font-weight-bold text-warning text-uppercase mb-0">
+                                                MY JJIM LIST</div>
+                                            <c:if test="${ s.memberId == sessionScope.loginuser.memberId }">
+                                            <c:forEach var="jjim" items="${ jjim }">
+                                            <div class="h6 mb-0 font-weight-bold text-gray-800" style="text-align: center">
+                                            <a href="javascript:call()" class="ss" value="${ jjim.sname }">${ jjim.sname }</a><hr></div>
+                                        	</c:forEach>
+                                        	</c:if>
                                         </div>
                                     </div>
                                 </div>
@@ -216,7 +235,7 @@
 
     <!-- Page level custom scripts -->
     <script src="/bsi/resources/js/demo/chart-area-demo.js"></script>
-    <script src="/bsi/resources/js/demo/chart-pie-demo2.js"></script>
+    <script src="/bsi/resources/js/demo/chart-pie-demo.js"></script>
 	<script type="text/javascript">
 	$(function(){
 		$('.carousel').carousel({
@@ -254,11 +273,29 @@
 			}	
 			location.href ="https://m.search.naver.com/search.naver?query="+abc+"  지하철 시간표";
 		}); 
+		$('.ss').click(function call(){
+			var jjim = $(this).attr('value');
+			 var abc ="";
+			if(jjim =='1서면'){
+				abc = "1호선 서면"
+			}else if(jjim =='1연산'){
+				abc = "1호선 연산"
+			}else if(jjim =='1동래'){
+				abc = "1호선 동래"
+			}else if(jjim =='2서면'){
+				abc = "2호선 서면"
+			}else if(jjim =='2덕천'){
+				abc = "2호선 덕천"
+			}else if(jjim =='3덕천'){
+				abc = "3호선 덕천"
+			}else if(jjim =='3연산'){
+				abc = "3호선 연산"
+			}else if(jjim =='4동래'){
+				abc = "4호선 연산"
+			}	abs = jjim;
+			location.href ="https://m.search.naver.com/search.naver?query="+abc+"  지하철 시간표"; 
+		});
 	});
-	
-	
-	
-	
 	
 	</script>
 </body>
