@@ -101,7 +101,7 @@
                                             </td>
                                             <td>
                                             <form action="delete" method="post" id="delete-form">
-                                            <button id='deletebtn' name="deletebtn" class="btn btn-primary btn-sm" value='${ jjim.sname }'>삭제</button>
+                                            <button id='deletebtn' name="deletebtn" class="btn btn-primary btn-sm" data-sname='${ jjim.sname }'>삭제</button>
                                             <input type="hidden" name="delete"value="${ jjim.sname }">
                                             </form>
                                             </td>
@@ -184,7 +184,7 @@
 		});
 		$("button[name='deletebtn']").click(function(e){
 			e.preventDefault();
-			var abc = $("button[name='deletebtn']").val();
+			var abc = $(this).attr("data-sname");
 			var msg = abc + " 역을 삭제하시겠습니까?";
 			var yes = confirm(msg);
 			if (yes) {
