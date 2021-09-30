@@ -1,5 +1,6 @@
 package com.team4.controller;
 
+import java.util.HashMap;
 import java.util.List;
 
 import javax.servlet.ServletContext;
@@ -134,4 +135,35 @@ public class SubwayController {
 		
 		return"redirect:manage";
 	}
+	
+	// 휘연님 작업 영역 시작
+	
+	@GetMapping(path = { "/customer-stats1" }) 
+	public String showCustomerStats1(Model model) {
+		
+		List<HashMap<String, Object>> subwayNames = subwayService.findAllSubwayNames();
+		
+		//System.out.println(subwayNames.get(0));
+
+		model.addAttribute("subwayNames", subwayNames);
+		
+		return "subway/customer-stats1";
+	}
+	
+	@PostMapping(path = { "/customer-stats1" }) 
+	public String showCustomerStats(String snumber, String hour, Model model) {
+		
+		List<HashMap<String, Object>> subwayNames = subwayService.findAllSubwayNames();
+		
+		System.out.println(snumber + " / " + hour);
+		
+		// snumber와 hour를 이용해서 데이터베이스에서 데이터 조회
+		
+		// 조회된 데이터 저장 ( jsp에서 읽을 수 있도록 )
+		model.addAttribute("subwayNames", subwayNames);
+		model.addAttribute("selectedSnumber", snumber);
+		
+		return "subway/customer-stats1";
+	}
+	// 휘연님 작업 영역 끝
 }

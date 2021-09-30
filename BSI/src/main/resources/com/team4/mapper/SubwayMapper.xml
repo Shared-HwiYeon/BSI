@@ -119,4 +119,13 @@
 	memberId = '${ memberId }'
 	</delete>
 	
+	<!-- 휘연님 작업 영역 시작 -->
+	
+	<select id="selectAllSubwayNames" resultType="hashmap">
+	SELECT distinct snumber, sname
+	FROM subway
+	</select>
+	
+	<!-- 휘연님 작업 영역 끝 -->
+	
 </mapper>

@@ -1,5 +1,6 @@
 package com.team4.mapper;
 
+import java.util.HashMap;
 import java.util.List;
 
 import org.apache.ibatis.annotations.Param;
@@ -45,6 +46,12 @@ public interface SubwayMapper {
 	List<JjimVO> selectjjim(@Param("memberId") String memberId);
 
 	void deletejjim(@Param("sname") String sname,@Param("memberId") String memberId);
+	
+	// 휘연님 작업 영역 시작
+	
+	List<HashMap<String, Object>> selectAllSubwayNames();
+	
+	// 휘연님 작업 영역 끝
 
 	
 }

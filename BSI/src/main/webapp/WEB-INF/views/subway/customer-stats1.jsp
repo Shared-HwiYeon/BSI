@@ -46,58 +46,22 @@
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
                           	<div style="padding-top:25px;text-align:center">
-			<form action="stats-by-section.action" method="post">
+			<form action="customer-stats1" method="post">
 			<table border="1" style="width:800px;margin:0 auto">
 				<tr style="height:30px">
 					<th style="width:20%">역명</th>
 					<td style="text-align:center;width:30%">
-						<select name="range">
-							<option value="95" selected>다대포해수욕장</option>
-							<option value="96" >다대포항</option>
-							<option value="97" >낫개</option>
-							<option value="98" >신장림</option>
-							<option value="99" >장림</option>
-							<option value="100" >동매</option>
-							<option value="101" >신평</option>
-							<option value="102" >하단</option>
-							<option value="103" >당리</option>
-							<option value="104" >사하</option>
-							<option value="105" >괴정</option>
-							<option value="106" >대티</option>
-							<option value="107" >서대신</option>
-							<option value="108" >동대신</option>
-							<option value="109" >토성</option>
-							<option value="110" >자갈치</optionq>
-							<option value="111" >남포</option>
-							<option value="112" >중앙</option>
-							<option value="113" >부산역</option>
-							<option value="114" >초량</option>
-							<option value="115" >부산진</option>
-							<option value="116" >좌천</option>
-							<option value="117" >범일</option>
-							<option value="118" >범내골</option>
-							<option value="119" >서면(1호선)</option>
-							<option value="120" >부전</option>
-							<option value="121" >양정</option>
-							<option value="122" >시청</option>
-							<option value="123" >연산</option>
-							<option value="124" >교대</option>
-							<option value="125" >동래</option>
-							<option value="126" >명륜</option>
-							<option value="127" >온천장</option>
-							<option value="128" >부산대</option>
-							<option value="129" >장전</option>
-							<option value="130" >구서</option>
-							<option value="131" >두실</option>
-							<option value="132" >남산</option>
-							<option value="133" >범어사</option>
-							<option value="134" >노포</option>
+						<select name="snumber">
+						<c:forEach var="subwayName" items="${ subwayNames }">
+							<option value="${ subwayName.snumber }" ${ subwayName.snumber == selectedSnumber ? "selected" : "" }>${ subwayName.sname }</option>
+						</c:forEach>
+							
 						</select>						
 					</td>
 					
 					<th style="width:20%">시간</th>
 					<td style="text-align:center;width:30%">
-						<select name="weeks">
+						<select name="hour">
 						<c:forEach begin="1" end="24" var='idx'>
 							<option value='${ idx }시'>${ idx }시</option>
 						</c:forEach>	

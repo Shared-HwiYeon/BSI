@@ -2,6 +2,7 @@ package com.team4.Service;
 
 import java.io.FileReader;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 import com.opencsv.CSVReader;
@@ -33,7 +34,7 @@ public class SubwayServiceImpl implements SubwayService{
 		
 		//subwaydao.deleteSubwayData();
 
-//		 subwaydao.insertSubway(list);
+		 subwaydao.insertSubway(list);
 	}
 
 	public List<SubwayVO> readbsiFromCsv(String csvPath) {
@@ -153,6 +154,15 @@ public class SubwayServiceImpl implements SubwayService{
 		subwayMapper.deletejjim(sname, memberId);
 		
 	}
+
+	// 휘연님 작업 영역 시작
+	
+	@Override
+	public List<HashMap<String, Object>> findAllSubwayNames() {
+		return subwayMapper.selectAllSubwayNames();
+	}
+	
+	// 휘여님 작업 영역 끝
 
 
 }

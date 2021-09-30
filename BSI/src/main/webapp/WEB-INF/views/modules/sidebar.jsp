@@ -30,7 +30,7 @@
 
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
-                <a class="nav-link collapsed" href="/bsi/subway/1" >
+                <a class="nav-link collapsed" href="/bsi/subway/customer-stats1" >
                     <i class="fas fa-fw fa-cog"></i>
                     <span>역별 시간별 이용객수</span>
                 </a>

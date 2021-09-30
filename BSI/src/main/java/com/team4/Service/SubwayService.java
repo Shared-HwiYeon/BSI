@@ -1,5 +1,6 @@
 package com.team4.Service;
 
+import java.util.HashMap;
 import java.util.List;
 
 import com.team4.vo.JjimVO;
@@ -36,6 +37,12 @@ public interface SubwayService {
 	List<JjimVO> findjjim(String memberId);
 
 	void deletejjim(String sname, String memberId);
+	
+	// 휘연님 작업 영역 시작
+	
+	List<HashMap<String, Object>> findAllSubwayNames();
+	
+	// 휘연님 작업 영억 끝
 		
 
 	
