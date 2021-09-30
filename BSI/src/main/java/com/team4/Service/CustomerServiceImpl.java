@@ -51,7 +51,7 @@ public class CustomerServiceImpl implements CustomerService {
 				if(row==null) {
 					break;
 				}
-				for(int i = 20; i < 24; i ++) {
+				for(int i = 0; i < 24; i ++) {
 				CustomerVO customer = new CustomerVO(Integer.BYTES,
 												 	 Integer.parseInt(row[1]),
 												 	 sdf.parse(row[3]),
