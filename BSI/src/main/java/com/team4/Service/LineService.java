@@ -8,4 +8,12 @@ public interface LineService {
 
 	List<LineVO> findAvgUnumber();
 
+	List<LineVO> findLine1();
+
+	List<LineVO> findLine2();
+
+	List<LineVO> findLine3();
+
+	List<LineVO> findLine4();
+
 }

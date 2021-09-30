@@ -113,8 +113,8 @@ public class MemberController {
 		
 		List<JjimVO> jjim = subwayService.findjjim(memberId);
 		
-		System.out.println(jjim.get(0).getSname());
-		System.out.println(snames.equals(jjim.get(0).getSname()));
+		//System.out.println(jjim.get(0).getSname());
+		//System.out.println(snames.equals(jjim.get(0).getSname()));
 		
 		for(int i = 0; i < jjim.size(); i++) {
 			if(snames.equals(jjim.get(i).getSname())) {

@@ -13,6 +13,7 @@ public class LineVO {
 
 	private int line;
 	private String division;
+	private String sname;
 	private int totalNumber;
 	private int avgNumber;
 	

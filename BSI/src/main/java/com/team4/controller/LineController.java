@@ -25,11 +25,20 @@ public class LineController {
 		
 		List<LineVO> lines = lineService.findAvgUnumber();
 		
+		List<LineVO> like1 = lineService.findLine1();
+		List<LineVO> like2 = lineService.findLine2();
+		List<LineVO> like3 = lineService.findLine3();
+		List<LineVO> like4 = lineService.findLine4();
+		
 		/*
 		 * System.out.println(lines.get(3).getDivision());
 		 * System.out.println(lines.get(3).getAvgNumber());
 		 */
 		model.addAttribute("lines", lines);
+		model.addAttribute("like1", like1);
+		model.addAttribute("like2", like2);
+		model.addAttribute("like3", like3);
+		model.addAttribute("like4", like4);
 		
 		return "line-khw/line";
 	}

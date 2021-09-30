@@ -12,6 +12,14 @@ public interface LineMapper {
 
 	List<LineVO> selectAvgUnumber();
 
+	List<LineVO> selectLine1();
+
+	List<LineVO> selectLine2();
+
+	List<LineVO> selectLine3();
+
+	List<LineVO> selectLine4();
+
 
 	
 	

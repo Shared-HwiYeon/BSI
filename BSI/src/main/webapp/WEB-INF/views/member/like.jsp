@@ -182,13 +182,13 @@
 			
 			$('#like').submit();
 		});
-		$("#deletebtn").click(function(e){
+		$("button[name='deletebtn']").click(function(e){
 			e.preventDefault();
-			var abc = $('#deletebtn').val();
+			var abc = $("button[name='deletebtn']").val();
 			var msg = abc + " 역을 삭제하시겠습니까?";
 			var yes = confirm(msg);
 			if (yes) {
-				alert(abc);
+				$('#delete-form').submit();
 			}
 			
 		});

@@ -33,7 +33,7 @@ public class SubwayServiceImpl implements SubwayService{
 		
 		//subwaydao.deleteSubwayData();
 
-//		 subwaydao.insertSubway(list);
+		 subwaydao.insertSubway(list);
 	}
 
 	public List<SubwayVO> readbsiFromCsv(String csvPath) {

@@ -19,6 +19,38 @@ public class LineServiceImpl implements LineService{
 		
 		return lines;
 	}
+
+	@Override
+	public List<LineVO> findLine1() {
+		
+		List<LineVO> like1 = lineMapper.selectLine1();
+		
+		return like1;
+	}
+
+	@Override
+	public List<LineVO> findLine2() {
+		
+		List<LineVO> like2 = lineMapper.selectLine2();
+		
+		return like2;
+	}
+
+	@Override
+	public List<LineVO> findLine3() {
+		
+		List<LineVO> like3 = lineMapper.selectLine3();
+		
+		return like3;
+	}
+
+	@Override
+	public List<LineVO> findLine4() {
+		
+		List<LineVO> like4 = lineMapper.selectLine4();
+		
+		return like4;
+	}
 	
 
 }
