@@ -139,6 +139,7 @@
 												</div>
                                         </div>
                                         
+                                                                                
                                         <div class="col-auto">
                                             <i class="fas fa-comments fa-2x text-gray-300"></i>                                        
                                         </div>                                
