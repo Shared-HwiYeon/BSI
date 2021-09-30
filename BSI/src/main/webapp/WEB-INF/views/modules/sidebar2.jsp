@@ -13,10 +13,9 @@
             <!-- Divider -->
             <hr class="sidebar-divider my-0">
 
-
             <!-- Nav Item - Dashboard -->
             <li class="nav-item active">
-                <a class="nav-link" href="/bsi/subway/5">
+                <a class="nav-link" href="/bsi/member/5">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>마이 페이지</span></a>
             </li>

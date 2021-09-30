@@ -1,18 +1,16 @@
 package com.team4.Service;
 
 import java.io.FileReader;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
 
+import com.opencsv.CSVReader;
 import com.team4.dao.SubwayDao;
 import com.team4.mapper.SubwayMapper;
-import com.team4.vo.CustomerVO;
+import com.team4.vo.JjimVO;
 import com.team4.vo.MembersVO;
 import com.team4.vo.StationVO;
 import com.team4.vo.SubwayVO;
-import com.opencsv.CSVReader;
 
 import lombok.Setter;
 
@@ -35,11 +33,10 @@ public class SubwayServiceImpl implements SubwayService{
 		
 		//subwaydao.deleteSubwayData();
 
-		 subwaydao.insertSubway(list); //데이터 삽입이에요	
+//		 subwaydao.insertSubway(list);
 	}
-	
 
-	public List<SubwayVO> readbsiFromCsv(String csvPath) { //이게 데이터 읽어오는 부분이에요	
+	public List<SubwayVO> readbsiFromCsv(String csvPath) {
 		FileReader fr = null;
 		CSVReader csvr = null;
 		ArrayList<SubwayVO> result = new ArrayList<>();
@@ -71,22 +68,6 @@ public class SubwayServiceImpl implements SubwayService{
 		return result;
 	}
 
-	@Override
-	public List<StationVO> findrank() {
-		
-		List<StationVO> list = subwayMapper.selectrank();
-		
-		return list;
-	}
-
-	@Override
-	public StationVO findavg() {
-		
-		StationVO vo = subwayMapper.selectAvg();
-		
-		return vo;
-	}
-
 	@Override  //나중에 MemberServicImpl로 이동 
 	public List<MembersVO> findAll() {
 		
@@ -109,23 +90,70 @@ public class SubwayServiceImpl implements SubwayService{
 	}
 
 	@Override
+	public List<String> getSname() {
+		
+		List<String> subway = subwayMapper.selectSname();
+		
+		return subway;
+	}
+
+	@Override
 	public void deleteMember(String memberId) {
 		subwayMapper.deleteMember(memberId);
 	}
 
+	@Override
+	public List<StationVO> findrank() {
+		
+		List<StationVO> list = subwayMapper.selectrank();
+		
+		return list;
+	}
+
+	@Override
+	public StationVO findavg() {
+		
+		StationVO vo = subwayMapper.selectAvg();
+		
+		return vo;
+	}
 
 	@Override
 	public List<Integer> findline() {
-		List<Integer> list = subwayMapper.selectline();
+		
+		List<Integer> list = subwayMapper.selectline(); 
+		
 		return list;
 	}
-
 
 	@Override
 	public List<String> findSnameGroupByLine(int lname) {
+		
 		List<String> list = subwayMapper.selectSnameGroupByLine(lname);
+		
 		return list;
 	}
+
+	@Override
+	public void insertlist(String snames, String memberId) {
+		
+		subwayMapper.insertlist(snames, memberId);
+	}
+
+	@Override
+	public List<JjimVO> findjjim(String memberId) {
+
+		List<JjimVO> jjims = subwayMapper.selectjjim(memberId);
+		
+		return jjims;
+	}
+
+	@Override
+	public void deletejjim(String sname, String memberId) {
+		subwayMapper.deletejjim(sname, memberId);
+		
+	}
+
 
 }
 

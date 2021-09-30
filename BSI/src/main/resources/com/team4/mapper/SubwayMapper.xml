@@ -94,4 +94,29 @@
 	WHERE LINE = '${ lname }'
 	</select>
 	
+	<update id="editMember" parameterType="String">
+	UPDATE MEMBER
+	SET EMAIL='${ email }' , PASSWD = '${ passwd }'
+	WHERE MEMBERID = '${ memberId }'	
+	</update>
+	
+	<insert id="insertlist" parameterType="String">
+	INSERT INTO jjim (snumber, memberId)
+	select snumber, memberId from subway join member where sname = '${ sname }' and memberId = '${ memberId }' 
+	</insert>
+	
+	<select id="selectjjim" resultType="JjimVO">
+	SELECT sname, regDate, memberId
+	FROM jjim join subway on jjim.snumber = subway.snumber
+	WHERE memberId = '${ memberId }'
+	ORDER BY regDate
+	</select>
+	
+	<delete id="deletejjim">
+	DELETE
+	FROM jjim
+	WHERE jjim.snumber IN (SELECT subway.snumber FROM subway WHERE sname = '${ sname }') and
+	memberId = '${ memberId }'
+	</delete>
+	
 </mapper>

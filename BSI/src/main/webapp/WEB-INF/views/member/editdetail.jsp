@@ -11,22 +11,6 @@
 	background-color: white;
 }
 </style>
-<script type="text/javascript">
-function fnSubmit() {
-	if(confirm("정말 수정하시겠습니까?")) {
-		return true;
-	}
-	return false;
-}
-
-function fnReset() {
-	if(confirm("정말 초기화하시겠습니까?")) {
-		return true;
-	}
-	return false;
-}
-</script>
-
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -63,26 +47,45 @@ function fnReset() {
                     </div>
                     </div>
 						<div align="center">
-							<div class="p-5">
-                                    <div class="text-center">
-                                        <h1 class="h4 text-gray-900 mb-4">Welcome Back!</h1>
-                                    </div>
-                                    <form class="user" action="edit" method="post" >
-                                        <div class="form-group">
-                                            <input type="text" class="form-control form-control-user"
-                                                id="exampleInputEmail" aria-describedby="emailHelp"
-                                                placeholder="Enter ID..." name="memberId">
-                                        </div>
-                                        <div class="form-group">
-                                            <input type="password" class="form-control form-control-user"
-                                                id="exampleInputPassword" placeholder="Password" name="passwd">
-                                        </div>
-                                        <input type="submit" value="Login" 
-                                        	class="btn btn-primary btn-user btn-block"/>
-                                    </form>
-                                    <hr>
-                                </div>
-							</div>
+							<form action="update" id="update" method="post" >
+								<input type="hidden" name="id" value="${dto.id }" />
+									 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0"
+						                    style="text-align:center">
+											<tr>
+												<th>아이디</th>
+												<td><input class="form-control" id='memberId' name='memberId' value="${ sessionScope.loginuser.memberId }" ></td>
+											</tr>
+											<tr>
+												<th>이메일</th>
+												<td><input class="form-control" id='email'	name='email' value ="${ sessionScope.loginuser.email }"></td>
+											</tr>
+											<tr>
+												<th>유저등급</th>
+												<td><input class="form-control" id='userType' name='userType' value="${ sessionScope.loginuser.userType }"></td>
+											</tr>
+											<tr>
+												<th>가입일자</th>
+												<td><input class="form-control" id='regdate' name='regdate' value="${ sessionScope.loginuser.regDate }"></td>
+											</tr>
+											<tr>
+												<th>비밀번호</th>
+												<td><input type="password" class="form-control" id='passwd' name='passwd' value=""></td>
+											</tr>
+											<tr>
+												<th>비밀번호확인</th>
+												<td><input type="password" class="form-control" id='confirm' name='confirm' value=""></td>
+											</tr>
+									
+									<tr align="center">
+										<td colspan="2">
+											<input type="button" id="edit" value="수정하기" />
+											<input type="button" id="return" value="돌아가기" />
+											<input type="reset" value="초기화하기" />				
+										</td>
+									</tr>
+								</table>
+							</form>
+						</div>
                 <!-- /.container-fluid -->
 
             </div>
@@ -124,12 +127,38 @@ function fnReset() {
     <jsp:include page="/WEB-INF/views/modules/js.jsp"/>
 
     <!-- Page level plugins -->
-    <script src="/project4/resources/vendor/chart.js/Chart.min.js"></script>
+    <script src="/bsi/resources/vendor/chart.js/Chart.min.js"></script>
 
     <!-- Page level custom scripts -->
-    <script src="/project4/resources/js/demo/chart-area-demo.js"></script>
-    <script src="/project4/resources/js/demo/chart-pie-demo.js"></script>
-
+    <script src="/bsi/resources/js/demo/chart-area-demo.js"></script>
+    <script src="/bsi/resources/js/demo/chart-pie-demo2.js"></script>
+	<script type="text/javascript">
+	$(function() {
+    	$("#regdate").attr('readonly', true);
+    	$("#userType").attr('readonly', true);
+    	$("#memberId").attr('readonly', true);
+    	
+    	$('#edit').click(function(){
+    		
+    		var pwd = $('#passwd').val();
+    		var pwdconfirm = $('#confirm').val()
+    		if(pwd == pwdconfirm){
+    			if(pwd == "" && pwdconfirm == ""){
+    				alert("비밀번호를 입력해주세요");
+        			return;	
+    			}	
+    		}else{
+    			alert("비밀번호 불일치");
+    			return;
+    		}	alert("수정하였습니다.")
+    		$('#update').submit();
+    	})
+    	$('#return').click(function(){
+    		location.href="5";
+    	})
+    	
+    });
+	</script>
 </body>
 
 </html>

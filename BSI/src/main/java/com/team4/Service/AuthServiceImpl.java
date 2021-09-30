@@ -1,5 +1,9 @@
 package com.team4.Service;
 
+import java.io.IOException;
+
+import javax.servlet.http.HttpServletResponse;
+
 import com.team4.common.Util;
 import com.team4.dao.CustomerDao;
 import com.team4.mapper.SubwayMapper;
@@ -35,5 +39,14 @@ public class AuthServiceImpl implements AuthService {
 		
 		return member;
 	}
-	
+
+	@Override
+	public void updateMember(String memberId, String email, String passwd) {
+		
+		passwd = Util.getHashedString(passwd, "SHA-256");
+		
+		subwayMapper.editMember(memberId,email, passwd);
+		
+	}
+
 }

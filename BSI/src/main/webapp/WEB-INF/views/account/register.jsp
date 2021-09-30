@@ -90,6 +90,15 @@
 				alert('Email 형식 오류');
 				return;
 			}
+			var pwd = $('#passwd').val();
+			var pwdconfirm = $('#RepeatPassword').val()
+			
+			if(pwd == pwdconfirm){
+				
+			}else{
+				alert("비밀번호 불일치");
+				return;
+			}
 			
 			$('#registerform').submit(); //form을 서버로 전송
 			

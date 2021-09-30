@@ -48,12 +48,12 @@
                                             <input type="password" class="form-control form-control-user"
                                                 id="exampleInputPassword" placeholder="비밀번호." name="passwd">
                                         </div>
-                                        <div class="form-group">
+                                        <!-- <div class="form-group">
                                             <div class="custom-control custom-checkbox small">
                                                 <input type="checkbox" class="custom-control-input" id="customCheck">
                                                 <label class="custom-control-label" for="customCheck">로그인 상태 유지</label>
                                             </div>
-                                        </div>
+                                        </div> -->
 
                                         <input type="submit" value="Login" 
                                         	class="btn btn-primary btn-user btn-block"/>

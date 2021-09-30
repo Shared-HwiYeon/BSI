@@ -14,7 +14,6 @@ public class AuthInterceptor implements HandlerInterceptor{
 	@Override
 	public boolean preHandle(HttpServletRequest req, HttpServletResponse resp, Object handler)
 			throws Exception {
-		System.out.println("preHandle");
 		
 		HttpSession session = req.getSession();
 		
@@ -34,6 +33,10 @@ public class AuthInterceptor implements HandlerInterceptor{
 				invalid = true;
 			}
 		}else if (uri.contains("/line-khw")) { 
+			if(member == null) {
+				invalid = true;
+			}
+		}else if (uri.contains("/member/")) {
 			if(member == null) {
 				invalid = true;
 			}
