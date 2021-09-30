@@ -30,6 +30,10 @@ public interface SubwayMapper {
 	void updateMember(MembersVO member);
 
 	void deleteMember(String memberId);
+
+	List<Integer> selectline();
+
+	List<String> selectSnameGroupByLine(int lname);
 	
 	
 }

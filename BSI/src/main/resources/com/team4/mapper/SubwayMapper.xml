@@ -83,5 +83,15 @@
 	WHERE memberId = '${ memberId }'
 	</delete>	
 	
+	<select id="selectline" resultType="int">
+	SELECT DISTINCT LINE
+	FROM SUBWAY
+	</select>
+	
+	<select id="selectSnameGroupByLine" parameterType="int" resultType="String">
+	SELECT SNAME
+	FROM SUBWAY
+	WHERE LINE = '${ lname }'
+	</select>
 	
 </mapper>

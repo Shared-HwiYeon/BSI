@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+		   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.team4.mapper.LineMapper">
+
+	<!-- <insert id="insertSubway" parameterType="LineVO">
+	INSERT INTO subway (sname, line, snumber)
+	VALUES (#{ sname }, #{ line }, #{ snumber })
+	</insert>
+	
+	<insert id="insertCustomer" parameterType="LineVO">
+	INSERT INTO customer (snumber, date, hour, division, unumber)
+	VALUES (#{ snumber }, #{ date }, #{ hour }, #{ division }, #{ unumber })
+	</insert>
+	
+	<select id="selectDailyUnumberByLine" parameterType="hashmap" resultType="LineVO">
+	select c.date, c.division, sum(c.unumber) as unumber
+	from customer c
+	inner join subway s
+	on c.snumber = s.snumber
+	where s.line = #{ line }
+		  and
+		  c.division = #{ division }
+	group by c.date
+	order by c.date
+	</select> -->
+	
+	<select id="selectAvgUnumber" resultType="LineVO">
+	select s.line, c.division, sum(c.unumber) as totalNumber, round(avg(c.unumber), 0) as avgNumber
+	from customer c
+	inner join subway s
+	on c.snumber = s.snumber
+	group by s.line, c.division;
+	</select>
+
+	<!-- <select id="selectLine1" resultType="LineVO">
+	select c.date, c.division, round(sum(c.unumber)/243,0) as unumber
+	from customer c
+	inner join subway s
+	on c.snumber = s.snumber
+	where s.line = 1
+	and c.division = '승차'
+	group by c.date, c.division
+	order by c.date, c.division
+	</select>
+	
+	<select id="selectLine2" resultType="LineVO">
+	select c.date, c.division, round(sum(c.unumber)/243,0) as unumber
+	from customer c
+	inner join subway s
+	on c.snumber = s.snumber
+	where s.line = 2
+	and c.division = '승차'
+	group by c.date, c.division
+	order by c.date, c.division
+	</select>
+	
+	<select id="selectLine3" resultType="LineVO">
+	select c.date, c.division, round(sum(c.unumber)/243,0) as unumber
+	from customer c
+	inner join subway s
+	on c.snumber = s.snumber
+	where s.line = 3
+	and c.division = '승차'
+	group by c.date, c.division
+	order by c.date, c.division
+	</select>
+	
+	<select id="selectLine4" resultType="LineVO">
+	select c.date, c.division, round(sum(c.unumber)/243,0) as unumber
+	from customer c
+	inner join subway s
+	on c.snumber = s.snumber
+	where s.line = 4
+	and c.division = '승차'
+	group by c.date, c.division
+	order by c.date, c.division
+	
+	</select> -->
+
+</mapper>

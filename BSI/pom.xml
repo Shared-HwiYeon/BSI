@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.team4</groupId>
 	<artifactId>bsi</artifactId>
-	<name>BSI</name>
+	<name>bsi</name>
 	<packaging>war</packaging>
 	<version>1.0.0-BUILD-SNAPSHOT</version>
 	<properties>

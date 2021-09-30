@@ -113,5 +113,19 @@ public class SubwayServiceImpl implements SubwayService{
 		subwayMapper.deleteMember(memberId);
 	}
 
+
+	@Override
+	public List<Integer> findline() {
+		List<Integer> list = subwayMapper.selectline();
+		return list;
+	}
+
+
+	@Override
+	public List<String> findSnameGroupByLine(int lname) {
+		List<String> list = subwayMapper.selectSnameGroupByLine(lname);
+		return list;
+	}
+
 }
 

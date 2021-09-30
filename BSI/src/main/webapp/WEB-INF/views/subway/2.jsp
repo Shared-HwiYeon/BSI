@@ -38,15 +38,117 @@
 
                     <!-- Page Heading -->
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <h1 class="h3 mb-0 text-gray-800">page-template</h1>
+                        <h1 class="h3 mb-0 text-gray-800">역별 승하차 인원</h1>
+                        
                     </div>
+                    
 
+               <!-- Content Column -->
+                       	<div style="padding-top:25px;text-align:center">
+			<form action="stats-by-section.action" method="post">
+			<table border="1" style="width:800px;margin:0 auto">
+				<tr style="height:30px">
+					<th style="width:20%">역명</th>
+					<td style="text-align:center;width:30%">
+						<select name="range">
+							<option value="95" selected>다대포해수욕장</option>
+							<option value="96" >다대포항</option>
+							<option value="97" >낫개</option>
+							<option value="98" >신장림</option>
+							<option value="99" >장림</option>
+							<option value="100" >동매</option>
+							<option value="101" >신평</option>
+							<option value="102" >하단</option>
+							<option value="103" >당리</option>
+							<option value="104" >사하</option>
+							<option value="105" >괴정</option>
+							<option value="106" >대티</option>
+							<option value="107" >서대신</option>
+							<option value="108" >동대신</option>
+							<option value="109" >토성</option>
+							<option value="110" >자갈치</optionq>
+							<option value="111" >남포</option>
+							<option value="112" >중앙</option>
+							<option value="113" >부산역</option>
+							<option value="114" >초량</option>
+							<option value="115" >부산진</option>
+							<option value="116" >좌천</option>
+							<option value="117" >범일</option>
+							<option value="118" >범내골</option>
+							<option value="119" >서면(1호선)</option>
+							<option value="120" >부전</option>
+							<option value="121" >양정</option>
+							<option value="122" >시청</option>
+							<option value="123" >연산</option>
+							<option value="124" >교대</option>
+							<option value="125" >동래</option>
+							<option value="126" >명륜</option>
+							<option value="127" >온천장</option>
+							<option value="128" >부산대</option>
+							<option value="129" >장전</option>
+							<option value="130" >구서</option>
+							<option value="131" >두실</option>
+							<option value="132" >남산</option>
+							<option value="133" >범어사</option>
+							<option value="134" >노포</option>
+						</select>						
+					</td>
+					
+					<th style="width:20%">기준값</th>
+					<td style="text-align:center;width:30%">
+						<select name="weeks">
+							<option value="minimum" >최소</option>
+							<option value="maximum" >최대</option>
+						</select>
+					</td>
+				
+				<tr>					
+					<td colspan="4" style="text-align: center;height:50px">
+						<input type="submit" value="조회"><!-- type=submit : 포함된 form을 서버로 submit -->
+					</td>
+				</tr>
+			</table>
+			</form>
+			<br><br>
+			
+					<table border="1" style="width:500px;margin:0 auto">
+				<tr style="background-color:#f5f5f5;height:40px">
+					<th style="width:60px">역명</th>
+					<th style="width:80px"></th>
+				</tr>
+				<tr style="background-color:#f5f5f5;height:40px">
+					<th style="width:60px">날짜</th>
+					<th style="width:80px"></th>
+				</tr>
+				<tr style="background-color:#f5f5f5;height:40px">
+					<th style="width:60px">시간</th>
+					<th style="width:80px"></th>
+				</tr>
+				<tr style="background-color:#f5f5f5;height:40px">
+					<th style="width:60px">최대/최소 역 이용객</th>
+					<th style="width:80px"></th>
+				</tr>
+				<tr style="background-color:#f5f5f5;height:40px">
+					<th style="width:60px">일일평균 역 이용객</th>
+					<th style="width:80px"></th>
+				</tr>
+				
+				
+					</div>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+
+				</div>
                 <!-- /.container-fluid -->
+        	</div>
+        	<!-- End of Main Content -->
 
-            </div>
-            <!-- End of Main Content -->
-
-           <jsp:include page="/WEB-INF/views/modules/footer.jsp" />
+			
+  <!-- Footer -->
+         
+            <!-- End of Footer -->
 
         </div>
         <!-- End of Content Wrapper -->
@@ -79,14 +181,14 @@
         </div>
     </div>
 
-    <jsp:include page="/WEB-INF/views/modules/js.jsp"/>
+      <!-- Bootstrap core JavaScript-->
+    <script src="/bsi/resources/vendor/jquery/jquery.min.js"></script>
+    <script src="/bsi/resources/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-    <!-- Page level plugins -->
-    <script src="/bsi/resources/vendor/chart.js/Chart.min.js"></script>
+    <!-- Core plugin JavaScript-->
+    <script src="/bsi/resources/vendor/jquery-easing/jquery.easing.min.js"></script>
 
-    <!-- Page level custom scripts -->
-    <script src="/bsi/resources/js/demo/chart-area-demo.js"></script>
-    <script src="/bsi/resources/js/demo/chart-pie-demo.js"></script>
+
 
 </body>
 

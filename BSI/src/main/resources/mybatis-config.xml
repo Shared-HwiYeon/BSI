@@ -14,11 +14,15 @@
 		<typeAlias type="com.team4.vo.BoardVO" alias="BoardVO" />
 		<typeAlias type="com.team4.vo.StationVO" alias="StationVO" />
 		<typeAlias type="com.team4.vo.MembersVO" alias="MembersVO" />
+		<typeAlias type="com.team4.vo.MembersVO" alias="CustomerVO" />
+		<typeAlias type="com.team4.vo.LineVO" alias="LineVO" />
+	
 	</typeAliases>
 	
 	<mappers>
 		<mapper resource="com/team4/mapper/SubwayMapper.xml"/>
 		<mapper resource="com/team4/mapper/BoardMapper.xml"/>
+		<mapper resource="com/team4/mapper/LineMapper.xml"/>
 	</mappers>
 	
 	

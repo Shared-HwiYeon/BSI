@@ -2,7 +2,6 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ page pageEncoding="utf-8" contentType="text/html; charset=utf-8" %>
 
-
 <!DOCTYPE html>
 <html lang="ko">
 
@@ -49,41 +48,41 @@
                         	 class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">
                         	 <iclass="fas fa-download fa-sm text-white-50"></i>지하철시간표 검색</a>
                     </div>
-					
-					<!-- Content Row -->
+                    
+                    <!-- Content Row -->
                     <div class="row">
 
                         <!-- Earnings (Monthly) Card Example -->
                         <div class="col-xl-3 col-md-6 mb-4">
-                            <div class="card border-left-primary shadow h-100 py-2">
+                            <div class="card border-left-primary shadow h-100 py-5">
                                 <div class="card-body">
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
-                                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                                                Earnings (Monthly)</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800">$40,000</div>
-                                        </div>
-                                        <div class="col-auto">
-                                            <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                                            <div class="text-s font-weight-bold text-primary text-uppercase mb-1">
+                                                부산교통공사 대표전화
+                                            </div>
                                         </div>
                                     </div>
+                                    <div class="h5 mb-0 font-weight-bold text-gray-800">1544-5005</div>
                                 </div>
                             </div>
                         </div>
 
                         <!-- Earnings (Monthly) Card Example -->
                         <div class="col-xl-3 col-md-6 mb-4">
-                            <div class="card border-left-success shadow h-100 py-2">
+                            <div class="card border-left-success shadow h-100 py-5">
                                 <div class="card-body">
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
-                                            <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
-                                                지하철 하루평균 이용객</div>
+                                            <div class="text-s font-weight-bold text-success text-uppercase mb-1">    
+		                                        지하철 하루평균 이용객</div>
                                             <div class="h5 mb-0 font-weight-bold text-gray-800">
-                                            <fmt:formatNumber value="${ vo.unumber }" pattern="#,###"/> 명</div>
-                                        </div>
-                                        <div class="col-auto">
-                                            <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
+	                                        	<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-check-fill" viewBox="0 0 16 16">
+		  											<path fill-rule="evenodd" d="M15.854 5.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 0 1 .708-.708L12.5 7.793l2.646-2.647a.5.5 0 0 1 .708 0z"/>
+		  											<path d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+												</svg>
+												<fmt:formatNumber value="${ vo.unumber }" pattern="#,###"/> 명
+                                        	</div>
                                         </div>
                                     </div>
                                 </div>
@@ -91,29 +90,38 @@
                         </div>
 
                         <!-- Earnings (Monthly) Card Example -->
-                        <div class="col-xl-3 col-md-6 mb-4">
-                            <div class="card border-left-info shadow h-100 py-2">
+                        <div class="col-xl-2 col-md-6 mb-4">
+                            <div class="card border-left-info shadow h-100 py-1">
                                 <div class="card-body">
                                     <div class="row no-gutters align-items-center">
-                                        <div class="col mr-2">
-                                            <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Tasks
+                                        <div class="col mr-6">
+                                            <div class="text-s font-weight-bold text-info text-uppercase mb-2">
+                                          	<div class="col-xs">
+                                            <i class="fas fa-clipboard-list fa-1x text-gray-300"></i>
+                                        	시간표조회</div>
                                             </div>
                                             <div class="row no-gutters align-items-center">
                                                 <div class="col-auto">
-                                                    <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">50%</div>
-                                                </div>
-                                                <div class="col">
-                                                    <div class="progress progress-sm mr-2">
-                                                        <div class="progress-bar bg-info" role="progressbar"
-                                                            style="width: 50%" aria-valuenow="50" aria-valuemin="0"
-                                                            aria-valuemax="100"></div>
-                                                    </div>
-                                                </div>
+                                                <form action="home" method="post" id="line">
+												<select name="lname" id="lname" onchange="changeLine(e)">
+													<option value="" selected disabled>호선 선택</option>
+													<c:forEach var="line" items="${ line }">
+													<option value="${ line }">${ line }호선</option>
+													</c:forEach>
+												</form>
+												</select>
+                                                <select name="sname"id="sname">
+                                                	<option value="" selected disabled>역명</option>
+													<c:forEach var="sname" items="${ sname }">
+													<option value="${ sname }">${ sname }</option>
+													</c:forEach>
+												</select>
+												<div class="col-auto">
+			                                        <button name='search'class="btn btn-outline-dark">조회</button>
+												</div>
+												</div>
                                             </div>
-                                        </div>
-                                        <div class="col-auto">
-                                            <i class="fas fa-clipboard-list fa-2x text-gray-300"></i>
-                                        </div>
+                                        </div> 
                                     </div>
                                 </div>
                             </div>
@@ -137,7 +145,7 @@
                                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-map" viewBox="0 0 16 16">
  											<path fill-rule="evenodd" d="M15.817.113A.5.5 0 0 1 16 .5v14a.5.5 0 0 1-.402.49l-5 1a.502.502 0 0 1-.196 0L5.5 15.01l-4.902.98A.5.5 0 0 1 0 15.5v-14a.5.5 0 0 1 .402-.49l5-1a.5.5 0 0 1 .196 0L10.5.99l4.902-.98a.5.5 0 0 1 .415.103zM10 1.91l-4-.8v12.98l4 .8V1.91zm1 12.98 4-.8V1.11l-4 .8v12.98zm-6-.8V1.11l-4 .8v12.98l4-.8z"/>
 											</svg>&nbsp;지하철 노선도</div>
-                                            <div ><a target="_blank" href="https://ssl.pstatic.net/sstatic/keypage/outside/subway/img/210319/smap_bs_all.png"><img id="subpic" class="col md-2" src="https://ssl.pstatic.net/sstatic/keypage/outside/subway/img/210319/smap_bs_all.png"></a></div>
+                                            <div ><a target="_blank" href="https://ssl.pstatic.net/sstatic/keypage/outside/subway/img/210319/smap_bs_all.png"><img class="col md-2" id="subpic" src="https://ssl.pstatic.net/sstatic/keypage/outside/subway/img/210319/smap_bs_all.png"></a></div>
                                         </div>  
                                     </div>
                                 </div>
@@ -204,19 +212,53 @@
     <jsp:include page="/WEB-INF/views/modules/js.jsp"/>
 
     <!-- Page level plugins -->
-    <script src="/bsi/resources/vendor/chart.js/Chart.min.js"></script>
+    <script src="/bsi2/resources/vendor/chart.js/Chart.min.js"></script>
 
     <!-- Page level custom scripts -->
-    <script src="/bsi/resources/js/demo/chart-area-demo.js"></script>
-    <script src="/bsi/resources/js/demo/chart-pie-demo.js"></script>
-    <script type="text/javascript">
+    <script src="/bsi2/resources/js/demo/chart-area-demo.js"></script>
+    <script src="/bsi2/resources/js/demo/chart-pie-demo2.js"></script>
+	<script type="text/javascript">
 	$(function(){
 		$('.carousel').carousel({
 			  interval: 100
-		})
+			});
 	});
+	$('#lname').off('change');
+	$('#lname').on('change',function changeLine(e){
+		e.preventDefault();	
+		e.stopPropagation();
+		var optionVal = $("#lname option:selected").val();
+		$('#line').submit();
+	}) ;
+	$(document).ready(function(){
+		$("button[name='search']").click(function(e){
+			e.preventDefault();	
+			e.stopPropagation();
+			var abc =$("#sname option:selected").val();
+			if($("#sname option:selected").val()=='1서면'){
+				abc = "1호선 서면"
+			}else if($("#sname option:selected").val()=='1연산'){
+				abc = "1호선 연산"
+			}else if($("#sname option:selected").val()=='1동래'){
+				abc = "1호선 동래"
+			}else if($("#sname option:selected").val()=='2서면'){
+				abc = "2호선 서면"
+			}else if($("#sname option:selected").val()=='2덕천'){
+				abc = "2호선 덕천"
+			}else if($("#sname option:selected").val()=='3덕천'){
+				abc = "3호선 덕천"
+			}else if($("#sname option:selected").val()=='3연산'){
+				abc = "3호선 연산"
+			}else if($("#sname option:selected").val()=='4동래'){
+				abc = "4호선 연산"
+			}	
+			location.href ="https://m.search.naver.com/search.naver?query="+abc+" 부산 지하철 시간표";
+		}); 
+	});
+	
+	
+	
 	</script>
-
 </body>
 
 </html>
