@@ -82,21 +82,7 @@
 
                 <!-- /.container-fluid -->
                 
-                <div class="like">
-                
-                	<select name="s_line">
-						<c:forEach var="i" begin="1" end="4">
-							<option value="${ i }" ${ i eq requestScope.s_line ? "selected" : "" }>${ i }호선</option>
-						</c:forEach>
-					</select>
-					&nbsp;  &nbsp;
-					<select name="sname">
-						<c:forEach var="line1" items="${ line1 }">
-							<option value="${ line1 }" ${ i eq requestScope.line1 ? "selected" : "" }>${ line1 }역</option>
-						</c:forEach>
-					</select>
-                
-                </div><!-- like -->
+               
 
             </div>
             <!-- End of Main Content -->
