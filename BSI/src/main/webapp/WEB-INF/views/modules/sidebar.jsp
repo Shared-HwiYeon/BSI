@@ -13,7 +13,6 @@
             <!-- Divider -->
             <hr class="sidebar-divider my-0">
 
-
             <!-- Nav Item - Dashboard -->
             <li class="nav-item active">
                 <a class="nav-link" href="/bsi">
@@ -71,7 +70,7 @@
 
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
-                <a class="nav-link collapsed" href="/bsi/subway/5" >
+                <a class="nav-link collapsed" href="/bsi/member/5" >
                     <i class="fas fa-fw fa-folder"></i>
                     <span>마이페이지</span>
                 </a>

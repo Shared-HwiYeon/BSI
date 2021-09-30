@@ -1,4 +1,5 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <%@ page pageEncoding="utf-8" contentType="text/html; charset=utf-8" %>
 
 <!DOCTYPE html>
@@ -38,9 +39,80 @@
 
                     <!-- Page Heading -->
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <h1 class="h3 mb-0 text-gray-800">My Likes</h1>
+                        <h1 class="h3 mb-0 text-gray-800">찜목록 보기</h1>
                     </div>
-
+                    
+					<table border="1" style="width:279px; text-align: center">
+						<tr>
+							<th width="80px">호선</th>
+							<th width="80px">역명</th>
+							<th rowspan="2"><button class="btn btn-outline-dark" name='jjim'>찜하기</button></th>
+						</tr>
+						<tr>
+	                        <th>
+								<form action="like" method="get" id="line">
+								<select name="lname" id="lname" onchange="changeLine(e)">
+									<option value="" selected disabled>호선 선택</option>
+									<c:forEach var="line" items="${ line }">
+									<option value="${ line }">${ line }호선</option>
+									</c:forEach>
+								</select>
+								</form>
+							</th>
+                            <th width="120px">
+                            	<form action="like" method="post" id="like">
+                                <select name="sname"id="sname">
+                               		<option value="" selected disabled>역명</option>
+									<c:forEach var="sname" items="${ sname }">
+									<option value="${ sname }">${ sname }</option>
+									</c:forEach>
+								</select>
+								</form>
+							</th>
+						</tr>
+					</table>
+					
+					<div class="card shadow mb-4">
+                        <div class="card-header py-3">
+                            <span class="m-0 font-weight-bold text-primary">찜 목록</span>
+                            <div style="clear:both"></div>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0"
+                                	   style="text-align:center">
+                                    <thead>
+                                        <tr>
+                                            <th>역명</th>
+                                            <th>등록일자</th>
+                                            <th>삭제</th>
+                                        </tr>
+                                    </thead>
+                             
+                                    <tbody>
+                                    <c:forEach var = "jjim" items="${ jjim }">
+                                        <tr>
+                                            <td>
+                                            <a href="https://m.search.naver.com/search.naver?query=+${ jjim.sname }+ 부산 지하철 시간표">
+                                            ${ jjim.sname }</a>
+                                            </td>
+                                            <td>
+                                            	<fmt:formatDate value="${ jjim.regDate }" pattern="yyyy-MM-dd HH:mm:ss"/>		
+                                            </td>
+                                            <td>
+                                            <form action="delete" method="post" id="delete-form">
+                                            <button id='deletebtn' name="deletebtn" class="btn btn-primary btn-sm" value='${ jjim.sname }'>삭제</button>
+                                            <input type="hidden" name="delete"value="${ jjim.sname }">
+                                            </form>
+                                            </td>
+                                        </tr>
+                                    </c:forEach>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                             <div id='result'></div>
                 <!-- /.container-fluid -->
 
             </div>
@@ -82,12 +154,53 @@
     <jsp:include page="/WEB-INF/views/modules/js.jsp"/>
 
     <!-- Page level plugins -->
-    <script src="/project4/resources/vendor/chart.js/Chart.min.js"></script>
+    <script src="/bsi/resources/vendor/chart.js/Chart.min.js"></script>
 
     <!-- Page level custom scripts -->
-    <script src="/project4/resources/js/demo/chart-area-demo.js"></script>
-    <script src="/project4/resources/js/demo/chart-pie-demo.js"></script>
+    <script src="/bsi/resources/js/demo/chart-area-demo.js"></script>
+    <script src="/bsi/resources/js/demo/chart-pie-demo2.js"></script>
+	<script type="text/javascript">
+	$(function(){
+		
+		$('#lname').off('change');
+		$('#lname').on('change',function changeLine(e){
+			e.preventDefault();	
+			e.stopPropagation();
+			var optionVal = $("#lname option:selected").val();
+			$('#line').submit();
+		}) ;
+		$("button[name='jjim']").click(function(e){
+			e.preventDefault();	
+			e.stopPropagation();
+			
+			var abc =$("#sname option:selected").val();
 
+			if(abc == ""){
+				alert("역을 선택해주세요");
+				return;
+			}
+			
+			$('#like').submit();
+		});
+		$("#deletebtn").click(function(e){
+			e.preventDefault();
+			var abc = $('#deletebtn').val();
+			var msg = abc + " 역을 삭제하시겠습니까?";
+			var yes = confirm(msg);
+			if (yes) {
+				alert(abc);
+			}
+			
+		});
+		
+		
+		
+	});
+	
+	
+	
+	
+	</script>
 </body>
 
 </html>

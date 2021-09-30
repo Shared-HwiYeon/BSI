@@ -231,11 +231,11 @@
     <jsp:include page="/WEB-INF/views/modules/js.jsp"/>
 
     <!-- Page level plugins -->
-    <script src="/bsi2/resources/vendor/chart.js/Chart.min.js"></script>
+    <script src="/bsi/resources/vendor/chart.js/Chart.min.js"></script>
 
     <!-- Page level custom scripts -->
-    <script src="/bsi2/resources/js/demo/chart-area-demo.js"></script>
-    <script src="/bsi2/resources/js/demo/chart-pie-demo2.js"></script>
+    <script src="/bsi/resources/js/demo/chart-area-demo.js"></script>
+    <script src="/bsi/resources/js/demo/chart-pie-demo2.js"></script>
 	<script type="text/javascript">
 	$(function(){
 		$('.carousel').carousel({

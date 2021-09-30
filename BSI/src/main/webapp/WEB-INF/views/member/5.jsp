@@ -38,8 +38,29 @@
 
                     <!-- Page Heading -->
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <h1 class="h3 mb-0 text-gray-800">page-template</h1>
+                        <h1 class="h3 mb-0 text-gray-800">나의 가입정보</h1>
                     </div>
+                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0"
+                                	   style="text-align:center">
+	                          <tr>
+	                              <th>아이디</th>
+	                              <td>${ sessionScope.loginuser.memberId }</td>
+	                             
+	                          </tr>
+	                          <tr>
+	                              <th>이메일</th>
+	                              <td>${ sessionScope.loginuser.email }</td>
+	                          </tr>
+	                          <tr>
+	                              <th>유저등급</th>
+	                              <td>${ sessionScope.loginuser.userType }</td>
+	                          </tr>
+	                          <tr>
+	                          	<th>가입일자</th>
+	                              <td>${ sessionScope.loginuser.regDate }</td>
+	                          </tr>
+	                          
+	                  </table>
 
                 <!-- /.container-fluid -->
 
