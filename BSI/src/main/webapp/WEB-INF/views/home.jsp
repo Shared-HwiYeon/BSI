@@ -126,7 +126,26 @@
                                 </div>
                             </div>
                         </div>
-					
+					<div class="col-xl-3 col-md-6 mb-4">
+                            <div class="card border-left-warning shadow h-100 py-2">
+                                <div class="card-body">
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="col mr-2">
+                                            <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
+                                                정류장 및 호선 검색</div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800"> 이름</div>
+                                           <div class="col-auto">
+			                                        <button name='search'class="btn btn-outline-dark">조회</button>
+												</div>
+                                        </div>
+                                        
+                                        <div class="col-auto">
+                                            <i class="fas fa-comments fa-2x text-gray-300"></i>                                        
+                                        </div>                                
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 
 
                     </div>
@@ -252,7 +271,7 @@
 			}else if($("#sname option:selected").val()=='4동래'){
 				abc = "4호선 연산"
 			}	
-			location.href ="https://m.search.naver.com/search.naver?query="+abc+" 부산 지하철 시간표";
+			location.href ="https://m.search.naver.com/search.naver?query="+abc+"  지하철 시간표";
 		}); 
 	});
 	
