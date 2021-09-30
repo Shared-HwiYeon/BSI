@@ -39,14 +39,21 @@
 
                     <!-- Page Heading -->
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <h1 class="h3 mb-0 text-gray-800">찜목록 보기</h1>
+                        <h1 class="h3 mb-0 text-gray-800">나의 찜목록 보기</h1>
                     </div>
-                    
-					<table border="1" style="width:279px; text-align: center">
+		<div class="row">
+
+			<div class="col-lg-5">
+                    <div class="card mb-4">
+                    <div class="card-header py-3">
+                        <h6 class="m-0 font-weight-bold text-primary">역 선택</h6>
+                    </div>
+                    <div class="card-body">
+                        <table class="table-light" style="width:290px; text-align: center; margin :0 auto">
 						<tr>
 							<th width="80px">호선</th>
 							<th width="80px">역명</th>
-							<th rowspan="2"><button class="btn btn-outline-dark" name='jjim'>찜하기</button></th>
+							<th rowspan="2" width="100px"><button class="btn btn-outline-dark" name='jjim'>찜하기</button></th>
 						</tr>
 						<tr>
 	                        <th>
@@ -71,6 +78,13 @@
 							</th>
 						</tr>
 					</table>
+                 </div>
+             </div>
+		</div>
+		</div>
+		<div class="row">
+
+			<div class="col-xl-8">
 					
 					<div class="card shadow mb-4">
                         <div class="card-header py-3">
@@ -112,7 +126,9 @@
                             </div>
                         </div>
                     </div>
-                             <div id='result'></div>
+				</div>
+			</div>
+			</div>
                 <!-- /.container-fluid -->
 
             </div>

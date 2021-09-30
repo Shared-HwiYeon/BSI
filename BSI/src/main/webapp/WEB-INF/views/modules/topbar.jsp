@@ -69,6 +69,7 @@
                         </li>
 							<li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="/bsi/account/logout.action">
+                                <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                                 <span class="mr-2 d-none d-lg-inline text-gray-600 small">Logout</span>
                             </a>
                         </li>

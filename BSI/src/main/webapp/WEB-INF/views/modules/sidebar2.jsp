@@ -16,7 +16,7 @@
             <!-- Nav Item - Dashboard -->
             <li class="nav-item active">
                 <a class="nav-link" href="/bsi/member/5">
-                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
                     <span>마이 페이지</span></a>
             </li>
 
@@ -31,15 +31,15 @@
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
                 <a class="nav-link collapsed" href="/bsi/member/edit" >
-                    <i class="fas fa-fw fa-cog"></i>
-                    <span>내정보 보기</span>
+                    <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+                    <span>내정보 수정</span>
                 </a>
             </li>
 
             <!-- Nav Item - Utilities Collapse Menu -->
             <li class="nav-item">
                 <a class="nav-link collapsed" href="/bsi/member/like">
-                    <i class="fas fa-fw fa-wrench"></i>
+                     <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
                     <span>찜목록 보기</span>
                 </a>
             </li>
@@ -48,10 +48,6 @@
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">
 
-            <!-- Sidebar Toggler (Sidebar) -->
-            <div class="text-center d-none d-md-inline">
-                <button class="rounded-circle border-0" id="sidebarToggle"></button>
-            </div>
 
 
         </ul>
