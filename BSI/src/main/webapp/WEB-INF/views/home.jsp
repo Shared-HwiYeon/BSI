@@ -162,7 +162,7 @@
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-1">
                                             <div class="text-md font-weight-bold text-dark text-uppercase mb-0">
-                                                일편균 이용객 순위</div>
+                                                일평균 이용객 순위</div>
                                             <c:forEach var="rank" items="${ list }">
                                             <marquee direction="up" scrolldelay="400">   
                                             <div class="h6 mb-0 font-weight-bold text-gray-800" style="text-align: center">${ rank.ranking }위&nbsp;&nbsp;${ rank.sname }&nbsp;-&nbsp;${ rank.division }&nbsp;-&nbsp;${ rank.unumber }명<hr width="200px"></div>
