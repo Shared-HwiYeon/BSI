@@ -126,6 +126,21 @@
 	FROM subway
 	</select>
 	
+	<select id="selectTimeCustomers" resultType="TimeCustomersVO">
+	select s.sname, c.date, hour, c.division, c.unumber
+	from customer c join subway s 
+	on s.snumber = c.snumber
+	where c.snumber =${ snumber }
+	and c.hour= '${ hour }'
+	</select>
+	
+	<select id="selectAvgByDate" resultType="TimeCustomersVO">
+	select avg(unumber) as avgnumber
+	from customer
+	where snumber =${ snumber }
+	group by date, division
+	
+	</select>
 	<!-- 휘연님 작업 영역 끝 -->
 	
 </mapper>

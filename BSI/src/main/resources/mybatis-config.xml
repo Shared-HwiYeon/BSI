@@ -17,6 +17,7 @@
 		<typeAlias type="com.team4.vo.MembersVO" alias="CustomerVO" />
 		<typeAlias type="com.team4.vo.LineVO" alias="LineVO" />
 		<typeAlias type="com.team4.vo.JjimVO" alias="JjimVO" />
+		<typeAlias type="com.team4.vo.TimeCustomersVO" alias="TimeCustomersVO" />
 	
 	</typeAliases>
 	

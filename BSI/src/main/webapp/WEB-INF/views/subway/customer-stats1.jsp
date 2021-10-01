@@ -90,13 +90,23 @@
                                             <th>역명</th>
                                             <th>날짜</th>
                                             <th>시간</th>
-                                            <th>승차</th>
-                                            <th>하차</th>
+                                            <th>승,하차</th>
+                                            <th>이용객</th>                                         
                                             <th>하루 평균 이용객</th>
                                         </tr>
                                     </thead>
-                                    
                                     <tbody>
+                                    
+                                    <c:forEach var ="vo" items="${ vo }" varStatus="status">
+                                    	<tr> 
+                                    		<th>${ vo.sname }</th>
+                                        	<th>${ vo.date }</th>
+                                            <th>${ vo.hour }</th>
+                                            <th>${ vo.division }</th>
+                                            <th>${ vo.unumber }</th>
+                                            <th>${ avg[status.index].avgnumber }</th>
+                                        </tr>
+                                     </c:forEach>
                                     </tbody>
                                 </table>
                             </div>

@@ -12,6 +12,7 @@ import com.team4.vo.JjimVO;
 import com.team4.vo.MembersVO;
 import com.team4.vo.StationVO;
 import com.team4.vo.SubwayVO;
+import com.team4.vo.TimeCustomersVO;
 
 import lombok.Setter;
 
@@ -160,6 +161,22 @@ public class SubwayServiceImpl implements SubwayService{
 	@Override
 	public List<HashMap<String, Object>> findAllSubwayNames() {
 		return subwayMapper.selectAllSubwayNames();
+	}
+
+	@Override
+	public List<TimeCustomersVO> findTimeCustomers(String snumber, String hour) {
+
+		List<TimeCustomersVO> vo = subwayMapper.selectTimeCustomers(snumber, hour);
+		
+		return vo;
+	}
+
+	@Override
+	public List<TimeCustomersVO> findAvgByDate(String snumber) {
+
+		List<TimeCustomersVO> vo = subwayMapper.selectAvgByDate(snumber);
+		
+		return vo;
 	}
 	
 	// 휘여님 작업 영역 끝

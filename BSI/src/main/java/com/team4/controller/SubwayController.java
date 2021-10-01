@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import com.team4.Service.CustomerService;
 import com.team4.Service.SubwayService;
 import com.team4.vo.MembersVO;
+import com.team4.vo.TimeCustomersVO;
 
 @Controller
 @RequestMapping(path= { "/subway" })
@@ -158,11 +159,16 @@ public class SubwayController {
 		System.out.println(snumber + " / " + hour);
 		
 		// snumber와 hour를 이용해서 데이터베이스에서 데이터 조회
+		List<TimeCustomersVO> vo = subwayService.findTimeCustomers(snumber, hour);
+		System.out.println(vo);
+		List<TimeCustomersVO> avg = subwayService.findAvgByDate(snumber);
 		
-		// 조회된 데이터 저장 ( jsp에서 읽을 수 있도록 )
+ 		// 조회된 데이터 저장 ( jsp에서 읽을 수 있도록 )
 		model.addAttribute("subwayNames", subwayNames);
 		model.addAttribute("selectedSnumber", snumber);
 		model.addAttribute("selectedHour", hour.substring(0, hour.indexOf("시")));  // 12시 -> 12
+		model.addAttribute("vo", vo);
+		model.addAttribute("avg",avg);
 		
 		return "subway/customer-stats1";
 	}

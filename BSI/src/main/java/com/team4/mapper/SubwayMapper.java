@@ -10,6 +10,7 @@ import com.team4.vo.JjimVO;
 import com.team4.vo.MembersVO;
 import com.team4.vo.StationVO;
 import com.team4.vo.SubwayVO;
+import com.team4.vo.TimeCustomersVO;
 
 public interface SubwayMapper {
 
@@ -50,6 +51,10 @@ public interface SubwayMapper {
 	// 휘연님 작업 영역 시작
 	
 	List<HashMap<String, Object>> selectAllSubwayNames();
+
+	List<TimeCustomersVO> selectTimeCustomers(@Param("snumber") String snumber,@Param("hour") String hour);
+
+	List<TimeCustomersVO> selectAvgByDate(@Param("snumber") String snumber);
 	
 	// 휘연님 작업 영역 끝
 
