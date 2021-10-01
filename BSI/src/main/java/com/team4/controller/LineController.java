@@ -1,9 +1,6 @@
 package com.team4.controller;
 
-import java.util.ArrayList;
 import java.util.List;
-
-import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -30,7 +27,7 @@ public class LineController {
 		
 		List<LineVO> lines = lineService.findAvgUnumber();
 		
-		List<LineVO> lines2 = lineService.findDateLine();
+		//List<LineVO> lines2 = lineService.findDateLine();
 		
 		//List<LineVO> date = lineService.findMonDay();
 		
@@ -39,14 +36,14 @@ public class LineController {
 		
 		List<LineVO> vo = lineService.findAVGandDivision(month, days);
 		
-		System.out.println(vo);
+		//System.out.println(vo);
 		/*
 		 * System.out.println(lines.get(3).getDivision());
 		 * System.out.println(lines.get(3).getAvgNumber());
 		 */
 		model.addAttribute("vo",vo);
 		model.addAttribute("lines", lines);
-		model.addAttribute("lines2", lines2);
+		//model.addAttribute("lines2", lines2);
 		//model.addAttribute("month", months);
 		//model.addAttribute("day", day);
 		
