@@ -13,9 +13,11 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.team4.Service.CustomerService;
 import com.team4.Service.SubwayService;
+import com.team4.vo.MaxMinVO;
 import com.team4.vo.MembersVO;
 import com.team4.vo.TimeCustomersVO;
 
@@ -45,16 +47,37 @@ public class SubwayController {
 		
 		return "redirect:/" ;
 	}
-	@GetMapping(path= { "/1" })
-	public String one() {
-		
-		return "subway/1";
-	}
-	
 	@GetMapping(path= { "/2" })
-	public String two() {
+	public String one(@RequestParam(defaultValue = "Max") String MaxMin,Model model) {
+		
+		List<String> subway = subwayService.getSname();
+		
+		model.addAttribute("subway",subway);
+		model.addAttribute("MaxMin", MaxMin);
+
 		return "subway/2";
 	}
+	
+	@PostMapping(path= { "/2" })
+	public String findStationAndMaxMin(@RequestParam(defaultValue = "다대포해수욕장") String station,
+									   @RequestParam(defaultValue = "Max") String MaxMin,
+										Model model) {
+		
+		List<String> subway = subwayService.getSname();
+		
+		model.addAttribute("subway",subway); //역명
+		
+		List<MaxMinVO> vo = subwayService.findStationAndMaxMin(station, MaxMin);
+		MaxMinVO sum = subwayService.findsum(station);
+		
+		model.addAttribute("vo", vo);
+		model.addAttribute("sum",sum);
+		model.addAttribute("station", station); //역명 고정
+		model.addAttribute("MaxMin", MaxMin); //최대최소 고정
+		
+		return "subway/2";
+	}
+	
 	
 //	@GetMapping(path= { "/3" })
 //	public String third() {

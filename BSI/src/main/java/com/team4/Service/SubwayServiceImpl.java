@@ -9,6 +9,7 @@ import com.opencsv.CSVReader;
 import com.team4.dao.SubwayDao;
 import com.team4.mapper.SubwayMapper;
 import com.team4.vo.JjimVO;
+import com.team4.vo.MaxMinVO;
 import com.team4.vo.MembersVO;
 import com.team4.vo.StationVO;
 import com.team4.vo.SubwayVO;
@@ -175,6 +176,22 @@ public class SubwayServiceImpl implements SubwayService{
 	public List<TimeCustomersVO> findAvgByDate(String snumber) {
 
 		List<TimeCustomersVO> vo = subwayMapper.selectAvgByDate(snumber);
+		
+		return vo;
+	}
+
+	@Override
+	public List<MaxMinVO> findStationAndMaxMin(String station, String MaxMin) {
+		
+		List<MaxMinVO> vo = subwayMapper.selectStationAndMaxMin(station, MaxMin);
+		
+		return vo;
+	}
+
+	@Override
+	public MaxMinVO findsum(String station) {
+
+		MaxMinVO vo = subwayMapper.selectSum(station);
 		
 		return vo;
 	}

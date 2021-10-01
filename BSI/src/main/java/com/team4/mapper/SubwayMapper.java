@@ -7,6 +7,7 @@ import org.apache.ibatis.annotations.Param;
 
 import com.team4.vo.CustomerVO;
 import com.team4.vo.JjimVO;
+import com.team4.vo.MaxMinVO;
 import com.team4.vo.MembersVO;
 import com.team4.vo.StationVO;
 import com.team4.vo.SubwayVO;
@@ -57,6 +58,8 @@ public interface SubwayMapper {
 	List<TimeCustomersVO> selectAvgByDate(@Param("snumber") String snumber);
 	
 	// 휘연님 작업 영역 끝
+	List<MaxMinVO> selectStationAndMaxMin(@Param("station") String station, @Param("MaxMin") String MaxMin);
 
+	MaxMinVO selectSum(@Param("station")String station);
 	
 }

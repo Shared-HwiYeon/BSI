@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.List;
 
 import com.team4.vo.JjimVO;
+import com.team4.vo.MaxMinVO;
 import com.team4.vo.MembersVO;
 import com.team4.vo.StationVO;
 import com.team4.vo.SubwayVO;
@@ -46,6 +47,10 @@ public interface SubwayService {
 	List<TimeCustomersVO> findTimeCustomers(String snumber, String hour);
 
 	List<TimeCustomersVO> findAvgByDate(String snumber);
+
+	List<MaxMinVO> findStationAndMaxMin(String station, String maxMin);
+
+	MaxMinVO findsum(String station);
 	
 	// 휘연님 작업 영억 끝
 		

@@ -143,4 +143,46 @@
 	</select>
 	<!-- 휘연님 작업 영역 끝 -->
 	
+	<resultMap type="StationVO" id="findStation">
+	 <result property="sname" column="sname"/>
+	 <result property="snumber" column="snumber"/>
+	 <result property="date" column="date"/>
+	 <result property="hour" column="hour"/>
+	 <result property="division" column="division"/>
+	 <result property="unumber" column="unumber"/>
+	</resultMap>
+	
+	<select id="selectStation" parameterType="String" resultMap="findStation">
+	SELECT Subway.sname, CUSTOMER.date, CUSTOMER.hour, CUSTOMER.division , CUSTOMER.unumber
+	FROM CUSTOMER JOIN SUBWAY
+	WHERE CUSTOMER.snumber = (SELECT subway.snumber FROM SUBWAY WHERE subway.sname='${ station }') and hour='${ time }' and subway.sname='${ station }'
+	</select>
+	
+	<resultMap type="MaxMinVO" id="findMaxMin">
+	 <result property="sname" column="sname"/>
+	 <result property="date" column="date"/>
+	 <result property="hour" column="hour"/>
+	 <result property="division" column="division"/>
+	 <result property="unumber" column="unumber"/>
+	</resultMap>
+	
+	<select id="selectStationAndMaxMin" parameterType="String" resultMap="findMaxMin">
+	select subway.sname, customer.date, customer.hour, customer.division , customer.unumber
+	from customer join subway
+	where customer.unumber=(select ${ MaxMin }(customer.unumber) from customer, subway  where customer.snumber = (select subway.snumber from subway where subway.sname='${ station }'))
+	and subway.sname ='${ station }'
+	and customer.snumber = (select subway.snumber from subway where subway.sname = '${ station }')
+	</select>
+	
+	<select id="selectSname" resultType="String">
+	SELECT SNAME
+	FROM SUBWAY
+	</select>
+	
+	<select id="selectSum" parameterType="String" resultType="MaxMinVO">
+	select sum(customer.unumber)/243 as sum
+	from customer
+	where customer.snumber = (select subway.snumber from subway where subway.sname= '${ station }')
+	</select>
+	
 </mapper>
