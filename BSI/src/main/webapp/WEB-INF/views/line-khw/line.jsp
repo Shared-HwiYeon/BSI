@@ -220,14 +220,14 @@
  // Area Chart Example
     var ctx = document.getElementById("mymyAreaChart");
     var myLineChart = new Chart(ctx, {
-      type: 'line',
+      type: 'bar',
       data: {
         labels: ["1호선", "2호선", "3호선", "4호선"],
         datasets: [
         	{
 	          label: "승차",
 	          lineTension: 0.3,
-	          backgroundColor: "rgba(20, 190, 20, 0.05)",
+	          backgroundColor: "rgba(20, 190, 20, 1)",
 	          borderColor: "rgba(20, 190, 20, 1)",
 	          pointRadius: 3,
 	          pointBackgroundColor: "rgba(20, 190, 20, 1)",
@@ -242,7 +242,7 @@
         	{
   	          label: "하차",
   	          lineTension: 0.3,
-  	          backgroundColor: "rgba(255, 255,77, 0.05)",
+  	          backgroundColor: "rgba(255, 255,77, 1)",
   	          borderColor: "rgba(255, 255,77, 1)",
   	          pointRadius: 3,
   	          pointBackgroundColor: "rgba(255, 255,77, 1)",
