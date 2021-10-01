@@ -42,33 +42,35 @@
                         <h1 class="h3 mb-0 text-gray-800">나의 찜목록 보기</h1>
                     </div>
 		<div class="row">
-
-			<div class="col-lg-5">
+			<div class="col-lg-3"></div>
+			<div class="col-lg-6">
                     <div class="card mb-4">
                     <div class="card-header py-3">
                         <h6 class="m-0 font-weight-bold text-primary">역 선택</h6>
                     </div>
                     <div class="card-body">
-                        <table class="table-light" style="width:290px; text-align: center; margin :0 auto">
+                        <table class="table-light" style="width:350px; text-align: center; margin :0 auto">
 						<tr>
-							<th width="80px">호선</th>
-							<th width="80px">역명</th>
-							<th rowspan="2" width="100px"><button class="btn btn-outline-dark" name='jjim'>찜하기</button></th>
-						</tr>
-						<tr>
-	                        <th>
+							<th width="80px">호선 :</th>
+							<th >
+								
 								<form action="like" method="get" id="line">
-								<select name="lname" id="lname" onchange="changeLine(e)">
+								<select name="lname" id="lname" onchange="changeLine(e)"class="custom-select custom-select-sm form-control form-control-sm">
 									<option value="" selected disabled>호선 선택</option>
 									<c:forEach var="line" items="${ line }">
 									<option value="${ line }">${ line }호선</option>
 									</c:forEach>
 								</select>
 								</form>
+								
 							</th>
+							<th rowspan="2" width="100px"><button class="btn btn-primary btn-xl" name='jjim'>찜하기</button></th>
+						</tr>
+						<tr>
+	                        <th>역명 :</th>
                             <th width="120px">
                             	<form action="like" method="post" id="like">
-                                <select name="sname"id="sname">
+                                <select name="sname"id="sname"class="custom-select custom-select-sm form-control form-control-sm">
                                		<option value="" selected disabled>역명</option>
 									<c:forEach var="sname" items="${ sname }">
 									<option value="${ sname }">${ sname }</option>
@@ -81,10 +83,11 @@
                  </div>
              </div>
 		</div>
+		<div class="col-lg-3"></div>
 		</div>
 		<div class="row">
 
-			<div class="col-xl-8">
+			<div class="col-xl-12">
 					
 					<div class="card shadow mb-4">
                         <div class="card-header py-3">

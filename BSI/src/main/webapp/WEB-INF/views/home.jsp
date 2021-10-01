@@ -57,8 +57,8 @@
                     <div class="row">
 
                         <!-- Earnings (Monthly) Card Example -->
-                        <div class="col-xl-3 col-md-6 mb-4">
-                            <div class="card border-left-primary shadow h-100 py-5">
+                        <div class="col-xl-4 col-md-6 mb-4">
+                            <div class="card border-left-primary shadow h-100 py-1">
                                 <div class="card-body">
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
@@ -73,8 +73,8 @@
                         </div>
 
                         <!-- Earnings (Monthly) Card Example -->
-                        <div class="col-xl-3 col-md-6 mb-4">
-                            <div class="card border-left-success shadow h-100 py-5">
+                        <div class="col-xl-4 col-md-6 mb-4">
+                            <div class="card border-left-success shadow h-100 py-1">
                                 <div class="card-body">
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
@@ -94,7 +94,7 @@
                         </div>
 
                         <!-- Earnings (Monthly) Card Example -->
-                        <div class="col-xl-2 col-md-6 mb-4">
+                        <div class="col-xl-4 col-md-6 mb-4">
                             <div class="card border-left-info shadow h-100 py-1">
                                 <div class="card-body">
                                     <div class="row no-gutters align-items-center">
@@ -107,22 +107,26 @@
                                             <div class="row no-gutters align-items-center">
                                                 <div class="col-auto">
                                                 <form action="home" method="post" id="line">
-												<select name="lname" id="lname" onchange="changeLine(e)">
+												<select name="lname" id="lname" onchange="changeLine(e)"class="custom-select custom-select-sm form-control form-control-sm">
 													<option value="" selected disabled>호선 선택</option>
 													<c:forEach var="line" items="${ line }">
 													<option value="${ line }">${ line }호선</option>
 													</c:forEach>
-												</form>
 												</select>
-                                                <select name="sname"id="sname">
+												</form>
+												</div>
+												&nbsp;
+												<div class="col-xl-4">
+                                                <select name="sname"id="sname" class="custom-select custom-select-sm form-control form-control-sm">
                                                 	<option value="" selected disabled>역명</option>
 													<c:forEach var="sname" items="${ sname }">
 													<option value="${ sname }">${ sname }</option>
 													</c:forEach>
 												</select>
-												<div class="col-auto">
-			                                        <button name='search'class="btn btn-outline-dark">조회</button>
 												</div>
+												&nbsp;&nbsp;
+												<div class="col-auto">
+			                                        <button name='search'class="btn btn-primary">조회</button>
 												</div>
                                             </div>
                                         </div> 
@@ -141,7 +145,7 @@
 
                         <!-- Earnings (Monthly) Card Example -->
                         <div class="col-xl-5 col-md-6 mb-4">
-                            <div class="card border-left-primary shadow h-100 py-2">
+                            <div class="card border-left-primary shadow h-100 py-1">
                                 <div class="card-body">
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
@@ -156,13 +160,14 @@
                             </div>
                         </div>
                     	<!-- Pending Requests Card Example -->
-                        <div class="col-xl-3 col-md-3 mb-1">
-                            <div class="card border-left-dark shadow h-20 py-2">
+                        <div class="col-xl-4 col-md-6 mb-4">
+                            <div class="card border-left-dark shadow h-100 py-1">
                                 <div class="card-body">
                                     <div class="row no-gutters align-items-center">
-                                        <div class="col mr-1">
+                                        <div class="col mr-2">
                                             <div class="text-md font-weight-bold text-dark text-uppercase mb-0">
                                                 일평균 이용객 순위</div>
+                                                <div>&nbsp;</div>
                                             <c:forEach var="rank" items="${ list }">
                                             <marquee direction="up" scrolldelay="400">   
                                             <div class="h6 mb-0 font-weight-bold text-gray-800" style="text-align: center">${ rank.ranking }위&nbsp;&nbsp;${ rank.sname }&nbsp;-&nbsp;${ rank.division }&nbsp;-&nbsp;${ rank.unumber }명<hr width="200px"></div>
@@ -175,17 +180,20 @@
                         </div>
                         <!-- Pending Requests Card Example -->
                         <c:if test="${ sessionScope.loginuser !=null }">
-                        <div class="col-xl-3 col-md-3 mb-1">
-                            <div class="card border-left-warning shadow h-20 py-2">
+                        <div class="col-xl-3 col-md-6 mb-4">
+                            <div class="card border-left-warning shadow h-100 py-1">
                                 <div class="card-body">
                                     <div class="row no-gutters align-items-center">
-                                        <div class="col mr-1">
+                                        <div class="col mr-6">
+                                        	
                                             <div class="text-md font-weight-bold text-warning text-uppercase mb-0">
-                                              MY JJIM LIST <a href="/bsi/member/like">목록가기</a> </div>
+                                              MY JJIM LIST <a href="/bsi/member/like">목록가기</a>
+                                            </div>
+                                            <div>&nbsp;</div>
                                             <c:if test="${ s.memberId == sessionScope.loginuser.memberId }">
                                             <c:forEach var="jjim" items="${ jjim }">
                                             <div class="h6 mb-0 font-weight-bold text-gray-800" style="text-align: center">
-                                            <a href="javascript:call()" class="ss" value="${ jjim.sname }">${ jjim.sname }</a><hr></div>
+                                            <a href="javascript:call()" class="ss" data-jjim="${ jjim.sname }">${ jjim.sname }</a><hr></div>
                                         	</c:forEach>
                                         	</c:if>
                                         </div>
@@ -280,8 +288,8 @@
 			location.href ="https://m.search.naver.com/search.naver?query="+abc+"  지하철 시간표";
 		}); 
 		$('.ss').click(function call(){
-			var jjim = $(this).attr('value');
-			 var abc ="";
+			var jjim = $(this).attr('data-jjim');
+			 var abc =jjim;
 			if(jjim =='1서면'){
 				abc = "1호선 서면"
 			}else if(jjim =='1연산'){
