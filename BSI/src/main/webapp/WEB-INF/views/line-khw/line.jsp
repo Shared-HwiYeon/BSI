@@ -82,20 +82,21 @@
 
                 <!-- /.container-fluid -->
        
+       <div class="con" style="width:100%">
                
-               <div class="col-xl-8 col-lg-7" style="margin-left:20px">
+               <div class="col-xl-8 col-lg-7" style="margin-left:20px; float: left">
                             <div class="card shadow mb-4">
                                 <!-- Card Header - Dropdown -->
                                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                                     <h6 class="m-0 font-weight-bold text-primary">날짜별 평균 승하차 인원</h6>
                                     
                                     <form action="line" method="get" id="date">
-                                    <select id="month" name="month">
+                                    <select id="month" name="month" style="border:1px solid blue; background-color:blue;color:#fff;font-weight:bold;border-radius:5px">
                         				<c:forEach var="i" begin="1" end="8">
                         				<option value="${ i }">${ i } 월</option>
                         				</c:forEach>
                     				</select>
-                       				<select id="days" name="days">
+                       				<select id="days" name="days" style="border:1px solid blue; background-color:blue;color:#fff;font-weight:bold;border-radius:5px">
                         				<c:forEach var="j" begin="1" end="31">
                         				<option value="${ j } ">${ j } 일</option>
                         				</c:forEach>
@@ -113,7 +114,23 @@
                             </div>
                 </div><!-- 2번차트 -->
                
+               <div class="card mb-4" style="width:300px; float: left ; margin-left: 30px">
+                                <div class="card-header" style="font-weight:bold">
+                                    승.하차 구분 색
+                                </div>
+                                <div class="card-body">
+                                	<div class="box" style="width:100%">
+                                    <div class="ball1" style="width:10px;height:10px;background-color:rgba(20, 190, 20, 1);border-radius:50%;float:left;margin-top:8px"></div>
+                                    <p style="display:inline-block;margin-left:7px">승차</p>
+                                    </div><!-- box -->
+                                    <div class="box" style="width:100%">
+                                    <div class="ball2" style="width:10px;height:10px;background-color:rgba(255, 255,77, 1);border-radius:50%;float:left;margin-top:8px"></div>
+                                    <p style="display:inline-block;margin-left:7px">하차</p>
+                                    </div><!-- box -->
+                                </div>
+                </div>
                
+       </div><!-- con -->        
 
             </div>
             <!-- End of Main Content -->

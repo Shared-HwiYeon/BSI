@@ -61,7 +61,7 @@
                              	</div> -->
                              	<div class="form-group">
                              		<label>내용</label>
-                             		<textarea class="form-control" name="content" rows="5" id="contentarea"></textarea>
+                             		<textarea class="form-control" name="content" rows="18" id="contentarea"></textarea>
                              	</div>
                              	
                              	<button id="write-button" class="btn btn-primary btn-sm">쓰기</button>
