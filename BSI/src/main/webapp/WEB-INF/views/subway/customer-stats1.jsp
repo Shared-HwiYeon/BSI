@@ -63,7 +63,7 @@
 					<td style="text-align:center;width:30%">
 						<select name="hour">
 						<c:forEach begin="1" end="24" var='idx'>
-							<option value='${ idx }시'>${ idx }시</option>
+							<option value='${ idx }시' ${ selectedHour == idx ? "selected" : "" }>${ idx }시</option>
 						</c:forEach>	
 						</select>
 					</td>

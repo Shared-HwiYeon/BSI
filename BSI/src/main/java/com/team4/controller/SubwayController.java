@@ -162,6 +162,7 @@ public class SubwayController {
 		// 조회된 데이터 저장 ( jsp에서 읽을 수 있도록 )
 		model.addAttribute("subwayNames", subwayNames);
 		model.addAttribute("selectedSnumber", snumber);
+		model.addAttribute("selectedHour", hour.substring(0, hour.indexOf("시")));  // 12시 -> 12
 		
 		return "subway/customer-stats1";
 	}
