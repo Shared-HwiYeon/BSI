@@ -73,7 +73,7 @@
                      		<th>시간</th>
                      		<th>승차</th>
                      		<th>이용객(${ MaxMin })</th>
-                     		<th>하루이용객(승하차 합)</th>
+                     		<th>평균이용객</th>
                      	</tr>
                      	<c:forEach var="vo" items="${ vo }" varStatus="status">
                      	<tr>

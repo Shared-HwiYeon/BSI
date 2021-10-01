@@ -49,6 +49,13 @@
 						<div align="center">
 							<form action="update" id="update" method="post" >
 								<input type="hidden" name="id" value="${dto.id }" />
+								<div class="card shadow mb-4">
+		                        <div class="card-header py-3">
+		                            <span class="m-0 font-weight-bold text-primary">내 정보</span>
+		                            <div style="clear:both"></div>
+		                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
 									 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0"
 						                    style="text-align:center">
 											<tr>
@@ -78,14 +85,15 @@
 									
 									<tr align="center">
 										<td colspan="2">
-											<input type="button" id="edit" value="수정하기" />
-											<input type="button" id="return" value="돌아가기" />
-											<input type="reset" value="초기화하기" />				
+											<input type="button" id="edit" value="수정하기"  class="btn btn-primary btn-sm"/>
+											<input type="button" id="return" value="돌아가기"class="btn btn-info btn-sm" />
+											<input type="reset" value="초기화하기"class="btn btn-info btn-sm" />				
 										</td>
 									</tr>
 								</table>
 							</form>
 						</div>
+				</div>
                 <!-- /.container-fluid -->
 
             </div>
@@ -93,10 +101,10 @@
 
            <jsp:include page="/WEB-INF/views/modules/footer.jsp" />
 
-        </div>
+         </div>
         <!-- End of Content Wrapper -->
 
-    </div>
+   
     <!-- End of Page Wrapper -->
 
     <!-- Scroll to Top Button-->
