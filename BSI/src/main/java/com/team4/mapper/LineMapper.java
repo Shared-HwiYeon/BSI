@@ -3,6 +3,7 @@ package com.team4.mapper;
 import java.util.List;
 
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
 
 import com.team4.vo.LineVO;
 
@@ -12,16 +13,13 @@ public interface LineMapper {
 
 	List<LineVO> selectAvgUnumber();
 
-	List<LineVO> selectLine1();
+	List<LineVO> selectDateLine();
 
-	List<LineVO> selectLine2();
+	List<LineVO> selectMonDay();
 
-	List<LineVO> selectLine3();
-
-	List<LineVO> selectLine4();
-
-
+	List<LineVO> selectDay(@Param("month") String month);
 	
+	List<LineVO> selectAVGandDivision(@Param("month")String month, @Param("days") String days);
 	
 
 }

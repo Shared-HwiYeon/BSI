@@ -21,36 +21,36 @@ public class LineServiceImpl implements LineService{
 	}
 
 	@Override
-	public List<LineVO> findLine1() {
+	public List<LineVO> findDateLine() {
+
+		List<LineVO> lines2 = lineMapper.selectDateLine();
 		
-		List<LineVO> like1 = lineMapper.selectLine1();
-		
-		return like1;
+		return lines2;
 	}
 
 	@Override
-	public List<LineVO> findLine2() {
+	public List<LineVO> findMonDay() {
+
+		List<LineVO> date = lineMapper.selectMonDay();
 		
-		List<LineVO> like2 = lineMapper.selectLine2();
-		
-		return like2;
+		return date;
 	}
 
 	@Override
-	public List<LineVO> findLine3() {
+	public List<LineVO> findDay(String month) {
+
+		List<LineVO> day = lineMapper.selectDay(month);
 		
-		List<LineVO> like3 = lineMapper.selectLine3();
-		
-		return like3;
+		return day;
 	}
 
 	@Override
-	public List<LineVO> findLine4() {
-		
-		List<LineVO> like4 = lineMapper.selectLine4();
-		
-		return like4;
+	public List<LineVO> findAVGandDivision(String month, String days) {
+		List<LineVO> vo = lineMapper.selectAVGandDivision(month, days);
+		return vo;
 	}
+
+	
 	
 
 }

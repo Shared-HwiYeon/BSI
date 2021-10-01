@@ -81,7 +81,38 @@
                     </div>
 
                 <!-- /.container-fluid -->
-                
+       
+               
+               <div class="col-xl-8 col-lg-7" style="margin-left:20px">
+                            <div class="card shadow mb-4">
+                                <!-- Card Header - Dropdown -->
+                                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                    <h6 class="m-0 font-weight-bold text-primary">날짜별 평균 승하차 인원</h6>
+                                    
+                                    <form action="line" method="get" id="date">
+                                    <select id="month" name="month">
+                        				<c:forEach var="i" begin="1" end="8">
+                        				<option value="${ i }">${ i } 월</option>
+                        				</c:forEach>
+                    				</select>
+                       				<select id="days" name="days">
+                        				<c:forEach var="j" begin="1" end="31">
+                        				<option value="${ j } ">${ j } 일</option>
+                        				</c:forEach>
+                    				</select>
+                    				</form>
+                    			
+                    				
+                                </div>
+                                <!-- Card Body -->
+                                <div class="card-body">
+                                    <div class="chart-area"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
+                                        <canvas id="mymyAreaChart" width="1012" height="353" style="display: block; height: 320px; width: 917px;" class="chartjs-render-monitor"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+                </div><!-- 2번차트 -->
+               
                
 
             </div>
@@ -166,6 +197,130 @@
 	      },
       },
     });
+    
+    
+    
+ // Area Chart Example
+    var ctx = document.getElementById("mymyAreaChart");
+    var myLineChart = new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels: ["1호선", "2호선", "3호선", "4호선"],
+        datasets: [
+        	{
+	          label: "승차",
+	          lineTension: 0.3,
+	          backgroundColor: "rgba(20, 190, 20, 0.05)",
+	          borderColor: "rgba(20, 190, 20, 1)",
+	          pointRadius: 3,
+	          pointBackgroundColor: "rgba(20, 190, 20, 1)",
+	          pointBorderColor: "rgba(20, 190, 20, 1)",
+	          pointHoverRadius: 3,
+	          pointHoverBackgroundColor: "rgba(20, 190, 20, 1)",
+	          pointHoverBorderColor: "rgba(20, 190, 20, 1)",
+	          pointHitRadius: 10,
+	          pointBorderWidth: 2,
+	          data: [${vo.get(0).getAvgNumber()},${vo.get(1).getAvgNumber()},${vo.get(2).getAvgNumber()},${vo.get(3).getAvgNumber()}],
+        	},
+        	{
+  	          label: "하차",
+  	          lineTension: 0.3,
+  	          backgroundColor: "rgba(255, 255,77, 0.05)",
+  	          borderColor: "rgba(255, 255,77, 1)",
+  	          pointRadius: 3,
+  	          pointBackgroundColor: "rgba(255, 255,77, 1)",
+  	          pointBorderColor: "rgba(255, 255,77, 1)",
+  	          pointHoverRadius: 3,
+  	          pointHoverBackgroundColor: "rgba(255, 255,77, 1)",
+  	          pointHoverBorderColor: "rgba(255, 255,77, 1)",
+  	          pointHitRadius: 10,
+  	          pointBorderWidth: 2,
+  	          data: [${vo.get(4).getAvgNumber()},${vo.get(5).getAvgNumber()},${vo.get(6).getAvgNumber()},${vo.get(7).getAvgNumber()}],
+          	}
+        ],
+      },
+      options: {
+        maintainAspectRatio: false,
+        layout: {
+          padding: {
+            left: 10,
+            right: 25,
+            top: 25,
+            bottom: 0
+          }
+        },
+        scales: {
+          xAxes: [{
+            time: {
+              unit: 'date'
+            },
+            gridLines: {
+              display: false,
+              drawBorder: false
+            },
+            ticks: {
+              maxTicksLimit: 7
+            }
+          }],
+          yAxes: [{
+            ticks: {
+              maxTicksLimit: 5,
+              padding: 10,
+              // Include a dollar sign in the ticks
+              callback: function(value, index, values) {
+                return number_format(value);
+              }
+            },
+            gridLines: {
+              color: "rgb(234, 236, 244)",
+              zeroLineColor: "rgb(234, 236, 244)",
+              drawBorder: false,
+              borderDash: [2],
+              zeroLineBorderDash: [2]
+            }
+          }],
+        },
+        legend: {
+          display: false
+        },
+        tooltips: {
+          backgroundColor: "rgb(255,255,255)",
+          bodyFontColor: "#858796",
+          titleMarginBottom: 10,
+          titleFontColor: '#6e707e',
+          titleFontSize: 14,
+          borderColor: '#dddfeb',
+          borderWidth: 1,
+          xPadding: 15,
+          yPadding: 15,
+          displayColors: false,
+          intersect: false,
+          mode: 'index',
+          caretPadding: 10,
+          callbacks: {
+            label: function(tooltipItem, chart) {
+              var datasetLabel = chart.datasets[tooltipItem.datasetIndex].label || '';
+              return datasetLabel + number_format(tooltipItem.yLabel);
+            }
+          }
+        }
+      }
+    });
+    
+    $(function(){
+    	
+    	
+    	
+    	$('#days').on('change',function changeLine(e){
+    		e.preventDefault();	
+    		e.stopPropagation();
+    		var optionVal = $("#day option:selected").val();
+    		$('#date').submit();
+    	}) ;
+    	
+    });
+    
+    
     
     </script>
 

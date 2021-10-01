@@ -8,12 +8,13 @@ public interface LineService {
 
 	List<LineVO> findAvgUnumber();
 
-	List<LineVO> findLine1();
+	List<LineVO> findDateLine();
 
-	List<LineVO> findLine2();
+	List<LineVO> findMonDay();
 
-	List<LineVO> findLine3();
+	List<LineVO> findDay(String month);
 
-	List<LineVO> findLine4();
+	List<LineVO> findAVGandDivision(String month, String days);
 
+	
 }
