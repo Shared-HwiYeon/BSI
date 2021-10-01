@@ -13,7 +13,10 @@ public class LineVO {
 
 	private int line;
 	private String division;
+	private String sname;
+	private String date;
 	private int totalNumber;
 	private int avgNumber;
+	private String day;
 	
 }
