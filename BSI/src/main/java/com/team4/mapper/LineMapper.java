@@ -21,5 +21,6 @@ public interface LineMapper {
 	
 	List<LineVO> selectAVGandDivision(@Param("month")String month, @Param("days") String days);
 	
+	
 
 }
