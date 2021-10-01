@@ -3,6 +3,8 @@ package com.team4.controller;
 import java.util.List;
 import java.util.Locale;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
@@ -11,6 +13,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.team4.Service.SubwayService;
+import com.team4.vo.JjimVO;
+import com.team4.vo.MembersVO;
 import com.team4.vo.StationVO;
 
 @Controller
@@ -21,8 +25,17 @@ public class HomeController {
 	private SubwayService subwayService;
 
 	@RequestMapping(path = { "/", "/home" })
-	public String home(@RequestParam(defaultValue = "0") int lname ,Locale locale, Model model) {
-
+	public String home(@RequestParam(defaultValue = "0") int lname ,Locale locale, Model model, HttpSession session) {
+			
+	      
+		  if((MembersVO)session.getAttribute("loginuser") !=null) {
+			  MembersVO s = (MembersVO)session.getAttribute("loginuser"); 
+			  String memberId = s.getMemberId();
+			  List<JjimVO> jjim = subwayService.findjjim(memberId);
+			  model.addAttribute("jjim",jjim);
+			  model.addAttribute("s",s);
+		  }
+		
 		  List<StationVO> list = subwayService.findrank();
 		  List<Integer> line = subwayService.findline();
 		  
