@@ -172,6 +172,7 @@
                             </div>
                         </div>
                         <!-- Pending Requests Card Example -->
+                        <c:if test="${ sessionScope.loginuser !=null }">
                         <div class="col-xl-3 col-md-3 mb-1">
                             <div class="card border-left-warning shadow h-20 py-2">
                                 <div class="card-body">
@@ -190,6 +191,7 @@
                                 </div>
                             </div>
                         </div>
+                        </c:if>
                      </div>   
 
                 <!-- /.container-fluid -->
