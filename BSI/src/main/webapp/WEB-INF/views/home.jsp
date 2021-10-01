@@ -181,7 +181,7 @@
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-1">
                                             <div class="text-md font-weight-bold text-warning text-uppercase mb-0">
-                                                MY JJIM LIST</div>
+                                              MY JJIM LIST <a href="/bsi/member/like">목록가기</a> </div>
                                             <c:if test="${ s.memberId == sessionScope.loginuser.memberId }">
                                             <c:forEach var="jjim" items="${ jjim }">
                                             <div class="h6 mb-0 font-weight-bold text-gray-800" style="text-align: center">
