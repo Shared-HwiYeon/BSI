@@ -2,6 +2,7 @@ package com.team4.controller;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
@@ -17,6 +18,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.team4.Service.AuthService;
 import com.team4.Service.SubwayService;
@@ -102,27 +104,17 @@ public class MemberController {
 						@RequestParam(name="sname") String snames,
 						Model model, HttpSession session, HttpServletResponse response) throws IOException {
 		
-		List<Integer> line = subwayService.findline();
-		List<String> sname = subwayService.findSnameGroupByLine(lname);
+		// List<Integer> line = subwayService.findline();
+		// List<String> sname = subwayService.findSnameGroupByLine(lname);
 		
-		model.addAttribute("line",line);
-		model.addAttribute("sname",sname); //동적 셀렉트
+		// model.addAttribute("line",line);
+		// model.addAttribute("sname",sname); //동적 셀렉트
 		
 		MembersVO s = (MembersVO)session.getAttribute("loginuser");
 		String memberId = s.getMemberId(); 
-		
 		List<JjimVO> jjim = subwayService.findjjim(memberId);
-		
 		//System.out.println(jjim.get(0).getSname());
 		//System.out.println(snames.equals(jjim.get(0).getSname()));
-		
-		for(int i = 0; i < jjim.size(); i++) {
-			if(snames.equals(jjim.get(i).getSname())) {
-				model.addAttribute("msg","이미 선택되었습니다.");
-				model.addAttribute("url","/member/like");
-				return "redirect";
-			}break;
-		}
 		
 		subwayService.insertlist(snames, memberId);
 		
@@ -132,14 +124,27 @@ public class MemberController {
 	}
 	
 	@PostMapping(path = { "/delete" })
-	public String deletejjim(@RequestParam(name="delete") String sname, HttpSession session ) {
-		
-		MembersVO s = (MembersVO)session.getAttribute("loginuser");
-		String memberId = s.getMemberId(); 
+	@ResponseBody
+	public String deletejjim(String sname, String memberId) {
 		
 		subwayService.deletejjim(sname,memberId);
-		System.out.println(sname);
 		
 		return "redirect:/member/like";
+	}
+	
+	@RequestMapping(path = {"/lname3"})
+	@ResponseBody
+	public List<String> findSnameGroupByLine(Integer lname){
+			List<String> sname = subwayService.findSnameGroupByLine(lname);
+		return sname;
+		
+	}
+	@ResponseBody
+	@PostMapping(path = {"/nchk"})
+	public int snameCheck(String sname, String memberId) {
+		
+		int check =subwayService.findname(sname, memberId);
+		
+		return check;
 	}
 }

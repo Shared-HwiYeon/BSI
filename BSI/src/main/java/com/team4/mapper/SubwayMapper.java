@@ -61,5 +61,9 @@ public interface SubwayMapper {
 	List<MaxMinVO> selectStationAndMaxMin(@Param("station") String station, @Param("MaxMin") String MaxMin);
 
 	MaxMinVO selectSum(@Param("station")String station);
+
+	List<String> selectSnameGroupByLine(@Param("lname") String lname);
+
+	int countname(@Param("sname") String sname, @Param("memberId") String memberId);
 	
 }

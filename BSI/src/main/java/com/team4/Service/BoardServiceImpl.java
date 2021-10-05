@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.team4.mapper.BoardMapper;
 import com.team4.vo.BoardVO;
+import com.team4.vo.PagingVO;
 
 import lombok.Setter;
 
@@ -46,6 +47,16 @@ public class BoardServiceImpl implements BoardService{
 	@Override
 	public void updateBoard(BoardVO board) {
 		boardMapper.updateBoard(board);
+	}
+
+	@Override
+	public int countBoard() {
+		return boardMapper.countBoard();
+	}
+
+	@Override
+	public List<BoardVO> selectBoard(PagingVO vo) {
+		return boardMapper.selectBoard(vo);
 	}
 
 }

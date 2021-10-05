@@ -51,6 +51,8 @@ public interface SubwayService {
 	List<MaxMinVO> findStationAndMaxMin(String station, String maxMin);
 
 	MaxMinVO findsum(String station);
+
+	int findname(String sname, String memberId);
 	
 	// 휘연님 작업 영억 끝
 		

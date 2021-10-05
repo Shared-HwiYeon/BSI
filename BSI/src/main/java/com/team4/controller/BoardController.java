@@ -12,10 +12,12 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.team4.Service.BoardService;
 import com.team4.vo.BoardVO;
 import com.team4.vo.MembersVO;
+import com.team4.vo.PagingVO;
 
 @Controller
 @RequestMapping(path = {"/board-khw"})
@@ -26,13 +28,30 @@ public class BoardController {
 	private BoardService boardService;
 	
 	@GetMapping(path = {"/list"})
-	public String list(Model model) {
+	public String list(Model model, PagingVO vo, 
+					@RequestParam(value = "nowPage", required = false)String nowPage, 
+					@RequestParam(value = "cntPerPage", required = false)	String cntPerPage) {
 		
-		List<BoardVO> boards = boardService.findAll();
 		
-		model.addAttribute("boards", boards);
 		
-		return "board-khw/list";
+		int total = boardService.countBoard();
+		if(nowPage == null && cntPerPage == null) {
+				nowPage ="1";
+				cntPerPage="5";
+		}else if(nowPage == null) {
+				nowPage="1";
+		}else if(cntPerPage == null) {
+				cntPerPage="5";
+		}
+		vo = new PagingVO(total, Integer.parseInt(nowPage), Integer.parseInt(cntPerPage));
+		List<BoardVO> list = boardService.selectBoard(vo);
+		model.addAttribute("paging", vo);
+		model.addAttribute("viewAll", list);
+//		List<BoardVO> boards = boardService.findAll();
+//		
+//		model.addAttribute("boards", boards);
+		
+		return "board-khw/paging";
 	}
 	
 	@GetMapping(path = { "/write" })

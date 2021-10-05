@@ -54,8 +54,7 @@
 							<th width="80px">호선 :</th>
 							<th >
 								
-								<form action="like" method="get" id="line">
-								<select name="lname" id="lname" onchange="changeLine(e)"class="custom-select custom-select-sm form-control form-control-sm">
+								<select name="lname" id="lname" class="custom-select custom-select-sm form-control form-control-sm">
 									<option value="" selected disabled>호선 선택</option>
 									<c:forEach var="line" items="${ line }">
 									<option value="${ line }">${ line }호선</option>
@@ -71,10 +70,7 @@
                             <th width="120px">
                             	<form action="like" method="post" id="like">
                                 <select name="sname"id="sname"class="custom-select custom-select-sm form-control form-control-sm">
-                               		<option value="" selected disabled>역명</option>
-									<c:forEach var="sname" items="${ sname }">
-									<option value="${ sname }">${ sname }</option>
-									</c:forEach>
+                               		<option value="null" selected disabled>역명</option>
 								</select>
 								</form>
 							</th>
@@ -110,7 +106,7 @@
                                     <c:forEach var = "jjim" items="${ jjim }">
                                         <tr>
                                             <td>
-                                            <a href="https://m.search.naver.com/search.naver?query=+${ jjim.sname }+ 부산 지하철 시간표">
+                                            <a href="javascript:call()" class="ss" data-jjim="${ jjim.sname }">
                                             ${ jjim.sname }</a>
                                             </td>
                                             <td>
@@ -169,7 +165,7 @@
             </div>
         </div>
     </div>
-
+	<input type="hidden" value="${sessionScope.loginuser.memberId}" class="session">
     <jsp:include page="/WEB-INF/views/modules/js.jsp"/>
 
     <!-- Page level plugins -->
@@ -177,39 +173,119 @@
 
     <!-- Page level custom scripts -->
     <script src="/bsi/resources/js/demo/chart-area-demo.js"></script>
-    <script src="/bsi/resources/js/demo/chart-pie-demo2.js"></script>
+    <script src="/bsi/resources/js/demo/chart-pie-demo.js"></script>
 	<script type="text/javascript">
 	$(function(){
 		
 		$('#lname').off('change');
-		$('#lname').on('change',function changeLine(e){
+		$('#lname').on('change',function(e){
 			e.preventDefault();	
 			e.stopPropagation();
-			var optionVal = $("#lname option:selected").val();
-			$('#line').submit();
+			
+			$('#sname').children('option').remove();
+			
+			var lname = $("#lname option:selected").val();
+			
+			$.ajax({
+					type:'post',
+					url:'./lname3',
+					data : {lname : lname},//json형식
+			})
+			.done(function(data){
+					$('#sname').append("<option value='null' selected disabled>역명</option>")
+				$(data).each(function(){
+					$('#sname').append("<option value='"+ this +"'>" + this + "</option>")
+				})
+			})
+			.fail(function(data, textStatus, error){
+				alert("code:"+data.status+"\n"+"message:"+data.responseText+"\n"+"error:"+error);
+				console.log('error');
+			})
+			.always(function(){
+			})
+		
 		}) ;
 		$("button[name='jjim']").click(function(e){
 			e.preventDefault();	
 			e.stopPropagation();
-			
-			var abc =$("#sname option:selected").val();
-
-			if(abc == ""){
-				alert("역을 선택해주세요");
+			var memberId = $('.session').val();
+			var sname =$("#sname option:selected").val();
+			if(sname == 'null'){
+				alert('역명을 선택해주세요');
 				return;
 			}
+			$.ajax({
+				type:'post',
+				url:'./nchk',
+				data:{sname : sname, memberId : memberId}
+			})
+			.done(function(data){
+				if(data == 1){
+					alert("이미 목록에 있습니다.");
+					return;
+				}
+				$('#like').submit();
+			})
+			.fail(function(data,textStatus,error){
+				alert("code:"+data.status+"\n"+"message:"+data.responseText+"\n"+"error:"+error);
+				console.log('error');
+			})
 			
-			$('#like').submit();
+			
+			
 		});
 		$("button[name='deletebtn']").click(function(e){
 			e.preventDefault();
-			var abc = $(this).attr("data-sname");
-			var msg = abc + " 역을 삭제하시겠습니까?";
+			var sname = $(this).attr("data-sname");
+			var msg = sname + " 역을 삭제하시겠습니까?";
+			var memberId = $('.session').val();
 			var yes = confirm(msg);
 			if (yes) {
-				$('#delete-form').submit();
+				/* $('#delete-form').submit(); */
+				$.ajax({
+					type:'post',
+					url:'./delete',
+					data:{sname : sname, memberId : memberId}
+				})
+				.done(function(data){
+					alert("삭제되었습니다.")
+					setTimeout(
+			                  function() 
+			                  {
+			                     location.reload();
+			                  }, 0001);   
+				})
+				.fail(function(data,textStatus,error){
+				alert("code:"+data.status+"\n"+"message:"+data.responseText+"\n"+"error:"+error);
+				console.log('error');
+				})
+
 			}
 			
+		});
+		$('.ss').click(function call(){
+			var jjim = $(this).attr('data-jjim');
+			 var abc =jjim;
+			if(jjim =='1서면'){
+				abc = "1호선 서면"
+			}else if(jjim =='1연산'){
+				abc = "1호선 연산"
+			}else if(jjim =='1동래'){
+				abc = "1호선 동래"
+			}else if(jjim =='2서면'){
+				abc = "2호선 서면"
+			}else if(jjim =='2덕천'){
+				abc = "2호선 덕천"
+			}else if(jjim =='3덕천'){
+				abc = "3호선 덕천"
+			}else if(jjim =='3연산'){
+				abc = "3호선 연산"
+			}else if(jjim =='4동래'){
+				abc = "4호선 연산"
+			}else if(jjim =='반여농산물'){
+				abc = "반여농산물시장"
+			} 	
+			location.href ="https://m.search.naver.com/search.naver?query="+abc+"  지하철 시간표"; 
 		});
 		
 		
