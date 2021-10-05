@@ -37,13 +37,13 @@ public class HomeController {
 			  model.addAttribute("s",s);
 		  }
 		
-//		  List<StationVO> list = subwayService.findrank();
-//		  List<Integer> line = subwayService.findline();
+		  List<StationVO> list = subwayService.findrank();
+		  List<Integer> line = subwayService.findline();
 //		  
 		  StationVO vo = subwayService.findavg();
 		  
-//		  model.addAttribute("line",line);
-//		  model.addAttribute("list",list);
+		  model.addAttribute("line",line);
+		  model.addAttribute("list",list);
 		  model.addAttribute("vo",vo);
 		  
 		  List<String> sname = subwayService.findSnameGroupByLine(lname);

@@ -249,7 +249,6 @@
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     
 	<script type="text/javascript">
-	$.noConflict();
 	$(function(){
 		$('.carousel').carousel({
 			  interval: 100
@@ -291,7 +290,6 @@
 				return;
 			}
 			var abc =$('#sname').prop('value');
-			alert(abc);
 			if($("#sname option:selected").val()=='1서면'){
 				abc = "1호선 서면"
 			}else if($("#sname option:selected").val()=='1연산'){
