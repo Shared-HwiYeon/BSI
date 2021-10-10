@@ -4,7 +4,7 @@
 <%@ page session="true" %>
 <html>
 <head>
-    <title>알림창</title>
+    <title>BSI</title>
 </head>
 <body>
 <script>

@@ -193,4 +193,10 @@
 	and memberId = '${ memberId }'
 	</select>
 	
+	<select id="IdCheck" resultType="String">
+	SELECT COUNT(*)
+	FROM member
+	where MEMBERID = '${ memberId }'
+	</select>
+	
 </mapper>

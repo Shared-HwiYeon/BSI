@@ -65,5 +65,7 @@ public interface SubwayMapper {
 	List<String> selectSnameGroupByLine(@Param("lname") String lname);
 
 	int countname(@Param("sname") String sname, @Param("memberId") String memberId);
+
+	String IdCheck(String memberId);
 	
 }
