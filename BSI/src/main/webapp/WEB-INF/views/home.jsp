@@ -182,7 +182,7 @@
                                         <div class="col mr-6">
                                         	
                                             <div class="text-md font-weight-bold text-warning text-uppercase mb-0">
-                                              MY JJIM LIST <a href="/bsi/member/like">목록가기</a>
+                                              MY JJIM LIST &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/bsi/member/like">목록가기</a>
                                             </div>
                                             <div>&nbsp;</div>
                                             <c:if test="${ s.memberId == sessionScope.loginuser.memberId }">
