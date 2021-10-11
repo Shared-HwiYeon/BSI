@@ -16,6 +16,8 @@ public interface LineService {
 
 	List<LineVO> findAVGandDivision(String month, String days);
 
+	List<LineVO> findAll(String month);
+
 	
 	
 }

@@ -49,4 +49,9 @@ public class AuthServiceImpl implements AuthService {
 		
 	}
 
+	@Override
+	public String findId(String memberId) {
+		return subwayMapper.IdCheck(memberId);
+	}
+
 }

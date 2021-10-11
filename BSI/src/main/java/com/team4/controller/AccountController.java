@@ -5,11 +5,14 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.team4.Service.AuthService;
+import com.team4.Service.SubwayService;
 import com.team4.vo.MembersVO;
 
 @Controller
@@ -26,7 +29,7 @@ public class AccountController {
 		return "account/login";
 	}
 	@PostMapping(path= { "/login" })
-	public String LoginForm(String memberId, String passwd, HttpSession session) {
+	public String LoginForm(String memberId, String passwd, HttpSession session, Model model) {
 		
 		//1. 데이터 읽기( 전달인자로 대체 )
 		
@@ -40,7 +43,9 @@ public class AccountController {
 			//3. 응답컨텐츠 생산하기(jsp로 forward 또는 따른 Servlet으로 redirect)
 			return"redirect:/";
 		} else {
-			return"redirect:/account/login";
+			model.addAttribute("msg","아이디 또는 비밀번호가 틀렸습니다.");
+			model.addAttribute("url","/account/login");
+			return"redirect";
 		}
 	}
 	
@@ -59,6 +64,14 @@ public class AccountController {
 		authService.registerMember(member);
 		
 		return "redirect:login";
+	}
+	@PostMapping(path= {"/idchk"})
+	@ResponseBody
+	public String idCheck(String memberId) {
+		
+		String idchk = authService.findId(memberId);
+		
+		return idchk;
 	}
 	@GetMapping(path= { "/logout" })
 	public String LogoutForm(HttpSession session) {

@@ -30,36 +30,36 @@
                     <div class="col-lg-7">
                         <div class="p-5">
                             <div class="text-center">
-                                <h1 class="h4 text-gray-900 mb-4">Create an Account!</h1>
+                                <h1 class="h4 text-gray-900 mb-4">BSI 아이디 만들어보세요!</h1>
                             </div>
                             <form id="registerform" class="user" action="register" method="post">
                                 <div class="form-group">
                                     <input type="text" class="form-control form-control-user" id="memberId"
-                                        placeholder="Your Name" name="memberId" >
+                                        placeholder="아이디를 입력해주세요." name="memberId" >
                                 </div>
                                 <div class="form-group">
                                     <input type="email" class="form-control form-control-user" id="Email"
-                                        placeholder="Email Address" name="email">
+                                        placeholder="이메일 입력해주세요." name="email">
                                 </div>
                                 <div class="form-group row">
                                     <div class="col-sm-6 mb-3 mb-sm-0">
                                         <input type="password" class="form-control form-control-user"
-                                            id="passwd" placeholder="Password" name="passwd">
+                                            id="passwd" placeholder="비밀번호" name="passwd">
                                     </div>
                                     <div class="col-sm-6">
                                         <input type="password" class="form-control form-control-user"
-                                            id="RepeatPassword" placeholder="Repeat Password">
+                                            id="RepeatPassword" placeholder="비밀번호 확인">
                                     </div>
                                 </div>
-                                <input id="register" type="button" value="Register Account" 
+                                <input id="register" type="button" value="회원가입하기!" 
                                 		class="btn btn-primary btn-user btn-block" />
                             </form>
                             <hr>
-                            <div class="text-center">
+                            <!-- <div class="text-center">
                                 <a class="small" href="forgot-password.html">Forgot Password?</a>
-                            </div>
+                            </div> -->
                             <div class="text-center">
-                                <a class="small" href="/bsi/account/login">Already have an account? Login!</a>
+                                <a class="small" href="/bsi/account/login">이미 아이디가 있으신가요? 로그인하세요!</a>
                             </div>
                         </div>
                     </div>
@@ -99,8 +99,25 @@
 				alert("비밀번호 불일치");
 				return;
 			}
+			var memberId = $('#memberId').val();
 			
-			$('#registerform').submit(); //form을 서버로 전송
+			$.ajax({
+				type:'post',
+				url:'./idchk',
+				data:{memberId : memberId}
+			})
+			.done(function(data){
+				if(data == "1"){
+					alert("아이디가 중복입니다.")
+					return;
+				}
+				$('#registerform').submit(); //form을 서버로 전송
+			})
+			.fail(function(data,textStatus,error){
+				alert("code:"+data.status+"\n"+"message:"+data.responseText+"\n"+"error:"+error);
+				alert('error');
+			})
+			
 			
 		});
 	});

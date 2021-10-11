@@ -41,4 +41,23 @@
 	WHERE BOARDNO = #{ boardNo }
 	</update>
 
+	<!-- 총 게시글 갯수 출력 -->
+	<select id="countBoard" resultType="int">
+		SELECT COUNT(*) FROM BOARD
+	</select>
+	
+	<!-- 페이징 처리 후 게시글 조회 -->
+	<select id="selectBoard" resultType="BoardVO">
+		SELECT * 
+		FROM (
+			SELECT @ROWNUM := @ROWNUM +1 AS ROWNUM, A.* 
+			FROM (
+			  	  SELECT * 
+				  FROM BOARD 
+				  ORDER BY boardNO DESC 
+				  )A, (SELECT @ROWNUM :=0)TMP
+			 )B
+		WHERE ROWNUM BETWEEN #{start} AND #{end}
+	</select>
+	
 </mapper>

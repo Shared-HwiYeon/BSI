@@ -185,4 +185,18 @@
 	where customer.snumber = (select subway.snumber from subway where subway.sname= '${ station }')
 	</select>
 	
+	<select id="countname" resultType="int">
+	select count(*)
+	from jjim j join subway s
+	on s.snumber = j.snumber
+	where j.snumber = (select s2.snumber from subway s2 where s2.sname = '${ sname }')
+	and memberId = '${ memberId }'
+	</select>
+	
+	<select id="IdCheck" resultType="String">
+	SELECT COUNT(*)
+	FROM member
+	where MEMBERID = '${ memberId }'
+	</select>
+	
 </mapper>

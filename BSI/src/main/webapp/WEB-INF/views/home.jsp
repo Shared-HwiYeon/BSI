@@ -106,22 +106,17 @@
                                             </div>
                                             <div class="row no-gutters align-items-center">
                                                 <div class="col-auto">
-                                                <form action="home" method="post" id="line">
-												<select name="lname" id="lname" onchange="changeLine(e)"class="custom-select custom-select-sm form-control form-control-sm">
-													<option value="" selected disabled>호선 선택</option>
+												<select name="lname" id="lname" class="custom-select custom-select-sm form-control form-control-sm">
+													<option selected disabled>호선 선택</option>
 													<c:forEach var="line" items="${ line }">
 													<option value="${ line }">${ line }호선</option>
 													</c:forEach>
 												</select>
-												</form>
 												</div>
 												&nbsp;
 												<div class="col-xl-4">
-                                                <select name="sname"id="sname" class="custom-select custom-select-sm form-control form-control-sm">
-                                                	<option value="" selected disabled>역명</option>
-													<c:forEach var="sname" items="${ sname }">
-													<option value="${ sname }">${ sname }</option>
-													</c:forEach>
+                                                <select name="sname" id='sname' class="custom-select custom-select-sm form-control form-control-sm">
+                                                	<option selected disabled>역명</option>
 												</select>
 												</div>
 												&nbsp;&nbsp;
@@ -187,7 +182,7 @@
                                         <div class="col mr-6">
                                         	
                                             <div class="text-md font-weight-bold text-warning text-uppercase mb-0">
-                                              MY JJIM LIST <a href="/bsi/member/like">목록가기</a>
+                                              MY JJIM LIST &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/bsi/member/like">목록가기</a>
                                             </div>
                                             <div>&nbsp;</div>
                                             <c:if test="${ s.memberId == sessionScope.loginuser.memberId }">
@@ -250,24 +245,51 @@
     <!-- Page level custom scripts -->
     <script src="/bsi/resources/js/demo/chart-area-demo.js"></script>
     <script src="/bsi/resources/js/demo/chart-pie-demo.js"></script>
+    
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    
 	<script type="text/javascript">
 	$(function(){
 		$('.carousel').carousel({
 			  interval: 100
 			});
 	});
-	$('#lname').off('change');
-	$('#lname').on('change',function changeLine(e){
+	$('#lname').on('change',function(e){
 		e.preventDefault();	
 		e.stopPropagation();
-		var optionVal = $("#lname option:selected").val();
-		$('#line').submit();
+
+		$('#sname').children('option').remove();
+		
+		var lname = $("#lname option:selected").val();
+		
+		$.ajax({
+				type:'post',
+				url:'./lname',
+				data : {lname : lname},//json형식
+		})
+		.done(function(data){
+			$(data).each(function(){
+				$('#sname').append("<option value='"+ this +"'>" + this + "</option>")
+			})
+		})
+		.fail(function(data, textStatus, error){
+			alert("code:"+data.status+"\n"+"message:"+data.responseText+"\n"+"error:"+error);
+			console.log('error');
+		})
+		.always(function(){
+		})
+		
+		
 	}) ;
 	$(document).ready(function(){
 		$("button[name='search']").click(function(e){
 			e.preventDefault();	
 			e.stopPropagation();
-			var abc =$("#sname option:selected").val();
+			if($("#sname option:selected").val()=='역명'){
+				alert("선택해주세요")
+				return;
+			}
+			var abc =$('#sname').prop('value');
 			if($("#sname option:selected").val()=='1서면'){
 				abc = "1호선 서면"
 			}else if($("#sname option:selected").val()=='1연산'){
@@ -284,6 +306,8 @@
 				abc = "3호선 연산"
 			}else if($("#sname option:selected").val()=='4동래'){
 				abc = "4호선 연산"
+			}else if($("#sname option:selected").val()=='반여농산물'){
+				abc = "반여농산물시장"
 			}	
 			location.href ="https://m.search.naver.com/search.naver?query="+abc+"  지하철 시간표";
 		}); 
@@ -306,7 +330,9 @@
 				abc = "3호선 연산"
 			}else if(jjim =='4동래'){
 				abc = "4호선 연산"
-			}	abs = jjim;
+			}else if(jjim =='반여농산물'){
+				abc = "반여농산물시장"
+			} 	
 			location.href ="https://m.search.naver.com/search.naver?query="+abc+"  지하철 시간표"; 
 		});
 	});

@@ -49,6 +49,14 @@ public class LineServiceImpl implements LineService{
 		List<LineVO> vo = lineMapper.selectAVGandDivision(month, days);
 		return vo;
 	}
+	
+	@Override
+	public List<LineVO> findAll(String month) {
+
+		List<LineVO> vo = lineMapper.sAll(month);
+		
+		return vo;
+	}
 
 	
 	

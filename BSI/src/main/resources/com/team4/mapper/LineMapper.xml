@@ -116,5 +116,13 @@
 	group by c.date, c.division,s.line
 	order by c.date;
 	</select>
+	
+	<select id="sAll" resultType="LineVO">
+	select line, date, round(avg(unumber),0) as avgNumber
+	from customer c join subway s
+	On c.snumber = s.snumber
+	group by line, date
+	having month(date) = "${month}";
+	</select>
 
 </mapper>

@@ -5,6 +5,7 @@ import java.util.List;
 import org.apache.ibatis.annotations.Mapper;
 
 import com.team4.vo.BoardVO;
+import com.team4.vo.PagingVO;
 
 @Mapper
 public interface BoardMapper {
@@ -20,6 +21,10 @@ public interface BoardMapper {
 	void updateBoardReadCount(int boardNo);
 	
 	void updateBoard(BoardVO board);
+
+	int countBoard();
+
+	List<BoardVO> selectBoard(PagingVO vo);
 	
 	
 

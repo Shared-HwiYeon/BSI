@@ -195,6 +195,11 @@ public class SubwayServiceImpl implements SubwayService{
 		
 		return vo;
 	}
+
+	@Override
+	public int findname(String sname, String memberId) {
+		return subwayMapper.countname(sname, memberId);
+	}
 	
 	// 휘여님 작업 영역 끝
 

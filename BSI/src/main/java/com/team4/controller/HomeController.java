@@ -11,6 +11,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.team4.Service.SubwayService;
 import com.team4.vo.JjimVO;
@@ -38,7 +39,7 @@ public class HomeController {
 		
 		  List<StationVO> list = subwayService.findrank();
 		  List<Integer> line = subwayService.findline();
-		  
+//		  
 		  StationVO vo = subwayService.findavg();
 		  
 		  model.addAttribute("line",line);
@@ -50,6 +51,14 @@ public class HomeController {
 		  model.addAttribute("sname",sname);
 		 
 		return "home";
+	}
+	
+	@RequestMapping(path = {"/lname"})
+	@ResponseBody
+	public List<String> findSnameGroupByLine(Integer lname){
+			List<String> sname = subwayService.findSnameGroupByLine(lname);
+		return sname;
+		
 	}
 
 }
