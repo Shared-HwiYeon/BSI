@@ -3,12 +3,38 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd">
 	
-	<!-- Root Context: defines shared resources visible to all other web components -->
+	<!-- Root Context: defines shared resources visible to all othclass="table-light"class="table-light"class="custom-select custom-select-sm form-control form-control-sm"class="custom-select custom-select-sm form-control form-control-sm"class="custom-select custom-select-sm form-control form-control-sm"class="custom-select custom-select-sm form-control form-control-sm"class="custom-select custom-select-sm form-control form-control-sm"class="custom-select custom-select-sm form-control form-control-sm"<table class="table-light" style="width:350px; text-align: center; margin :0 auto">
+						<tr>
+							<th width="80px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;역명 :</th>
+							<th >
+								
+								<select name="station" class="custom-select custom-select-sm form-control form-control-sm">
+									<c:forEach var="sname" items="${ subway }">
+									<option value="${ sname }"${sname eq requestScope.station ? "selected" : "" }>${ sname }</option>
+									</c:forEach>
+								</select>
+								
+								
+							</th>
+							<th rowspan="2" width="100px"><button class="btn btn-primary btn-xl" id='submit'>조회</button></th>
+						</tr>
+						<tr>
+	                        <th>최대/최소 :</th>
+                            <th width="120px">
+                            
+                                <select name="MaxMin" id="MaxMin" class="custom-select custom-select-sm form-control form-control-sm">
+									<option value="Max" ${MaxMin == 'Max' ? 'selected':'' }>최대</option>
+									<option value="Min" ${MaxMin == 'Min' ? 'selected':'' }>최소</option>
+								</select>
+								
+							</th>
+						</tr>
+					</table>er web components -->
 
 		
 	<bean id="hikaridataSource" class="com.zaxxer.hikari.HikariDataSource">
 		<property name="driverClassName" value="com.mysql.cj.jdbc.Driver" />
-		<property name="jdbcUrl" value="jdbc:mysql://localhost:3306/project4team?characterEncoding=utf8&amp;useSSL=false&amp;autoReconnection=true" />
+		<property name="jdbcUrl" value="jdbc:mysql://localhost:3306/project4team" />
 		<property name="username" value="kdigital" />
 		<property name="password" value="mysql" />
 		<property name="minimumIdle" value="20" />

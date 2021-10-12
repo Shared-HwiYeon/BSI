@@ -81,9 +81,7 @@
                  </div>
              </div>
 		</div>
-					</table>
-					</form>
-					</div>	
+	</div>	
 					<div class="card shadow mb-4">
                         <div class="card-header py-3">
                             <span class="m-0 font-weight-bold text-primary">데이터 조회</span>
