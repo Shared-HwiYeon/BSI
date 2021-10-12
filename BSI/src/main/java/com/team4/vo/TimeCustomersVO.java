@@ -17,4 +17,5 @@ public class TimeCustomersVO {
 	private int unumber;
 	private int avgnumber;
 
+	
 }
