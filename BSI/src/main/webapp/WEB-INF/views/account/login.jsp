@@ -59,9 +59,9 @@
                                         	class="btn btn-primary btn-user btn-block"/>
                                     </form>
                                     <hr>
-                                    <div class="text-center">
+                                    <!-- <div class="text-center">
                                         <a class="small" href="forgot-password.html">비밀번호를 잊으셨나요?</a>
-                                    </div>
+                                    </div> -->
                                     <div class="text-center">
                                         <a class="small" href="/bsi/account/register">계정이 없으신가요?</a>
                                     </div>
