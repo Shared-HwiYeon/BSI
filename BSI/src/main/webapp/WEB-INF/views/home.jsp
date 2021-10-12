@@ -305,7 +305,7 @@
 			}else if($("#sname option:selected").val()=='3연산'){
 				abc = "3호선 연산"
 			}else if($("#sname option:selected").val()=='4동래'){
-				abc = "4호선 연산"
+				abc = "4호선 동래"
 			}else if($("#sname option:selected").val()=='반여농산물'){
 				abc = "반여농산물시장"
 			}	
@@ -329,7 +329,7 @@
 			}else if(jjim =='3연산'){
 				abc = "3호선 연산"
 			}else if(jjim =='4동래'){
-				abc = "4호선 연산"
+				abc = "4호선 동래"
 			}else if(jjim =='반여농산물'){
 				abc = "반여농산물시장"
 			} 	
