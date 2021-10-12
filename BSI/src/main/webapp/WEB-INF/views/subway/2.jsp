@@ -81,8 +81,6 @@
                  </div>
              </div>
 		</div>
-					</table>
-					</form>
 					</div>	
 					<div class="card shadow mb-4">
                         <div class="card-header py-3">
@@ -116,6 +114,7 @@
                      	</c:forEach>
                      	</tbody>
                      </table>
+                </div>
                 </div>
                 <!-- /.container-fluid -->
 
