@@ -119,14 +119,15 @@
                 <!-- /.container-fluid -->
 
             </div>
+            </div>
             <!-- End of Main Content -->
-
+			</div>
            <jsp:include page="/WEB-INF/views/modules/footer.jsp" />
 
-        </div>
+        
         <!-- End of Content Wrapper -->
 
-    </div>
+    
     <!-- End of Page Wrapper -->
 
     <!-- Scroll to Top Button-->
